@@ -1,0 +1,75 @@
+Project: Ritter Sport – Production Load Balancing (PoC-first)
+
+Primary goal
+- Build a 2-week Proof of Concept to demonstrate that weekly production load can be smoothed across Mon–Fri without breaking key constraints, using minimal yet convincing forecasting + scheduling.
+
+Canonical references
+- readme.md → Project overview, constraints, methodology, data layout
+- planning/POC_PLAN.md → Full PoC scope, success criteria, timeline
+- planning/section1_data_ingestion_plan.md → Detailed plan for Section 1 (ETL)
+- tasks/section1_checklist.md → Executable checklist for ETL section
+- tasks/poc_timeline.md → 10-day execution schedule
+- tasks/backlog.md → Work items beyond Section 1
+- docs/data_dictionary.md → Normalized output schema
+- docs/data_sample_list.md → Recorded sample Excel files for PoC
+- config/personnel_intensive.yml → Terms/aliases to tag personnel‑intensive sorts
+- production-analysis.html → Visual EDA baseline used for comparisons
+
+Directory map (working areas)
+- 2024/, 2025/ → Raw weekly Excel files by area (H2_H3, H4, M2_M3)
+- planning/ → Plans and breakdowns (do not code here)
+- tasks/ → Checklists, timeline, backlog (keep current)
+- docs/ → Data dictionary and sample list (must reflect reality)
+- config/ → Project configs (personnel‑intensive taxonomy)
+- src/etl/ → ETL code (ingest.py, utils.py)
+- data/processed/ → Normalized outputs written by ETL
+- data/reports/ → JSON/HTML ingest reports written by ETL
+- logs/ → Human‑friendly logs from ETL and later steps
+
+Constraints snapshot (implement minimally in PoC)
+- 3 shifts/day; 5 lines overall; at least one line idle per day
+- No simultaneous personnel‑intensive sorts (config/personnel_intensive.yml)
+- Prefer not to split sort blocks on Hohl; interruptions on Massiv acceptable (soft in PoC)
+- Avoid same sort on consecutive days (soft for PoC unless trivial)
+
+Data ingestion (Section 1) outputs
+- data/processed/normalized_daily.csv (required)
+- data/reports/ingest_summary_<timestamp>.json
+- logs/ingest_<timestamp>.log
+- docs/data_dictionary.md kept in sync; docs/data_sample_list.md lists the sampled files
+
+Agent workflow (always follow)
+1) Before coding: consult readme.md and planning/* to confirm intent and scope.
+2) For ETL, create/modify only under src/etl/, config/, data/, docs/, logs/.
+3) After edits: ensure no lints; keep logs clear and helpful; update tasks and docs.
+4) Produce demo‑ready artifacts early and iterate (CSV + simple charts/report).
+
+Tasks hygiene
+- Keep tasks/section1_checklist.md updated as steps complete.
+- Log any deviations or discoveries in the checklist or docs/data_dictionary.md.
+- Add new work beyond PoC scope to tasks/backlog.md, not to the active checklist.
+
+Logging & reporting
+- Logs must be clear, user‑friendly, and actionable (counts, what was assumed, warnings, decisions).
+- Summarize each run: files processed, rows used, anomalies, unknown line %, caps applied.
+- Prefer JSON report for machine-readability and reproducibility.
+
+Naming & normalization
+- Lines: hohl2, hohl3, hohl4, massiv2, massiv3 (lowercase, no spaces)
+- Normalized columns (minimum): date, weekday, kw, line, total_hours
+- Provenance: include source_file, source_type (Konzept|Version1|unknown)
+- Personnel‑intensive tagging via config/personnel_intensive.yml terms/aliases
+
+Quality gates (PoC level)
+- No NaNs in required normalized columns
+- Cap day×line totals at 24 hours (with warnings)
+- ≥90% of usable rows yield valid date+line (H4 fully known; ≤20% unknown in multi‑line areas)
+- Personnel‑intensive tagging verified on exemplars
+
+Visualization & demo
+- Reuse production-analysis.html style for clarity
+- Show before/after: daily stacked bars, avg active lines, constraint badges, and a KPI row
+
+If uncertain
+- Prefer minimal, explainable choices; log assumptions and add an item to tasks/backlog.md
+- Do not expand scope beyond the PoC plan without recording it in planning/ or tasks/

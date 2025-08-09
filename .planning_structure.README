@@ -1,0 +1,19 @@
+Structure created:
+- planning/
+  - POC_PLAN.md
+  - section1_data_ingestion_plan.md
+  - README.md
+- tasks/
+  - section1_checklist.md
+  - backlog.md
+  - poc_timeline.md
+- docs/
+  - data_dictionary.md
+  - data_sample_list.md
+- config/
+  - personnel_intensive.yml
+- src/etl/
+  - README.md
+- data/processed/ (to be created by ETL)
+- data/reports/ (to be created by ETL)
+- logs/ (to be created by ETL)
