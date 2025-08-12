@@ -1,7 +1,13 @@
-Project: Ritter Sport – Production Load Balancing (PoC-first)
+Project: Ritter Sport – Production Load Balancing Decision Support Tool (PoC)
 
 Primary goal
-- Build a 2-week Proof of Concept to demonstrate that weekly production load can be smoothed across Mon–Fri without breaking key constraints, using minimal yet convincing forecasting + scheduling.
+- Build a 2-week Proof of Concept for a decision support tool that helps production planners optimize weekly load distribution across Mon–Fri and 5 production lines, replacing manual educated guesses with data-driven forecasting and optimization.
+
+Use case
+- Managers meet to define production requirements/demands for upcoming 1-2 weeks
+- Planner inputs: A) Requirements (manager-defined demands), B) Constraints (or modify defaults), C) Other factors
+- System outputs: A) Load forecast based on historical data + Ritter Sport insights, B) Optimized load distribution across weekdays and machines
+- Result: Better load balancing → cost efficiency, manageable work hours, satisfied employees
 
 Canonical references
 - readme.md → Project overview, constraints, methodology, data layout
@@ -38,11 +44,18 @@ Data ingestion (Section 1) outputs
 - logs/ingest_<timestamp>.log
 - docs/data_dictionary.md kept in sync; docs/data_sample_list.md lists the sampled files
 
-Agent workflow (always follow)
+Planner interface requirements
+- Input forms: A) Production requirements/demands (quantities, products, deadlines), B) Constraints (override defaults), C) Additional factors
+- Forecasting engine: Historical data analysis + Ritter Sport domain insights → predicted load distribution
+- Optimization engine: Balance load across Mon-Fri and 5 lines while respecting all constraints
+- Output: Clear weekly schedule with rationale, constraint compliance indicators, load distribution metrics
+
+Development workflow (always follow)
 1) Before coding: consult readme.md and planning/* to confirm intent and scope.
-2) For ETL, create/modify only under src/etl/, config/, data/, docs/, logs/.
-3) After edits: ensure no lints; keep logs clear and helpful; update tasks and docs.
-4) Produce demo‑ready artifacts early and iterate (CSV + simple charts/report).
+2) Focus on planner user experience: clear inputs, transparent forecasting, actionable optimization outputs.
+3) For ETL, create/modify only under src/etl/, config/, data/, docs/, logs/.
+4) After edits: ensure no lints; keep logs clear and helpful; update tasks and docs.
+5) Produce demo‑ready artifacts early and iterate (working planner interface + optimization results).
 
 Tasks hygiene
 - Keep tasks/section1_checklist.md updated as steps complete.

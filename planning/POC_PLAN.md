@@ -1,10 +1,22 @@
-# Proof of Concept Plan – Production Load Balancing at Ritter Sport
+# Proof of Concept Plan – Production Load Balancing Decision Support Tool
 
-## A. Intuitive outline (how this can work)
-- Understand the problem: Today most hours happen Mon–Wed; Thu–Fri are quiet. Some lines are overloaded, others underused.
-- Predict next week’s need: From recent weeks, estimate how many hours each line will likely need on each weekday.
-- Propose a smoother plan: Spread those hours more evenly across Mon–Fri while respecting key rules (3 shifts/day, at least one line idle, no simultaneous personnel‑intensive sorts).
-- Show the impact: Compare “current vs proposed” on a few simple charts (hours/day, active lines/day, overtime/idle proxies) to prove smoothing is possible without breaking rules.
+## A. Vision: Empowering Planners with Data-Driven Decisions
+
+### The Current Challenge
+- **Manual Planning**: Planners rely on experience and educated guesses to schedule production
+- **Suboptimal Results**: Heavy Mon-Wed loads, light Thu-Fri, overtime costs, employee stress
+- **Limited Support**: No tools to systematically forecast workload or optimize distribution
+
+### Our Solution
+A decision support tool that transforms the planner's workflow:
+1. **Input**: Planner enters manager-defined requirements + constraints
+2. **Process**: System forecasts load distribution and optimizes schedule
+3. **Output**: Balanced weekly plan with clear rationale and compliance indicators
+
+### Success Proof Points
+- Demonstrate 15%+ reduction in daily load variance
+- Show constraint compliance with transparent reasoning
+- Provide actionable weekly schedules planners can actually use
 
 ## B. Two‑week Proof‑of‑Concept plan (minimal, end‑to‑end)
 
@@ -21,13 +33,16 @@
 - Keep average active lines/day near 4 on Mon–Wed and ≥3 on Thu–Fri (no Friday collapse).
 - Satisfy the three POC constraints above on all days.
 
-### Deliverables (simple and demo‑ready)
-- One suggested weekly plan (CSV/Excel) with per‑day, per‑line hours and shift split.
-- A lightweight dashboard (Streamlit or static HTML) showing before/after:
+### Deliverables (demo‑ready planner tool)
+- **Planner Interface**: Web form where planners can input production requirements and constraints
+- **Forecasting Engine**: System that predicts load distribution based on historical patterns
+- **Optimization Engine**: Scheduler that balances load while respecting all constraints
+- **Output Dashboard**: Clear weekly schedule with:
   - Hours per weekday (stacked by line)
-  - Average active lines per day
-  - Constraint flags (pass/fail)
-- A 1‑page note with metrics: baseline vs. proposed.
+  - Load distribution metrics and trends
+  - Constraint compliance indicators (pass/fail badges)
+  - Rationale for scheduling decisions
+- **Export Capability**: Download optimized schedule as CSV/Excel for implementation
 
 ### Minimal technical approach
 - Data ingestion (light)
@@ -51,13 +66,23 @@
     - A small table of constraint checks.
     - A single KPI row (var(day totals), avg active lines/day).
 
-### 10‑day execution plan (2 weeks)
-- Days 1–2: Confirm columns on 3–5 files. Build normalizer to produce day×line hours. Draft the personnel‑intensive keyword list.
-- Days 3–4: Baseline forecast (weekday averages). Sanity charts vs. history.
-- Days 5–6: Greedy smoothing prototype; ensure 3 constraints pass; auto‑export plan CSV.
-- Days 7–8: Mini‑dashboard (Streamlit or static HTML) with before/after charts and pass/fail badges.
-- Day 9: Polish: small MILP alternative (optional) OR strengthen greedy edge cases.
-- Day 10: Freeze demo: pick 1–2 historical weeks; produce “current vs proposed”; finalize KPI summary.
+### 14‑day execution plan (planner-focused development)
+
+#### Phase 1: Foundation (Days 1-4)
+- **Days 1-2**: Data pipeline - parse Excel files, normalize schema, validate quality
+- **Days 3-4**: Baseline analysis - understand patterns, constraints, and planner needs
+
+#### Phase 2: Core Intelligence (Days 5-8)
+- **Days 5-6**: Forecasting engine - build load prediction model based on historical data
+- **Days 7-8**: Optimization engine - implement constraint-aware scheduling algorithm
+
+#### Phase 3: Planner Interface (Days 9-12)
+- **Days 9-10**: Input forms - create web interface for requirements and constraints
+- **Days 11-12**: Output dashboard - build schedule visualization and export features
+
+#### Phase 4: Integration & Demo (Days 13-14)
+- **Day 13**: End-to-end testing - validate complete planner workflow
+- **Day 14**: Demo preparation - polish interface, prepare stakeholder presentation
 
 ### Risks and simple mitigations
 - Messy product/sort tags: fallback to a conservative conflict rule (limit number of personnel‑intensive allocations per day).
@@ -79,11 +104,15 @@
 - Problem and aims from `notes.md` and `Pitch_and_details.md`
 - Patterns from `production-analysis.html`
 
-### Outputs you’ll see in 2 weeks
-- `proposed_schedule_week_X.csv` (one week)
-- `poc_dashboard` (Streamlit app or `poc_analysis.html`)
-- `poc_summary.pdf` or `poc_summary.md` with KPI deltas
+### Expected Outputs (14-day deliverables)
+- **Working Planner Interface**: Web application where planners can input requirements and get optimized schedules
+- **Demonstration Scenarios**: 2-3 historical weeks showing "manual vs. optimized" comparisons
+- **Technical Documentation**: Setup guides, user manuals, and API documentation
+- **Business Case**: Quantified benefits - overtime reduction, load smoothing, constraint compliance
+- **Stakeholder Demo**: End-to-end workflow demonstration for management and planning teams
 
-### Decisions needed now
-- Which weeks to test (suggest KW28–35) and one target week for the “proposal.”
-- Confirm the personnel‑intensive sort list and a basic name matching rule.
+### Success Validation
+- **User Experience**: Planners can complete the full workflow (input → forecast → optimize → export) in <5 minutes
+- **Technical Performance**: System generates optimized schedules in <30 seconds
+- **Business Impact**: Demonstrate 15%+ reduction in daily load variance while maintaining 100% constraint compliance
+- **Adoption Readiness**: Clear path to production deployment with documented requirements and technical architecture
