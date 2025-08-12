@@ -38,6 +38,17 @@ python -m src.etl.ingest \
     --personnel-config config/personnel_intensive.yml \
     --log-level INFO
 
+echo "📊 Data quality check after deduplication..."
+python -c "
+import pandas as pd
+df = pd.read_csv('data/processed/normalized_daily.csv')
+daily_totals = df.groupby('date')['total_hours'].sum()
+print(f'✅ Historical daily mean: {daily_totals.mean():.1f}h (should be ~40-50h for 2 lines)')
+print(f'✅ Historical daily std: {daily_totals.std():.1f}h (should be <10h)')
+print(f'✅ Unique days: {len(daily_totals)} (should be much less than total rows)')
+print(f'✅ Date range: {daily_totals.index.min()} to {daily_totals.index.max()}')
+"
+
 if [ $? -ne 0 ]; then
     echo "❌ Data ingestion failed"
     exit 1

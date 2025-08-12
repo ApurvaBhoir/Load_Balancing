@@ -178,3 +178,57 @@ def configure_logging(log_dir: str, log_level: str) -> Tuple[logging.Logger, str
     logger.addHandler(fh)
     logger.addHandler(ch)
     return logger, log_path
+
+
+def deduplicate_records(df):
+    """
+    Deduplicate day×line records from multiple Excel files.
+    
+    Strategy: For same date×line combinations, prefer:
+    1. Version files over Konzept files
+    2. Highest version number if multiple versions
+    3. Latest source file alphabetically as fallback
+    
+    Args:
+        df: DataFrame with columns [date, line, source_file, source_type, ...]
+        
+    Returns:
+        DataFrame with one record per date×line combination
+    """
+    if 'date' not in df.columns or 'line' not in df.columns:
+        return df
+    
+    # Create priority scoring for source selection
+    def source_priority(row):
+        source_type = row.get('source_type', 'unknown')
+        source_file = row.get('source_file', '')
+        
+        # Version files get higher priority than Konzept
+        if 'Version' in source_type:
+            priority = 100
+            # Extract version number if present (Version1, Version2, etc.)
+            import re
+            version_match = re.search(r'Version\s*(\d+)', source_type)
+            if version_match:
+                priority += int(version_match.group(1))
+        elif 'Konzept' in source_type:
+            priority = 50
+        else:
+            priority = 10
+        
+        # Use source file name as tiebreaker (later alphabetically = higher priority)
+        priority += hash(source_file) % 10
+        
+        return priority
+    
+    # Add priority column
+    df['_priority'] = df.apply(source_priority, axis=1)
+    
+    # Sort by priority (highest first) and take first record per date×line
+    df_sorted = df.sort_values(['date', 'line', '_priority'], ascending=[True, True, False])
+    df_dedup = df_sorted.drop_duplicates(subset=['date', 'line'], keep='first')
+    
+    # Remove temporary priority column
+    df_dedup = df_dedup.drop(columns=['_priority'])
+    
+    return df_dedup

@@ -21,6 +21,7 @@ from .utils import (
     ensure_directories,
     kw_from_date,
     configure_logging,
+    deduplicate_records,
 )
 from .matrix_parser import normalize_matrix_file
 
@@ -204,6 +205,15 @@ def main():
         return 2
 
     combined = pd.concat(all_rows, ignore_index=True)
+
+    # Apply deduplication strategy for same day×line combinations
+    logger.info("Applying deduplication strategy...")
+    before_dedup = len(combined)
+    combined = deduplicate_records(combined)
+    after_dedup = len(combined)
+    dedup_removed = before_dedup - after_dedup
+    if dedup_removed > 0:
+        logger.info(f"Removed {dedup_removed} duplicate day×line records")
 
     # Required columns invariant
     required = ["date", "weekday", "kw", "line", "total_hours"]
