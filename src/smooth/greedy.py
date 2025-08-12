@@ -96,10 +96,10 @@ def find_transfer_opportunities(df: pd.DataFrame, target_variance_reduction: flo
     current_variance = daily_totals['total_hours'].var()
     mean_daily = daily_totals['total_hours'].mean()
     
-    # Identify peaks (above mean + 0.5*std) and valleys (below mean - 0.5*std)
+    # Identify peaks (above mean + 0.2*std) and valleys (below mean - 0.2*std) - more aggressive
     std_daily = daily_totals['total_hours'].std()
-    peak_threshold = mean_daily + 0.5 * std_daily
-    valley_threshold = mean_daily - 0.5 * std_daily
+    peak_threshold = mean_daily + 0.2 * std_daily
+    valley_threshold = mean_daily - 0.2 * std_daily
     
     peaks = daily_totals[daily_totals['total_hours'] > peak_threshold]['date'].tolist()
     valleys = daily_totals[daily_totals['total_hours'] < valley_threshold]['date'].tolist()
@@ -130,7 +130,7 @@ def find_transfer_opportunities(df: pd.DataFrame, target_variance_reduction: flo
             
             for _, work in transferable.iterrows():
                 line = work['line']
-                hours_to_transfer = min(work['predicted_hours'] * 0.3, 6)  # Transfer up to 30% or 6h
+                hours_to_transfer = min(work['predicted_hours'] * 0.4, 8)  # Transfer up to 40% or 8h
                 
                 # Check if valley day can accept this work
                 valley_line = valley_data[valley_data['line'] == line]

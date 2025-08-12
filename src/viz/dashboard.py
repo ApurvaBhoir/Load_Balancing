@@ -49,11 +49,13 @@ def calculate_dashboard_metrics(data: Dict[str, pd.DataFrame]) -> Dict[str, Any]
     
     # Historical metrics
     hist_daily = historical.groupby('date')['total_hours'].sum()
-    hist_weekday = historical.groupby('weekday')['total_hours'].sum().groupby(historical.groupby('weekday')['weekday'].first()).mean()
+    hist_daily_with_weekday = historical.groupby(['date', 'weekday'])['total_hours'].sum().reset_index()
+    hist_weekday = hist_daily_with_weekday.groupby('weekday')['total_hours'].mean()
     
     # Forecast metrics
     forecast_daily = forecast.groupby('date')['predicted_hours'].sum()
-    forecast_weekday = forecast.groupby('weekday')['predicted_hours'].sum().groupby(forecast.groupby('weekday')['weekday'].first()).mean()
+    forecast_daily_with_weekday = forecast.groupby(['date', 'weekday'])['predicted_hours'].sum().reset_index()
+    forecast_weekday = forecast_daily_with_weekday.groupby('weekday')['predicted_hours'].mean()
     
     metrics = {
         'historical': {
@@ -129,9 +131,9 @@ def generate_chart_data(data: Dict[str, pd.DataFrame]) -> Dict[str, Any]:
         }
     }
     
-    # Weekday averages
-    hist_weekday_avg = historical.groupby('weekday')['total_hours'].mean()
-    forecast_weekday_avg = forecast.groupby('weekday')['predicted_hours'].mean()
+    # Weekday averages - calculate daily totals first, then average by weekday
+    hist_weekday_avg = hist_daily.groupby('weekday')['total_hours'].mean()
+    forecast_weekday_avg = forecast_daily.groupby('weekday')['predicted_hours'].mean()
     
     for day in ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']:
         chart_data['weekday_comparison']['historical'].append(round(hist_weekday_avg.get(day, 0), 1))
@@ -325,28 +327,40 @@ def generate_html_dashboard(metrics: Dict[str, Any], chart_data: Dict[str, Any],
             }}
         }});
 
-        // Line Utilization Chart
+        // Line Utilization Chart - Use bar chart for better readability
         const lineCtx = document.getElementById('lineChart').getContext('2d');
         new Chart(lineCtx, {{
-            type: 'radar',
+            type: 'bar',
             data: {{
                 labels: chartData.line_utilization.labels,
                 datasets: [{{
-                    label: 'Historical',
+                    label: 'Historical Avg',
                     data: chartData.line_utilization.historical,
+                    backgroundColor: 'rgba(255, 99, 132, 0.7)',
                     borderColor: '#FF6384',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)'
+                    borderWidth: 1
                 }}, {{
-                    label: 'Forecast',
+                    label: 'Forecast Avg',
                     data: chartData.line_utilization.forecast,
+                    backgroundColor: 'rgba(54, 162, 235, 0.7)',
                     borderColor: '#36A2EB',
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)'
+                    borderWidth: 1
                 }}]
             }},
             options: {{
                 responsive: true,
                 scales: {{
-                    r: {{ beginAtZero: true, title: {{ display: true, text: 'Average Hours' }} }}
+                    y: {{ 
+                        beginAtZero: true, 
+                        title: {{ display: true, text: 'Average Hours per Line' }},
+                        max: 24
+                    }},
+                    x: {{
+                        title: {{ display: true, text: 'Production Lines' }}
+                    }}
+                }},
+                plugins: {{
+                    legend: {{ display: true, position: 'top' }}
                 }}
             }}
         }});
