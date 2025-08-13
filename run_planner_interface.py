@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 """
-Launch script for the Ritter Sport Production Load Balancing Planner Interface.
+Simple script to run the Ritter Sport Production Planner interface locally.
 
-This script launches the Streamlit web application for production planners.
+For production deployment, use Docker:
+    ./deploy.sh
+    # OR: docker compose up --build
+
+For local development:
+    python run_planner_interface.py
+    # OR: streamlit run src/interface/planner_app.py
 """
 
 import subprocess
@@ -10,42 +16,42 @@ import sys
 import os
 
 def main():
-    """Launch the Streamlit planner interface."""
-    
-    # Ensure we're in the right directory
+    """Run the Streamlit planner interface."""
+    # Ensure we're in the correct directory
     script_dir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(script_dir)
     
-    # Check if Streamlit is available
+    # Check if streamlit is available
     try:
         import streamlit
-        print("✅ Streamlit is available")
     except ImportError:
-        print("❌ Streamlit not found. Please install it:")
-        print("   conda install streamlit")
+        print("❌ Streamlit not found. Please install requirements:")
+        print("   pip install -r requirements.txt")
+        print("")
+        print("Or use Docker deployment:")
+        print("   ./deploy.sh")
         sys.exit(1)
     
-    # Check if the app file exists
-    app_path = "src/interface/planner_app.py"
-    if not os.path.exists(app_path):
-        print(f"❌ App file not found: {app_path}")
-        sys.exit(1)
+    print("🍫 Starting Ritter Sport Production Planner...")
+    print("📊 Interface will open at: http://localhost:8501")
+    print("🔄 Press Ctrl+C to stop the application")
+    print("")
     
-    # Launch the Streamlit app
-    print("🚀 Launching Ritter Sport Production Planner Interface...")
-    print("   📱 Open your browser to: http://localhost:8501")
-    print("   🛑 Press Ctrl+C to stop the server")
-    print()
-    
+    # Run the Streamlit app
     try:
         subprocess.run([
-            sys.executable, "-m", "streamlit", "run", app_path,
-            "--server.port", "8501",
-            "--server.address", "localhost",
-            "--browser.gatherUsageStats", "false"
-        ])
+            sys.executable, "-m", "streamlit", "run", 
+            "src/interface/planner_app.py",
+            "--server.port=8501",
+            "--server.headless=false"
+        ], check=True)
     except KeyboardInterrupt:
-        print("\n👋 Planner interface stopped.")
+        print("\n👋 Application stopped by user")
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Failed to start application: {e}")
+        print("\nTry using Docker instead:")
+        print("   ./deploy.sh")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
