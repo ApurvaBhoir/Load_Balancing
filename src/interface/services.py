@@ -129,37 +129,15 @@ def adjust_forecast_for_requirements(forecast_df: pd.DataFrame, requirements: Di
     """
     Adjust the baseline forecast to match production requirements.
     
-    This is a simplified approach that scales forecast based on required hours.
+    Enhanced to be product-aware and consider priorities and deadlines.
     """
-    # Calculate total required hours
-    total_required_hours = sum(item['Quantity (hours)'] for item in requirements['products'])
+    products = requirements['products']
     
-    if total_required_hours == 0:
+    if not products or sum(item['Quantity (hours)'] for item in products) == 0:
         return forecast_df
     
-    # Calculate current forecast total
-    current_total = forecast_df['total_hours'].sum()
-    
-    if current_total == 0:
-        # If no historical data, create a basic distribution
-        return create_basic_forecast_from_requirements(requirements, constraints)
-    
-    # Scale forecast to match requirements
-    scale_factor = total_required_hours / current_total
-    forecast_df = forecast_df.copy()
-    forecast_df['total_hours'] = forecast_df['total_hours'] * scale_factor
-    
-    # Apply line availability constraints
-    line_availability = constraints.get('line_availability', {})
-    for line, available in line_availability.items():
-        if not available:
-            forecast_df.loc[forecast_df['line'] == line, 'total_hours'] = 0.0
-    
-    # Cap hours at maximum daily hours
-    max_hours = constraints.get('max_daily_hours', 24.0)
-    forecast_df['total_hours'] = forecast_df['total_hours'].clip(upper=max_hours)
-    
-    return forecast_df
+    # Create product-aware schedule
+    return create_product_aware_schedule(forecast_df, products, constraints, requirements['planning_date'])
 
 
 def create_basic_forecast_from_requirements(requirements: Dict[str, Any], constraints: Dict[str, Any]) -> pd.DataFrame:
@@ -272,31 +250,51 @@ def run_optimization(forecast_results: Dict[str, Any], requirements: Dict[str, A
 
 
 def create_schedule_summary(optimized_df: pd.DataFrame, requirements: Dict[str, Any]) -> pd.DataFrame:
-    """Create a human-readable schedule summary."""
+    """Create a human-readable schedule summary with product information."""
     
-    # Pivot the data to create a schedule view
-    schedule = optimized_df.pivot_table(
+    # Group by date, weekday, and line to get product assignments
+    schedule_detail = optimized_df.groupby(['date', 'weekday', 'line']).agg({
+        'total_hours': 'sum',
+        'product': lambda x: ', '.join([p for p in x if p != 'Idle']) or 'Idle',
+        'priority': lambda x: ', '.join(set([p for p in x if p != 'N/A'])) or 'N/A',
+        'personnel_intensive_flag': 'any'
+    }).reset_index()
+    
+    # Create a pivot table for the classic view
+    schedule_hours = schedule_detail.pivot_table(
         index=['date', 'weekday'],
         columns='line',
         values='total_hours',
         fill_value=0.0
     ).reset_index()
     
-    # Add daily totals
-    line_columns = [col for col in schedule.columns if col not in ['date', 'weekday']]
-    schedule['daily_total'] = schedule[line_columns].sum(axis=1)
+    # Create a pivot table for products
+    schedule_products = schedule_detail.pivot_table(
+        index=['date', 'weekday'],
+        columns='line',
+        values='product',
+        fill_value='Idle',
+        aggfunc=lambda x: ', '.join(x) if len(x) > 0 else 'Idle'
+    ).reset_index()
     
-    # Add active lines count
-    schedule['active_lines'] = (schedule[line_columns] > 0).sum(axis=1)
+    # Combine the information
+    line_columns = [col for col in schedule_hours.columns if col not in ['date', 'weekday']]
+    
+    # Add daily totals and metrics
+    schedule_hours['daily_total'] = schedule_hours[line_columns].sum(axis=1)
+    schedule_hours['active_lines'] = (schedule_hours[line_columns] > 0).sum(axis=1)
     
     # Format for display
-    schedule['date'] = pd.to_datetime(schedule['date']).dt.strftime('%Y-%m-%d')
+    schedule_hours['date'] = pd.to_datetime(schedule_hours['date']).dt.strftime('%Y-%m-%d')
     
     # Round hours to 1 decimal place
     for col in line_columns + ['daily_total']:
-        schedule[col] = schedule[col].round(1)
+        schedule_hours[col] = schedule_hours[col].round(1)
     
-    return schedule
+    # Store product information for later use (as an attribute dictionary to avoid pandas warning)
+    schedule_hours.attrs['product_details'] = schedule_products
+    
+    return schedule_hours
 
 
 def calculate_metrics(forecast_results: Dict[str, Any], optimization_results: Dict[str, Any]) -> Dict[str, Any]:
@@ -427,6 +425,159 @@ def generate_forecast_from_averages(weekday_averages: pd.DataFrame, start_date: 
                 })
     
     return pd.DataFrame(rows)
+
+
+def create_product_aware_schedule(base_forecast_df: pd.DataFrame, products: List[Dict[str, Any]], constraints: Dict[str, Any], planning_date) -> pd.DataFrame:
+    """
+    Create a product-aware schedule that assigns specific products to time slots and lines.
+    
+    Considers:
+    - Priority levels (High → schedule earlier)
+    - Deadlines (must finish by specified day)
+    - Personnel-intensive constraints
+    - Line availability
+    """
+    from datetime import datetime, timedelta
+    
+    # Sort products by priority and deadline
+    priority_order = {'High': 1, 'Medium': 2, 'Low': 3}
+    deadline_order = {'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5}
+    
+    sorted_products = sorted(products, key=lambda x: (
+        priority_order.get(x['Priority'], 3),  # High priority first
+        deadline_order.get(x['Deadline'], 5),  # Earlier deadlines first
+        -x['Quantity (hours)']  # Larger products first (within same priority/deadline)
+    ))
+    
+    # Create schedule framework
+    start_date = planning_date
+    if hasattr(start_date, 'weekday'):
+        if start_date.weekday() != 0:  # Ensure Monday
+            start_date = start_date + timedelta(days=(7 - start_date.weekday()))
+    else:
+        start_date = datetime.combine(start_date, datetime.min.time())
+        if start_date.weekday() != 0:
+            start_date = start_date + timedelta(days=(7 - start_date.weekday()))
+    
+    # Available lines
+    line_availability = constraints.get('line_availability', {})
+    available_lines = [line for line, available in line_availability.items() if available]
+    if not available_lines:
+        available_lines = ['hohl2', 'hohl3', 'hohl4', 'massiv2', 'massiv3']
+    
+    max_hours_per_day = constraints.get('max_daily_hours', 24.0)
+    
+    # Create empty schedule grid
+    schedule_rows = []
+    weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+    
+    # Initialize capacity tracking
+    daily_line_capacity = {}
+    for day_idx, weekday in enumerate(weekdays):
+        current_date = start_date + timedelta(days=day_idx)
+        daily_line_capacity[current_date] = {line: max_hours_per_day for line in available_lines}
+    
+    # Load personnel-intensive products
+    personnel_intensive_products = set()
+    try:
+        config_path = os.path.join(os.path.dirname(__file__), '../../config/personnel_intensive.yml')
+        if os.path.exists(config_path):
+            with open(config_path, 'r') as f:
+                config = yaml.safe_load(f)
+                personnel_intensive_products.update(config.get('terms', []))
+                # Add aliases
+                for alias, actual in config.get('aliases', {}).items():
+                    if actual in personnel_intensive_products:
+                        personnel_intensive_products.add(alias)
+    except:
+        pass
+    
+    # Track personnel-intensive usage by day
+    personnel_intensive_by_day = {start_date + timedelta(days=i): False for i in range(5)}
+    
+    # Schedule each product
+    for product in sorted_products:
+        product_name = product['Product']
+        required_hours = product['Quantity (hours)']
+        deadline_day = product['Deadline']
+        
+        if required_hours <= 0:
+            continue
+        
+        # Determine if product is personnel-intensive
+        is_personnel_intensive = any(term.lower() in product_name.lower() for term in personnel_intensive_products)
+        
+        # Find available slots
+        deadline_idx = deadline_order.get(deadline_day, 5) - 1  # Convert to 0-based index
+        
+        remaining_hours = required_hours
+        
+        # Try to schedule from earliest day to deadline
+        for day_idx in range(min(deadline_idx + 1, 5)):  # Don't go past deadline
+            if remaining_hours <= 0:
+                break
+                
+            current_date = start_date + timedelta(days=day_idx)
+            
+            # Check personnel-intensive constraint
+            if is_personnel_intensive and personnel_intensive_by_day[current_date]:
+                continue  # Skip this day, already has personnel-intensive production
+            
+            # Find best line for this day
+            best_line = None
+            max_available_capacity = 0
+            
+            for line in available_lines:
+                available_capacity = daily_line_capacity[current_date][line]
+                if available_capacity > max_available_capacity:
+                    max_available_capacity = available_capacity
+                    best_line = line
+            
+            if best_line and max_available_capacity > 0:
+                # Schedule as much as possible on this line/day
+                hours_to_schedule = min(remaining_hours, max_available_capacity)
+                
+                # Create schedule entry
+                schedule_rows.append({
+                    'date': current_date,
+                    'weekday': weekdays[day_idx],
+                    'line': best_line,
+                    'total_hours': hours_to_schedule,
+                    'product': product_name,
+                    'priority': product['Priority'],
+                    'deadline': deadline_day,
+                    'personnel_intensive_flag': is_personnel_intensive
+                })
+                
+                # Update capacity and constraints
+                daily_line_capacity[current_date][best_line] -= hours_to_schedule
+                remaining_hours -= hours_to_schedule
+                
+                if is_personnel_intensive:
+                    personnel_intensive_by_day[current_date] = True
+        
+        # If we couldn't schedule everything by deadline, warn but continue
+        if remaining_hours > 0:
+            print(f"Warning: Could not schedule {remaining_hours:.1f}h of {product_name} by deadline {deadline_day}")
+    
+    # Fill any remaining capacity with "idle" entries to maintain line tracking
+    for day_idx, weekday in enumerate(weekdays):
+        current_date = start_date + timedelta(days=day_idx)
+        for line in available_lines:
+            remaining_capacity = daily_line_capacity[current_date][line]
+            if remaining_capacity > 0.1:  # Only add if significant capacity remains
+                schedule_rows.append({
+                    'date': current_date,
+                    'weekday': weekday,
+                    'line': line,
+                    'total_hours': 0.0,  # Idle time
+                    'product': 'Idle',
+                    'priority': 'N/A',
+                    'deadline': 'N/A',
+                    'personnel_intensive_flag': False
+                })
+    
+    return pd.DataFrame(schedule_rows)
 
 
 def compute_weekday_averages_list(df: pd.DataFrame) -> List[Dict[str, Any]]:

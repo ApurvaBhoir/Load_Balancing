@@ -494,82 +494,212 @@ def render_results():
             if st.button("🖨️ Print View"):
                 st.info("Print-friendly format will be implemented in the next iteration")
     
-    # Load Distribution Visualization
-    st.subheader("📊 Load Distribution Analysis")
+    # Product-Specific Analysis
+    st.subheader("🍫 Product Production Schedule")
     
     if 'optimized_df' in st.session_state.optimization_results:
         optimized_df = st.session_state.optimization_results['optimized_df']
         
-        # Create daily load chart
-        daily_totals = optimized_df.groupby(['date', 'weekday'])['total_hours'].sum().reset_index()
-        daily_totals['date_str'] = pd.to_datetime(daily_totals['date']).dt.strftime('%a %m/%d')
+        # Show product distribution
+        col1, col2 = st.columns(2)
         
-        fig = px.bar(
-            daily_totals, 
-            x='date_str', 
-            y='total_hours',
-            title='Daily Total Production Hours',
-            labels={'total_hours': 'Hours', 'date_str': 'Day'},
-            color='total_hours',
-            color_continuous_scale='Blues'
-        )
-        fig.update_layout(showlegend=False, height=400)
-        st.plotly_chart(fig, use_container_width=True)
+        with col1:
+            # Product completion timeline
+            if 'product' in optimized_df.columns:
+                product_summary = optimized_df[optimized_df['product'] != 'Idle'].groupby(['product', 'priority', 'deadline']).agg({
+                    'total_hours': 'sum',
+                    'date': ['min', 'max']
+                }).reset_index()
+                
+                # Flatten column names
+                product_summary.columns = ['Product', 'Priority', 'Deadline', 'Total Hours', 'Start Date', 'End Date']
+                product_summary['Start Date'] = pd.to_datetime(product_summary['Start Date']).dt.strftime('%a %m/%d')
+                product_summary['End Date'] = pd.to_datetime(product_summary['End Date']).dt.strftime('%a %m/%d')
+                
+                st.write("**📋 Product Schedule Summary**")
+                st.dataframe(
+                    product_summary,
+                    use_container_width=True,
+                    hide_index=True
+                )
         
-        # Line utilization chart
-        st.subheader("🔧 Line Utilization")
+        with col2:
+            # Priority distribution
+            priority_data = optimized_df[optimized_df['product'] != 'Idle'].groupby('priority')['total_hours'].sum().reset_index()
+            if not priority_data.empty:
+                fig_priority = px.pie(
+                    priority_data,
+                    values='total_hours',
+                    names='priority',
+                    title='Production Hours by Priority',
+                    color_discrete_map={'High': '#ff4444', 'Medium': '#ffaa44', 'Low': '#44aa44'}
+                )
+                fig_priority.update_layout(height=300)
+                st.plotly_chart(fig_priority, use_container_width=True)
         
-        line_pivot = optimized_df.pivot_table(
-            index=['date', 'weekday'], 
-            columns='line', 
-            values='total_hours', 
-            fill_value=0
-        ).reset_index()
+        # Daily product schedule visualization
+        st.subheader("📅 Daily Product Distribution")
         
-        # Create stacked bar chart
-        line_columns = [col for col in line_pivot.columns if col not in ['date', 'weekday']]
-        line_pivot['date_str'] = pd.to_datetime(line_pivot['date']).dt.strftime('%a %m/%d')
+        # Create product timeline chart
+        if 'product' in optimized_df.columns:
+            # Prepare data for visualization
+            daily_products = optimized_df[optimized_df['total_hours'] > 0].copy()
+            daily_products['date_str'] = pd.to_datetime(daily_products['date']).dt.strftime('%a %m/%d')
+            
+            # Create stacked bar chart by product
+            unique_products = daily_products['product'].unique()
+            product_colors = px.colors.qualitative.Set3[:len(unique_products)]
+            
+            fig_products = go.Figure()
+            
+            for i, product in enumerate(unique_products):
+                if product == 'Idle':
+                    continue
+                    
+                product_data = daily_products[daily_products['product'] == product]
+                product_daily = product_data.groupby('date_str')['total_hours'].sum().reset_index()
+                
+                fig_products.add_trace(go.Bar(
+                    name=product,
+                    x=product_daily['date_str'],
+                    y=product_daily['total_hours'],
+                    marker_color=product_colors[i % len(product_colors)]
+                ))
+            
+            fig_products.update_layout(
+                barmode='stack',
+                title='Production Hours by Product and Day',
+                xaxis_title='Day',
+                yaxis_title='Hours',
+                height=400
+            )
+            st.plotly_chart(fig_products, use_container_width=True)
         
-        fig_lines = go.Figure()
+        # Line utilization with product details
+        st.subheader("🔧 Line Utilization by Product")
         
-        colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd']
-        for i, line in enumerate(line_columns):
-            fig_lines.add_trace(go.Bar(
-                name=line.upper(),
-                x=line_pivot['date_str'],
-                y=line_pivot[line],
-                marker_color=colors[i % len(colors)]
-            ))
-        
-        fig_lines.update_layout(
-            barmode='stack',
-            title='Production Hours by Line and Day',
-            xaxis_title='Day',
-            yaxis_title='Hours',
-            height=400
-        )
-        st.plotly_chart(fig_lines, use_container_width=True)
+        # Create a detailed view showing which products are on which lines
+        if 'product' in optimized_df.columns and 'line' in optimized_df.columns:
+            line_product_detail = optimized_df[optimized_df['total_hours'] > 0].groupby(['date', 'line', 'product']).agg({
+                'total_hours': 'sum'
+            }).reset_index()
+            
+            line_product_detail['date_str'] = pd.to_datetime(line_product_detail['date']).dt.strftime('%a %m/%d')
+            
+            # Show as a detailed table
+            line_schedule_pivot = line_product_detail.pivot_table(
+                index=['date_str'],
+                columns=['line'],
+                values='product',
+                aggfunc=lambda x: '\n'.join([f"{prod} ({optimized_df[(optimized_df['date'] == line_product_detail[line_product_detail['product'] == prod]['date'].iloc[0]) & (optimized_df['line'] == line_product_detail[line_product_detail['product'] == prod]['line'].iloc[0])]['total_hours'].sum():.1f}h)" for prod in x if prod != 'Idle']),
+                fill_value='Idle'
+            )
+            
+            # Simplified version for better readability
+            simplified_view = optimized_df[optimized_df['total_hours'] > 0].groupby(['date', 'line']).agg({
+                'product': lambda x: ', '.join([p for p in x if p != 'Idle']) or 'Idle',
+                'total_hours': 'sum'
+            }).reset_index()
+            
+            simplified_view['date_str'] = pd.to_datetime(simplified_view['date']).dt.strftime('%a %m/%d')
+            simplified_view['line_product'] = simplified_view['line'] + ': ' + simplified_view['product'] + ' (' + simplified_view['total_hours'].round(1).astype(str) + 'h)'
+            
+            # Group by date to show all lines for each day
+            daily_line_summary = simplified_view.groupby('date_str')['line_product'].apply(lambda x: '\n'.join(x)).reset_index()
+            daily_line_summary.columns = ['Day', 'Line Assignments']
+            
+            st.write("**📋 Detailed Line-Product Assignments**")
+            st.dataframe(
+                daily_line_summary,
+                use_container_width=True,
+                hide_index=True,
+                height=200
+            )
     
-    # Constraint Compliance
-    st.subheader("✅ Constraint Compliance")
+    # Constraint Compliance & Requirements Analysis  
+    st.subheader("✅ Constraint Compliance & Requirements Check")
     
     violations = st.session_state.optimization_results.get('constraint_violations', [])
     
-    if len(violations) == 0:
-        st.success("🎉 All constraints satisfied!")
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.write("**🔒 Operational Constraints**")
+        if len(violations) == 0:
+            st.success("🎉 All operational constraints satisfied!")
+            
+            # Show compliance badges
+            subcol1, subcol2 = st.columns(2)
+            with subcol1:
+                st.success("✅ Idle Line Constraint")
+                st.success("✅ Capacity Constraints")
+            with subcol2:
+                st.success("✅ Personnel-Intensive Constraint")
+                st.success("✅ Line Availability")
+        else:
+            st.warning(f"⚠️ Found {len(violations)} constraint violations")
+            for violation in violations[:3]:  # Show first 3
+                st.warning(f"• {violation.get('constraint', 'Unknown')} violated on {violation.get('date', 'Unknown date')}")
+    
+    with col2:
+        st.write("**📋 Requirements Fulfillment**")
         
-        # Show compliance badges
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            st.success("✅ Idle Line Constraint")
-        with col2:
-            st.success("✅ Personnel-Intensive Constraint")
-        with col3:
-            st.success("✅ Capacity Constraints")
-    else:
-        st.warning(f"⚠️ Found {len(violations)} constraint violations")
-        for violation in violations[:5]:  # Show first 5
-            st.warning(f"• {violation.get('constraint', 'Unknown')} violated on {violation.get('date', 'Unknown date')}")
+        # Check if all products were scheduled by their deadlines
+        if 'optimized_df' in st.session_state.optimization_results:
+            optimized_df = st.session_state.optimization_results['optimized_df']
+            requirements = st.session_state.requirements
+            
+            requirement_check = []
+            for req_product in requirements.get('products', []):
+                product_name = req_product['Product']
+                required_hours = req_product['Quantity (hours)']
+                deadline = req_product['Deadline']
+                priority = req_product['Priority']
+                
+                # Find scheduled hours for this product
+                scheduled_data = optimized_df[optimized_df['product'] == product_name]
+                scheduled_hours = scheduled_data['total_hours'].sum()
+                
+                # Check deadline compliance
+                deadline_order = {'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5}
+                deadline_idx = deadline_order.get(deadline, 5)
+                
+                scheduled_by_deadline = True
+                if not scheduled_data.empty:
+                    latest_day = pd.to_datetime(scheduled_data['date']).max()
+                    latest_weekday = latest_day.strftime('%A')
+                    latest_idx = deadline_order.get(latest_weekday, 5)
+                    scheduled_by_deadline = latest_idx <= deadline_idx
+                
+                # Status determination
+                if scheduled_hours >= required_hours and scheduled_by_deadline:
+                    status = "✅ Complete"
+                elif scheduled_hours >= required_hours * 0.9:
+                    status = "⚠️ Mostly Complete"
+                elif scheduled_hours > 0:
+                    status = "🔶 Partial"
+                else:
+                    status = "❌ Not Scheduled"
+                
+                requirement_check.append({
+                    'Product': product_name,
+                    'Required': f"{required_hours:.1f}h",
+                    'Scheduled': f"{scheduled_hours:.1f}h",
+                    'Deadline': deadline,
+                    'Priority': priority,
+                    'Status': status
+                })
+            
+            if requirement_check:
+                requirements_df = pd.DataFrame(requirement_check)
+                st.dataframe(
+                    requirements_df,
+                    use_container_width=True,
+                    hide_index=True,
+                    height=200
+                )
+            else:
+                st.info("No specific product requirements to check.")
     
     # Summary Statistics
     st.subheader("📈 Planning Summary")
