@@ -120,18 +120,28 @@ anlage_data/
 
 ## 🚦 Getting Started
 
+### Quick Start with Docker (Recommended)
+1. **Clone the repository**
+2. **Install Docker and Docker Compose**
+3. **Run**: `./deploy.sh` or `docker compose up --build`
+4. **Open**: http://localhost:8501 in your browser
+5. **Demo**: Use "Load Sample Scenario" to see the system in action
+
 ### For Developers
 1. **Explore the Data**: Check `data/processed/normalized_daily.csv` for current data structure
 2. **Review Constraints**: Read `config/personnel_intensive.yml` and `.cursorrules`
 3. **Follow the Plan**: Check `planning/POC_PLAN.md` for detailed implementation steps
 4. **Track Progress**: Update `tasks/section1_checklist.md` as you complete tasks
 
-### For Planners (Coming Soon)
-1. **Open the Tool**: Launch the web interface
+### For Planners
+1. **Open the Tool**: Launch the web interface (Docker or local installation)
 2. **Input Requirements**: Enter production demands from management meetings
-3. **Review Forecast**: See predicted load distribution
-4. **Optimize Schedule**: Get constraint-compliant weekly plan
-5. **Export Results**: Download schedule for implementation
+3. **Review Forecast**: See predicted load distribution based on historical data
+4. **Optimize Schedule**: Get constraint-compliant weekly plan with load balancing
+5. **Export Results**: Download schedule for production implementation
+
+### Docker Deployment
+See [DOCKER_DEPLOYMENT.md](DOCKER_DEPLOYMENT.md) for detailed deployment instructions, including production setup with nginx and monitoring configurations.
 
 
 ## 🎯 Success Metrics

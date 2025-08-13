@@ -1,0 +1,14 @@
+# Core application dependencies
+streamlit==1.47.0
+pandas==2.3.0
+numpy>=2.0.1
+plotly==6.2.0
+pyyaml==6.0.2
+openpyxl==3.1.5
+
+# Additional utilities
+python-dateutil>=2.8.0
+pytz>=2021.1
+
+# Optional: For development and debugging
+requests>=2.25.0
