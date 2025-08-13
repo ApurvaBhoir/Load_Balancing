@@ -137,19 +137,18 @@ def render_input_forms():
         # Product requirements table
         st.write("**Product Demands**")
         
-        if 'requirements_df' not in st.session_state:
-            # Initialize with some default products
-            default_products = available_products[:5] if len(available_products) >= 5 else available_products
-            st.session_state.requirements_df = pd.DataFrame({
-                'Product': default_products,
-                'Quantity (hours)': [0.0] * len(default_products),
-                'Priority': ['Medium'] * len(default_products),
-                'Deadline': ['Friday'] * len(default_products)
-            })
+        # Create default dataframe for data editor
+        default_products = available_products[:5] if len(available_products) >= 5 else available_products
+        default_df = pd.DataFrame({
+            'Product': default_products,
+            'Quantity (hours)': [0.0] * len(default_products),
+            'Priority': ['Medium'] * len(default_products),
+            'Deadline': ['Friday'] * len(default_products)
+        })
         
-        # Editable dataframe for requirements
+        # Editable dataframe for requirements - Streamlit automatically manages state via key
         requirements_df = st.data_editor(
-            st.session_state.requirements_df,
+            default_df,
             column_config={
                 "Product": st.column_config.SelectboxColumn(
                     "Product Type",
@@ -183,10 +182,18 @@ def render_input_forms():
             key="requirements_editor"
         )
         
+        # The st.data_editor already returns the edited DataFrame directly
+        # No need to access session state - the return value IS the current edited data
+        
+        # Store for use by other components  
         st.session_state.requirements_df = requirements_df
         
         # Validation - calculate total and show early feedback
-        total_hours = requirements_df['Quantity (hours)'].sum()
+        # Handle case where DataFrame might be empty or missing columns
+        if requirements_df is not None and not requirements_df.empty and 'Quantity (hours)' in requirements_df.columns:
+            total_hours = requirements_df['Quantity (hours)'].sum()
+        else:
+            total_hours = 0.0
         
         # Capacity gauge calculation (will be updated after constraints are set)
         st.session_state.current_total_hours = total_hours
@@ -194,7 +201,7 @@ def render_input_forms():
         # Store current requirements for validation
         current_requirements = {
             'total_hours': total_hours,
-            'products': requirements_df.to_dict('records'),
+            'products': requirements_df.to_dict('records') if requirements_df is not None and not requirements_df.empty else [],
             'planning_date': datetime.now().date()
         }
         
