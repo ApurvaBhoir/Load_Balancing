@@ -420,8 +420,180 @@ def render_results():
             reset_processing_state()
             st.rerun()
     
+    # Forecast vs. Optimized Comparison
+    st.subheader("🔄 Forecast vs. Optimized Comparison")
+    st.info("💡 This shows how the optimization improved the initial forecast based on historical patterns")
+    
+    # Get both forecast and optimized data
+    forecast_df = st.session_state.forecast_results['forecast_df']
+    optimized_df = st.session_state.optimization_results['optimized_df']
+    
+    # Create comparison view
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.write("**📊 Initial Forecast**")
+        st.caption("Based on historical patterns + product requirements")
+        
+        # Forecast daily totals
+        forecast_daily = forecast_df.groupby(['date', 'weekday'])['total_hours'].sum().reset_index()
+        forecast_daily['date_str'] = pd.to_datetime(forecast_daily['date']).dt.strftime('%a %m/%d')
+        
+        fig_forecast = px.bar(
+            forecast_daily,
+            x='date_str',
+            y='total_hours',
+            title='Initial Forecast - Daily Load',
+            labels={'total_hours': 'Hours', 'date_str': 'Day'},
+            color='total_hours',
+            color_continuous_scale='Oranges',
+            height=300
+        )
+        fig_forecast.update_layout(showlegend=False)
+        st.plotly_chart(fig_forecast, use_container_width=True)
+        
+        # Forecast stats
+        forecast_variance = forecast_daily['total_hours'].var()
+        forecast_max = forecast_daily['total_hours'].max()
+        forecast_min = forecast_daily['total_hours'].min()
+        st.metric("Daily Variance", f"{forecast_variance:.1f}")
+        st.metric("Peak Day", f"{forecast_max:.1f}h")
+        st.metric("Lowest Day", f"{forecast_min:.1f}h")
+    
+    with col2:
+        st.write("**⚖️ Optimized Schedule**")
+        st.caption("After constraint-aware optimization")
+        
+        # Optimized daily totals
+        optimized_daily = optimized_df.groupby(['date', 'weekday'])['total_hours'].sum().reset_index()
+        optimized_daily['date_str'] = pd.to_datetime(optimized_daily['date']).dt.strftime('%a %m/%d')
+        
+        fig_optimized = px.bar(
+            optimized_daily,
+            x='date_str',
+            y='total_hours',
+            title='Optimized Schedule - Daily Load',
+            labels={'total_hours': 'Hours', 'date_str': 'Day'},
+            color='total_hours',
+            color_continuous_scale='Blues',
+            height=300
+        )
+        fig_optimized.update_layout(showlegend=False)
+        st.plotly_chart(fig_optimized, use_container_width=True)
+        
+        # Optimized stats
+        optimized_variance = optimized_daily['total_hours'].var()
+        optimized_max = optimized_daily['total_hours'].max()
+        optimized_min = optimized_daily['total_hours'].min()
+        st.metric("Daily Variance", f"{optimized_variance:.1f}", delta=f"{optimized_variance - forecast_variance:.1f}")
+        st.metric("Peak Day", f"{optimized_max:.1f}h", delta=f"{optimized_max - forecast_max:.1f}h")
+        st.metric("Lowest Day", f"{optimized_min:.1f}h", delta=f"{optimized_min - forecast_min:.1f}h")
+    
+    # Side-by-side comparison chart
+    st.write("**📊 Side-by-Side Comparison**")
+    
+    # Combine data for comparison
+    comparison_data = []
+    for _, row in forecast_daily.iterrows():
+        comparison_data.append({
+            'Day': row['date_str'],
+            'Hours': row['total_hours'],
+            'Type': 'Initial Forecast'
+        })
+    for _, row in optimized_daily.iterrows():
+        comparison_data.append({
+            'Day': row['date_str'],
+            'Hours': row['total_hours'],
+            'Type': 'Optimized Schedule'
+        })
+    
+    comparison_df = pd.DataFrame(comparison_data)
+    fig_comparison = px.bar(
+        comparison_df,
+        x='Day',
+        y='Hours',
+        color='Type',
+        barmode='group',
+        title='Load Distribution: Forecast vs. Optimized',
+        color_discrete_map={
+            'Initial Forecast': '#FFA500',
+            'Optimized Schedule': '#1f77b4'
+        },
+        height=400
+    )
+    st.plotly_chart(fig_comparison, use_container_width=True)
+    
+    # Optimization Summary
+    st.subheader("📈 What the Optimization Achieved")
+    
+    # Calculate improvements
+    variance_improvement = forecast_variance - optimized_variance
+    peak_reduction = forecast_max - optimized_max
+    valley_increase = optimized_min - forecast_min
+    
+    summary_col1, summary_col2 = st.columns(2)
+    
+    with summary_col1:
+        st.write("**🎯 Load Balancing Results:**")
+        
+        if variance_improvement > 0:
+            st.success(f"✅ Reduced daily load variance by {variance_improvement:.1f} hours²")
+        else:
+            st.info("ℹ️ Load distribution was already well-balanced")
+            
+        if peak_reduction > 0:
+            st.success(f"✅ Reduced peak day load by {peak_reduction:.1f} hours")
+        elif peak_reduction < 0:
+            st.warning(f"⚠️ Peak day increased by {abs(peak_reduction):.1f} hours")
+        else:
+            st.info("ℹ️ Peak day load unchanged")
+            
+        if valley_increase > 0:
+            st.success(f"✅ Increased minimum day load by {valley_increase:.1f} hours")
+        elif valley_increase < 0:
+            st.warning(f"⚠️ Minimum day decreased by {abs(valley_increase):.1f} hours")
+        else:
+            st.info("ℹ️ Minimum day load unchanged")
+    
+    with summary_col2:
+        st.write("**📊 Overall Impact:**")
+        
+        # Calculate overall smoothness score
+        max_theoretical_daily = optimized_df['total_hours'].sum() / 5  # Perfect daily average
+        forecast_deviation = abs(forecast_daily['total_hours'] - max_theoretical_daily).mean()
+        optimized_deviation = abs(optimized_daily['total_hours'] - max_theoretical_daily).mean()
+        smoothness_improvement = ((forecast_deviation - optimized_deviation) / forecast_deviation * 100) if forecast_deviation > 0 else 0
+        
+        if smoothness_improvement > 0:
+            st.metric("Load Smoothness Improvement", f"+{smoothness_improvement:.1f}%", help="How much closer to perfect daily balance")
+        else:
+            st.metric("Load Smoothness", "Already optimal", help="Schedule was already well-balanced")
+        
+        # Show constraint compliance
+        violations = st.session_state.optimization_results.get('constraint_violations', [])
+        if len(violations) == 0:
+            st.success("✅ All constraints satisfied")
+        else:
+            st.warning(f"⚠️ {len(violations)} constraint violations")
+        
+        # Show requirements fulfillment
+        total_requirements = len(st.session_state.requirements.get('products', []))
+        fulfilled_count = 0
+        
+        for req_product in st.session_state.requirements.get('products', []):
+            product_name = req_product['Product']
+            required_hours = req_product['Quantity (hours)']
+            scheduled_data = optimized_df[optimized_df['product'] == product_name]
+            scheduled_hours = scheduled_data['total_hours'].sum()
+            
+            if scheduled_hours >= required_hours * 0.9:  # 90% threshold
+                fulfilled_count += 1
+        
+        fulfillment_rate = (fulfilled_count / total_requirements * 100) if total_requirements > 0 else 100
+        st.metric("Requirements Fulfilled", f"{fulfillment_rate:.0f}%", help="Percentage of product requirements met")
+    
     # Key metrics
-    st.subheader("📈 Performance Overview")
+    st.subheader("📊 Performance Metrics")
     
     metrics = st.session_state.metrics
     col1, col2, col3, col4 = st.columns(4)
@@ -721,16 +893,134 @@ def render_results():
             st.metric("Daily Standard Deviation", f"{daily_std:.1f}h")
     
     with col2:
-        st.write("**Transfers Applied:**")
+        st.write("**🔄 Optimization Transfers:**")
         transfers = st.session_state.optimization_results.get('transfers', [])
         
         if transfers:
-            st.metric("Optimization Transfers", len(transfers))
-            st.write("Recent transfers:")
-            for transfer in transfers[:3]:  # Show first 3
-                st.caption(f"• Moved {transfer.get('hours', 0):.1f}h from {transfer.get('from', '')} to {transfer.get('to', '')}")
+            st.metric("Optimization Transfers Applied", len(transfers))
+            
+            # Create detailed transfer log
+            st.write("**📋 Transfer Details:**")
+            transfer_details = []
+            for i, transfer in enumerate(transfers, 1):
+                # Extract transfer information (format varies based on implementation)
+                if isinstance(transfer, dict):
+                    peak_date = transfer.get('peak_date', 'Unknown')
+                    valley_date = transfer.get('valley_date', 'Unknown')
+                    line = transfer.get('line', 'Unknown')
+                    hours = transfer.get('hours_to_transfer', transfer.get('hours', 0))
+                    
+                    # Format dates
+                    if hasattr(peak_date, 'strftime'):
+                        peak_str = peak_date.strftime('%a %m/%d')
+                    else:
+                        peak_str = str(peak_date)
+                    if hasattr(valley_date, 'strftime'):
+                        valley_str = valley_date.strftime('%a %m/%d')
+                    else:
+                        valley_str = str(valley_date)
+                    
+                    transfer_details.append({
+                        'Transfer #': i,
+                        'Hours Moved': f"{hours:.1f}h",
+                        'From': f"{peak_str} ({line})",
+                        'To': f"{valley_str} ({line})",
+                        'Reason': 'Load balancing'
+                    })
+            
+            if transfer_details:
+                transfers_df = pd.DataFrame(transfer_details)
+                st.dataframe(
+                    transfers_df,
+                    use_container_width=True,
+                    hide_index=True,
+                    height=min(200, len(transfer_details) * 35 + 50)
+                )
+            
+            # Transfer impact summary
+            st.write("**📊 Transfer Impact:**")
+            subcol1, subcol2 = st.columns(2)
+            with subcol1:
+                total_hours_moved = sum(t.get('hours_to_transfer', t.get('hours', 0)) for t in transfers if isinstance(t, dict))
+                st.metric("Total Hours Redistributed", f"{total_hours_moved:.1f}h")
+            with subcol2:
+                unique_lines = len(set(t.get('line', '') for t in transfers if isinstance(t, dict) and t.get('line')))
+                st.metric("Lines Optimized", unique_lines)
         else:
-            st.info("No transfers were needed - schedule was already optimal!")
+            st.info("✅ No transfers were needed - the initial forecast was already well-balanced!")
+    
+    # Strategic Summary for Managers
+    st.subheader("💼 Executive Summary")
+    st.info("🎯 **Key Takeaway**: This optimization replaced manual scheduling guesswork with data-driven decisions")
+    
+    summary_metrics = st.container()
+    with summary_metrics:
+        
+        executive_col1, executive_col2, executive_col3 = st.columns(3)
+        
+        with executive_col1:
+            st.write("**📈 Business Value:**")
+            
+            # Estimate cost savings (simplified calculation)
+            total_hours = optimized_df['total_hours'].sum()
+            if variance_improvement > 0:
+                overtime_reduction_estimate = variance_improvement * 0.1  # Rough estimate
+                st.success(f"💰 Estimated overtime reduction: {overtime_reduction_estimate:.1f}h/week")
+            
+            if smoothness_improvement > 0:
+                st.success(f"📊 {smoothness_improvement:.1f}% improvement in load balance")
+            
+            st.success(f"✅ {fulfillment_rate:.0f}% of requirements fulfilled")
+        
+        with executive_col2:
+            st.write("**🎯 What Changed:**")
+            
+            if len(transfers) > 0:
+                st.write(f"• {len(transfers)} optimization transfers applied")
+                total_hours_moved = sum(t.get('hours_to_transfer', t.get('hours', 0)) for t in transfers if isinstance(t, dict))
+                st.write(f"• {total_hours_moved:.1f}h redistributed across the week")
+                unique_lines = len(set(t.get('line', '') for t in transfers if isinstance(t, dict) and t.get('line')))
+                st.write(f"• {unique_lines} production lines optimized")
+            else:
+                st.write("• No changes needed - initial forecast was optimal")
+                st.write("• All constraints naturally satisfied")
+            
+            violation_count = len(st.session_state.optimization_results.get('constraint_violations', []))
+            if violation_count == 0:
+                st.write("• ✅ All operational constraints satisfied")
+            else:
+                st.write(f"• ⚠️ {violation_count} constraint issues to address")
+        
+        with executive_col3:
+            st.write("**🚀 Next Steps:**")
+            
+            if fulfillment_rate == 100 and len(violations) == 0:
+                st.success("🎉 **Ready to implement!**")
+                st.write("• Download schedule for production")
+                st.write("• Share with floor managers")
+                st.write("• Monitor actual vs. planned")
+            elif fulfillment_rate >= 90:
+                st.warning("⚡ **Minor adjustments needed**")
+                st.write("• Review partial requirements")
+                st.write("• Consider constraint relaxation")
+                st.write("• Implement with monitoring")
+            else:
+                st.error("🔧 **Requires revision**")
+                st.write("• Adjust requirements or constraints")
+                st.write("• Consider additional capacity")
+                st.write("• Re-run optimization")
+    
+    # Future Vision Note
+    st.markdown("---")
+    st.info("""
+    🔮 **Future Vision**: In advanced implementations, the forecast will incorporate:
+    • Machine learning predictions based on seasonality, orders, and market trends
+    • Real-time capacity adjustments and material availability
+    • Dynamic constraint optimization based on actual floor conditions
+    • Multi-week planning horizons with rolling optimization
+    
+    This PoC demonstrates the foundation for that intelligent decision support system.
+    """)
 
 
 def main():

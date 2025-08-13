@@ -116,3 +116,114 @@ A decision support tool that transforms the planner's workflow:
 - **Technical Performance**: System generates optimized schedules in <30 seconds
 - **Business Impact**: Demonstrate 15%+ reduction in daily load variance while maintaining 100% constraint compliance
 - **Adoption Readiness**: Clear path to production deployment with documented requirements and technical architecture
+
+``` mermaid
+graph TD
+    A["🖱️ User clicks 'Generate Forecast & Optimize'"] --> B{Check Requirements}
+    B -->|total_hours = 0| C["❌ Error: No requirements"]
+    B -->|total_hours > 0| D["🔄 Reset Processing State"]
+    
+    D --> E["📝 Set planning_step = 'forecast'"]
+    E --> F["🔄 Streamlit rerun()"]
+    F --> G["🎯 render_processing() called"]
+    
+    G --> H["📊 Progress: 25% - Analyzing historical patterns..."]
+    H --> I["📈 run_forecast()"]
+    
+    subgraph "🔮 FORECASTING PHASE"
+        I --> I1["📂 load_historical_data()"]
+        I1 --> I2["📊 Read normalized_daily.csv"]
+        I2 --> I3["📈 calculate_weekday_averages()"]
+        I3 --> I4["🗓️ Generate date range (Mon-Fri)"]
+        I4 --> I5["📋 generate_forecast_from_averages()"]
+        I5 --> I6["🍫 create_product_aware_schedule()"]
+        
+        subgraph "🍫 PRODUCT SCHEDULING"
+            I6 --> P1["📊 Sort products by Priority & Deadline"]
+            P1 --> P2["🎯 High → Medium → Low priority"]
+            P2 --> P3["📅 Early → Late deadlines"]
+            P3 --> P4["💪 Larger → Smaller quantities"]
+            P4 --> P5["🏭 Initialize line capacity tracking"]
+            P5 --> P6["📋 Load personnel-intensive config"]
+            P6 --> P7{"🔄 For each product"}
+            P7 --> P8["🔍 Check personnel-intensive constraint"]
+            P8 --> P9["🎯 Find best available line/day"]
+            P9 --> P10["📝 Create schedule entry"]
+            P10 --> P11["🔄 Update capacity & constraints"]
+            P11 --> P7
+            P7 -->|All products scheduled| P12["📝 Add 'Idle' entries for remaining capacity"]
+        end
+    end
+    
+    I6 --> J["📊 Progress: 50% - Optimizing schedule..."]
+    J --> K["⚖️ run_optimization()"]
+    
+    subgraph "⚖️ OPTIMIZATION PHASE"
+        K --> K1["🔄 Prepare data for greedy optimizer"]
+        K1 --> K2["📝 Rename columns: total_hours → predicted_hours"]
+        K2 --> K3["📅 Ensure date column is datetime"]
+        K3 --> K4["🎯 apply_smoothing() - Greedy Algorithm"]
+        
+        subgraph "🎯 GREEDY SMOOTHING"
+            K4 --> G1["📊 calculate_daily_totals()"]
+            G1 --> G2["🔍 find_transfer_opportunities()"]
+            G2 --> G3{"🔄 For max_transfers=10"}
+            G3 --> G4["📈 Identify peak vs valley days"]
+            G4 --> G5["🔍 Check constraint violations"]
+            G5 --> G6{"✅ Transfer valid?"}
+            G6 -->|Yes| G7["📝 Apply transfer"]
+            G6 -->|No| G8["⏭️ Skip transfer"]
+            G7 --> G3
+            G8 --> G3
+            G3 -->|Max transfers or no opportunities| G9["✅ Return optimized schedule"]
+        end
+        
+        K4 --> K5["📝 Convert back: predicted_hours → total_hours"]
+        K5 --> K6["✅ check_constraints() for each day"]
+        K6 --> K7["📋 create_schedule_summary()"]
+    end
+    
+    K --> L["📊 Progress: 75% - Calculating metrics..."]
+    L --> M["📈 calculate_metrics()"]
+    
+    subgraph "📈 METRICS CALCULATION"
+        M --> M1["📊 Group forecast by date: daily totals"]
+        M1 --> M2["📊 Group optimized by date: daily totals"]
+        M2 --> M3["📈 Calculate variance reduction"]
+        M3 --> M4["🏭 Calculate active lines per day"]
+        M4 --> M5["✅ Calculate constraint compliance"]
+        M5 --> M6["📊 Return metrics dictionary"]
+    end
+    
+    M --> N["📊 Progress: 100% - Processing complete!"]
+    N --> O["💾 Store results in session_state"]
+    
+    subgraph "💾 SESSION STATE STORAGE"
+        O --> O1["📈 forecast_results"]
+        O --> O2["⚖️ optimization_results"]
+        O --> O3["📊 metrics"]
+        O --> O4["✅ processing_complete = True"]
+    end
+    
+    O --> P["🔄 Streamlit rerun()"]
+    P --> Q["📊 render_results()"]
+    
+    subgraph "📊 RESULTS DISPLAY"
+        Q --> R1["📈 Performance Overview KPIs"]
+        Q --> R2["📅 Weekly Schedule Table"]
+        Q --> R3["🍫 Product Production Schedule"]
+        Q --> R4["📊 Product Schedule Summary"]
+        Q --> R5["🥧 Priority Distribution Chart"]
+        Q --> R6["📅 Daily Product Distribution Chart"]
+        Q --> R7["🔧 Line-Product Assignments"]
+        Q --> R8["✅ Constraint Compliance Check"]
+        Q --> R9["📋 Requirements Fulfillment Status"]
+        Q --> R10["📈 Planning Summary Statistics"]
+    end
+    
+    style A fill:#e1f5fe
+    style I fill:#fff3e0
+    style K fill:#fce4ec
+    style M fill:#f3e5f5
+    style Q fill:#e8f5e8
+```
