@@ -187,7 +187,9 @@ def render_input_forms():
         
         # Validation - calculate total and show early feedback
         total_hours = requirements_df['Quantity (hours)'].sum()
-        st.metric("Total Production Hours Requested", f"{total_hours:.1f} h")
+        
+        # Capacity gauge calculation (will be updated after constraints are set)
+        st.session_state.current_total_hours = total_hours
         
         # Store current requirements for validation
         current_requirements = {
@@ -300,6 +302,87 @@ def render_input_forms():
         
         # Store validation for later use
         st.session_state.input_validation = validation_result
+    
+    # Dynamic Capacity Gauge
+    st.markdown("---")
+    st.subheader("📊 Capacity Overview")
+    
+    if hasattr(st.session_state, 'current_total_hours'):
+        total_hours = st.session_state.current_total_hours
+        max_daily_hours = st.session_state.constraints.get('max_daily_hours', 24.0)
+        
+        # Calculate capacities based on constraints
+        line_availability = st.session_state.constraints.get('line_availability', {})
+        available_lines = sum(1 for available in line_availability.values() if available)
+        enforce_idle = st.session_state.constraints.get('enforce_idle_line', True)
+        
+        # Effective lines per day (subtract 1 if idle line required)
+        effective_lines_per_day = available_lines - (1 if enforce_idle else 0)
+        max_weekly_capacity = effective_lines_per_day * max_daily_hours * 5  # 5 weekdays
+        
+        # Calculate utilization percentages
+        weekly_utilization = (total_hours / max_weekly_capacity * 100) if max_weekly_capacity > 0 else 0
+        
+        # Personnel-intensive capacity check
+        personnel_intensive_hours = 0
+        for product in st.session_state.current_requirements.get('products', []):
+            product_name = product.get('Product', '').lower()
+            if any(term in product_name for term in ['knusper', 'waffel', 'crisp', 'nuss']):
+                personnel_intensive_hours += product.get('Quantity (hours)', 0)
+        
+        max_personnel_capacity = max_daily_hours * 5  # 1 line * 5 days
+        personnel_utilization = (personnel_intensive_hours / max_personnel_capacity * 100) if max_personnel_capacity > 0 else 0
+        
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            st.metric(
+                "Total Hours Requested", 
+                f"{total_hours:.1f}h",
+                help=f"Out of {max_weekly_capacity:.0f}h maximum weekly capacity"
+            )
+            
+            # Weekly capacity gauge
+            
+            st.progress(min(weekly_utilization / 100, 1.0))
+            st.caption(f"Weekly Capacity: {weekly_utilization:.1f}% used")
+        
+        with col2:
+            st.metric(
+                "Available Production Lines", 
+                f"{available_lines}",
+                help=f"Effective lines per day: {effective_lines_per_day} (1 kept idle)" if enforce_idle else f"All {available_lines} lines can be used"
+            )
+            
+            # Line availability gauge
+            line_utilization = (available_lines / 5 * 100)  # Out of 5 total lines
+            st.progress(line_utilization / 100)
+            st.caption(f"Line Availability: {line_utilization:.0f}% of total lines")
+        
+        with col3:
+            if personnel_intensive_hours > 0:
+                st.metric(
+                    "Personnel-Intensive Hours", 
+                    f"{personnel_intensive_hours:.1f}h",
+                    help=f"Out of {max_personnel_capacity:.0f}h maximum (1 line constraint)"
+                )
+                
+                # Personnel gauge
+                
+                st.progress(min(personnel_utilization / 100, 1.0))
+                st.caption(f"Personnel Capacity: {personnel_utilization:.1f}% used")
+            else:
+                st.metric("Personnel-Intensive Hours", "0h", help="No personnel-intensive products detected")
+                st.progress(0.0)
+                st.caption("Personnel Capacity: 0% used")
+        
+        # Capacity warnings
+        if weekly_utilization > 100:
+            st.error(f"⚠️ **Capacity exceeded by {weekly_utilization - 100:.1f}%** - Reduce requirements or extend timeline")
+        elif weekly_utilization > 85:
+            st.warning(f"⚠️ **High utilization ({weekly_utilization:.1f}%)** - Consider adding buffer time")
+        elif weekly_utilization > 0:
+            st.success(f"✅ **Capacity utilization looks good ({weekly_utilization:.1f}%)**")
     
     # Action buttons
     st.markdown("---")
@@ -794,17 +877,52 @@ def render_results():
                 fill_value='Idle'
             )
             
-            # Simplified version for better readability
-            simplified_view = optimized_df[optimized_df['total_hours'] > 0].groupby(['date', 'line']).agg({
+            # Simplified version for better readability - include ALL lines (even with 0 hours)
+            # First, get all unique dates and lines from optimized_df
+            all_combinations = optimized_df[['date', 'line']].drop_duplicates()
+            
+            # Create detailed view with all line-date combinations
+            detailed_view = optimized_df.groupby(['date', 'line']).agg({
                 'product': lambda x: ', '.join([p for p in x if p != 'Idle']) or 'Idle',
                 'total_hours': 'sum'
             }).reset_index()
             
-            simplified_view['date_str'] = pd.to_datetime(simplified_view['date']).dt.strftime('%a %m/%d')
-            simplified_view['line_product'] = simplified_view['line'] + ': ' + simplified_view['product'] + ' (' + simplified_view['total_hours'].round(1).astype(str) + 'h)'
+            # Include lines with 0 hours (these might be missing from groupby)
+            all_lines = ['hohl2', 'hohl3', 'hohl4', 'massiv2', 'massiv3']
+            all_dates = optimized_df['date'].unique()
             
-            # Group by date to show all lines for each day
-            daily_line_summary = simplified_view.groupby('date_str')['line_product'].apply(lambda x: '\n'.join(x)).reset_index()
+            # Create a complete grid of all date-line combinations
+            from itertools import product
+            complete_combinations = pd.DataFrame(
+                list(product(all_dates, all_lines)), 
+                columns=['date', 'line']
+            )
+            
+            # Merge to ensure all combinations are represented
+            complete_view = pd.merge(complete_combinations, detailed_view, on=['date', 'line'], how='left')
+            complete_view['product'] = complete_view['product'].fillna('Idle')
+            complete_view['total_hours'] = complete_view['total_hours'].fillna(0.0)
+            
+            # Filter out lines that are truly not available (0 hours AND not in constraints)
+            available_lines = st.session_state.constraints.get('line_availability', {})
+            available_line_names = [line for line, available in available_lines.items() if available]
+            
+            # Only show available lines, but show them even if they have 0 hours
+            filtered_view = complete_view[complete_view['line'].isin(available_line_names)]
+            
+            # Format for display (use .copy() to avoid SettingWithCopyWarning)
+            filtered_view = filtered_view.copy()
+            filtered_view['date_str'] = pd.to_datetime(filtered_view['date']).dt.strftime('%a %m/%d')
+            filtered_view['line_product'] = (
+                filtered_view['line'] + ': ' + 
+                filtered_view['product'] + 
+                ' (' + filtered_view['total_hours'].round(1).astype(str) + 'h)'
+            )
+            
+            # Group by date to show all available lines for each day
+            daily_line_summary = filtered_view.groupby('date_str')['line_product'].apply(
+                lambda x: '\n'.join(sorted(x))  # Sort to ensure consistent ordering
+            ).reset_index()
             daily_line_summary.columns = ['Day', 'Line Assignments']
             
             st.write("**Detailed Line-Product Assignments**")
