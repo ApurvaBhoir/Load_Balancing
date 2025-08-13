@@ -138,13 +138,40 @@ def render_input_forms():
         st.write("**Product Demands**")
         
         # Create default dataframe for data editor
-        default_products = available_products[:5] if len(available_products) >= 5 else available_products
-        default_df = pd.DataFrame({
-            'Product': default_products,
-            'Quantity (hours)': [0.0] * len(default_products),
-            'Priority': ['Medium'] * len(default_products),
-            'Deadline': ['Friday'] * len(default_products)
-        })
+        # Check if we should load sample data OR if sample data is already loaded
+        if 'load_sample_data' in st.session_state:
+            default_df = st.session_state.load_sample_data
+            print(f"🔧 DEBUG: Loading sample data into data editor, shape: {default_df.shape}")
+            print(f"🔧 DEBUG: Sample data total hours: {default_df['Quantity (hours)'].sum()}")
+            # Clear the flag so it only loads once
+            del st.session_state.load_sample_data
+            # Set a persistent flag to remember sample data was loaded
+            st.session_state.sample_data_loaded = True
+        elif hasattr(st.session_state, 'sample_data_loaded') and st.session_state.sample_data_loaded:
+            # Sample data was loaded before, use the current requirements_df instead of default
+            if hasattr(st.session_state, 'requirements_df') and st.session_state.requirements_df is not None:
+                default_df = st.session_state.requirements_df
+                print(f"🔧 DEBUG: Using persistent sample data from requirements_df, shape: {default_df.shape}")
+            else:
+                # Fallback to recreating sample data
+                sample_products = [
+                    {"Product": "100g Knusperkeks", "Quantity (hours)": 45.0, "Priority": "High", "Deadline": "Wednesday"},
+                    {"Product": "Standard", "Quantity (hours)": 60.0, "Priority": "Medium", "Deadline": "Thursday"},
+                    {"Product": "100g Waffel", "Quantity (hours)": 35.0, "Priority": "Medium", "Deadline": "Friday"},
+                    {"Product": "100g Marzipan", "Quantity (hours)": 25.0, "Priority": "Low", "Deadline": "Friday"},
+                ]
+                default_df = pd.DataFrame(sample_products)
+                print(f"🔧 DEBUG: Recreated sample data, shape: {default_df.shape}")
+        else:
+            # Use regular default data
+            default_products = available_products[:5] if len(available_products) >= 5 else available_products
+            default_df = pd.DataFrame({
+                'Product': default_products,
+                'Quantity (hours)': [0.0] * len(default_products),
+                'Priority': ['Medium'] * len(default_products),
+                'Deadline': ['Friday'] * len(default_products)
+            })
+            print(f"🔧 DEBUG: Using default data for data editor, shape: {default_df.shape}")
         
         # Editable dataframe for requirements - Streamlit automatically manages state via key
         requirements_df = st.data_editor(
@@ -188,12 +215,22 @@ def render_input_forms():
         # Store for use by other components  
         st.session_state.requirements_df = requirements_df
         
+        print(f"🔧 DEBUG: Data editor returned, shape: {requirements_df.shape if requirements_df is not None else 'None'}")
+        if requirements_df is not None:
+            print(f"🔧 DEBUG: Data editor columns: {list(requirements_df.columns)}")
+            print(f"🔧 DEBUG: Data editor data:\n{requirements_df}")
+        
         # Validation - calculate total and show early feedback
         # Handle case where DataFrame might be empty or missing columns
         if requirements_df is not None and not requirements_df.empty and 'Quantity (hours)' in requirements_df.columns:
             total_hours = requirements_df['Quantity (hours)'].sum()
+            print(f"🔧 DEBUG: Calculated total_hours from data editor: {total_hours}")
         else:
             total_hours = 0.0
+            print(f"🔧 DEBUG: Could not calculate total_hours, using 0.0. Reasons:")
+            print(f"  - requirements_df is None: {requirements_df is None}")
+            print(f"  - requirements_df is empty: {requirements_df.empty if requirements_df is not None else 'N/A'}")
+            print(f"  - has Quantity column: {'Quantity (hours)' in requirements_df.columns if requirements_df is not None else 'N/A'}")
         
         # Capacity gauge calculation (will be updated after constraints are set)
         st.session_state.current_total_hours = total_hours
@@ -397,9 +434,38 @@ def render_input_forms():
     
     with col2:
         if st.button("Run Forecast & Optimization", type="primary", use_container_width=True):
-            if total_hours == 0:
+            print("🔧 DEBUG: Run Forecast & Optimization button clicked")
+            
+            # Double-check total hours from the current requirements_df to handle sample data loading
+            current_total = 0
+            
+            print(f"🔧 DEBUG: Validation checks:")
+            print(f"  - hasattr requirements_df: {hasattr(st.session_state, 'requirements_df')}")
+            
+            if hasattr(st.session_state, 'requirements_df'):
+                req_df = st.session_state.requirements_df
+                print(f"  - requirements_df is not None: {req_df is not None}")
+                if req_df is not None:
+                    print(f"  - requirements_df not empty: {not req_df.empty}")
+                    print(f"  - requirements_df shape: {req_df.shape}")
+                    print(f"  - requirements_df columns: {list(req_df.columns) if hasattr(req_df, 'columns') else 'No columns'}")
+                    
+                    if not req_df.empty and 'Quantity (hours)' in req_df.columns:
+                        current_total = req_df['Quantity (hours)'].sum()
+                        print(f"  - calculated current_total: {current_total}")
+                    else:
+                        print(f"  - Cannot calculate total: empty={req_df.empty}, has quantity col={'Quantity (hours)' in req_df.columns if hasattr(req_df, 'columns') else False}")
+            
+            # Also check other state variables
+            print(f"🔧 DEBUG: Other state variables:")
+            print(f"  - current_total_hours: {getattr(st.session_state, 'current_total_hours', 'NOT SET')}")
+            print(f"  - total_hours variable: {total_hours}")
+            
+            if current_total == 0:
+                print("🔧 DEBUG: Validation FAILED - showing error")
                 st.error("Please enter at least one product requirement")
             else:
+                print(f"🔧 DEBUG: Validation PASSED - proceeding with {current_total} total hours")
                 # Reset processing state and move to forecast step
                 reset_processing_state()
                 st.session_state.planning_step = 'forecast'
@@ -412,6 +478,8 @@ def render_input_forms():
 
 def load_sample_scenario():
     """Load a sample planning scenario for demonstration."""
+    print("🔧 DEBUG: load_sample_scenario() called")
+    
     # Sample data based on historical patterns
     sample_products = [
         {"Product": "100g Knusperkeks", "Quantity (hours)": 45.0, "Priority": "High", "Deadline": "Wednesday"},
@@ -420,7 +488,29 @@ def load_sample_scenario():
         {"Product": "100g Marzipan", "Quantity (hours)": 25.0, "Priority": "Low", "Deadline": "Friday"},
     ]
     
-    st.session_state.requirements_df = pd.DataFrame(sample_products)
+    sample_df = pd.DataFrame(sample_products)
+    sample_total = sample_df['Quantity (hours)'].sum()
+    
+    print(f"🔧 DEBUG: Created sample_df with {len(sample_df)} rows, total hours: {sample_total}")
+    print(f"🔧 DEBUG: Sample data columns: {list(sample_df.columns)}")
+    
+    # Store the sample data to be loaded on next render AND update current state
+    st.session_state.load_sample_data = sample_df
+    st.session_state.requirements_df = sample_df
+    
+    # Also update the current requirements and validation state immediately
+    st.session_state.current_total_hours = sample_total
+    st.session_state.current_requirements = {
+        'total_hours': sample_total,
+        'products': sample_df.to_dict('records'),
+        'planning_date': datetime.now().date()
+    }
+    
+    print(f"🔧 DEBUG: Updated session state:")
+    print(f"  - current_total_hours: {st.session_state.current_total_hours}")
+    print(f"  - requirements_df shape: {st.session_state.requirements_df.shape}")
+    print(f"  - load_sample_data set: {'load_sample_data' in st.session_state}")
+    
     st.success("Sample scenario loaded. Review the requirements and click 'Run Forecast & Optimization'")
     st.rerun()
 

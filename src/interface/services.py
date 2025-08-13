@@ -371,30 +371,38 @@ def validate_input_requirements(requirements, constraints):
             'suggestion': 'Reduce personnel-intensive products or extend timeline'
         })
     
-    # Check deadline conflicts
+    # Check deadline feasibility - can we complete work BY the deadline?
+    weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
     deadline_issues = []
-    daily_requirements = {}
+    
     for product in products:
         deadline = product.get('Deadline', 'Friday')
         hours = product.get('Quantity (hours)', 0)
         priority = product.get('Priority', 'Medium')
         
-        if deadline not in daily_requirements:
-            daily_requirements[deadline] = {'total': 0, 'high_priority': 0}
-        daily_requirements[deadline]['total'] += hours
-        if priority == 'High':
-            daily_requirements[deadline]['high_priority'] += hours
-    
-    for day, reqs in daily_requirements.items():
-        max_day_capacity = 4 * max_daily_hours  # 4 lines * 24h = 96h
-        if reqs['total'] > max_day_capacity:
-            deadline_issues.append(f"{day}: {reqs['total']:.1f}h required (max: {max_day_capacity}h)")
+        # Find how many days are available up to and including the deadline
+        try:
+            deadline_index = weekdays.index(deadline)
+            available_days = deadline_index + 1  # Monday=1 day, Tuesday=2 days, etc.
+        except ValueError:
+            available_days = 5  # Default to full week if deadline not recognized
+        
+        # Calculate available capacity up to deadline (4 effective lines per day)
+        max_day_capacity = 4 * max_daily_hours  # 4 lines * 24h = 96h per day
+        available_capacity = available_days * max_day_capacity
+        
+        # Check if this individual product can be completed by its deadline
+        if hours > available_capacity:
+            deadline_issues.append(
+                f"{product.get('Product', 'Unknown')} ({hours:.1f}h) cannot be completed by {deadline} "
+                f"(max capacity by {deadline}: {available_capacity:.0f}h)"
+            )
     
     if deadline_issues:
         errors.append({
-            'type': 'deadline_conflict',
-            'message': 'Daily capacity exceeded for deadlines: ' + '; '.join(deadline_issues),
-            'suggestion': 'Redistribute products across different days or extend deadlines'
+            'type': 'deadline_feasibility',
+            'message': 'Some products cannot be completed by their deadlines: ' + '; '.join(deadline_issues),
+            'suggestion': 'Extend deadlines or reduce quantities for infeasible products'
         })
     
     return {'warnings': warnings, 'errors': errors}
