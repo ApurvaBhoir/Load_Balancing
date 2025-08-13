@@ -83,6 +83,12 @@ Visualization & demo
 - Reuse production-analysis.html style for clarity
 - Show before/after: daily stacked bars, avg active lines, constraint badges, and a KPI row
 
+Frontend UI/style (soft rule)
+- Keep the planner UI professional and minimal; avoid excessive emojis or playful decorations
+- Use neutral titles/headings and concise copy; rely on color/typography/layout for emphasis
+- Use icons sparingly to improve clarity (status/progress), not for decoration
+- Prefer consistent spacing, alignment, and readable charts over visual gimmicks
+
 If uncertain
 - Prefer minimal, explainable choices; log assumptions and add an item to tasks/backlog.md
 - Do not expand scope beyond the PoC plan without recording it in planning/ or tasks/

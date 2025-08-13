@@ -72,16 +72,16 @@ def render_header():
     """Render the application header."""
     st.set_page_config(
         page_title="Ritter Sport Production Planner",
-        page_icon="🍫",
+        page_icon=None,
         layout="wide",
         initial_sidebar_state="collapsed"
     )
     
-    st.title("🍫 Ritter Sport Production Load Balancing")
+    st.title("Ritter Sport Production Planner")
     st.subheader("Decision Support Tool for Production Planners")
     
     # Progress indicator with clickable navigation
-    steps = ["📝 Input", "🔮 Forecast", "⚖️ Optimize", "📊 Results"]
+    steps = ["Input", "Forecast", "Optimize", "Results"]
     step_keys = ['input', 'forecast', 'optimize', 'results']
     current_step_idx = {'input': 0, 'forecast': 1, 'optimize': 1, 'results': 3}.get(
         st.session_state.planning_step, 0
@@ -91,35 +91,32 @@ def render_header():
     for i, (col, step, step_key) in enumerate(zip(cols, steps, step_keys)):
         with col:
             if i == current_step_idx:
-                st.markdown(f"**{step}** ✨")
+                st.markdown(f"**{step}**")
             elif i < current_step_idx:
                 # Completed steps - make them clickable
-                if step_key == 'input' and st.button(f"{step} ✅", key=f"nav_{step_key}", help="Click to return to input"):
+                if step_key == 'input' and st.button(f"{step}", key=f"nav_{step_key}", help="Click to return to input"):
                     st.session_state.planning_step = 'input'
                     reset_processing_state()
                     st.rerun()
-                elif step_key == 'results' and 'optimization_results' in st.session_state and st.button(f"{step} ✅", key=f"nav_{step_key}", help="Click to view results"):
+                elif step_key == 'results' and 'optimization_results' in st.session_state and st.button(f"{step}", key=f"nav_{step_key}", help="Click to view results"):
                     st.session_state.planning_step = 'results'
                     st.rerun()
                 else:
-                    st.markdown(f"{step} ✅")
+                    st.markdown(f"{step}")
             else:
                 # Future steps - not yet available
-                if i == current_step_idx + 1:
-                    st.markdown(f"⏳ {step}")
-                else:
-                    st.markdown(f"⏸️ {step}")
+                st.markdown(f"{step}")
 
 
 def render_input_forms():
     """Render the input forms for requirements and constraints."""
-    st.header("📝 Production Planning Input")
+    st.header("Production Planning Input")
     
     col1, col2 = st.columns([2, 1])
     
     with col1:
         st.subheader("A) Production Requirements")
-        st.info("💡 Enter the production demands defined by managers for the upcoming week.")
+        st.caption("Enter the production demands defined by managers for the upcoming week.")
         
         # Load historical data to get available products
         try:
@@ -129,7 +126,7 @@ def render_input_forms():
             available_products = ["100g Knusperkeks", "100g Waffel", "100g Marzipan", "Mini Knusperkeks", "Standard"]
         
         # Planning week selection
-        st.write("**Planning Week:**")
+        st.write("**Planning Week**")
         planning_date = st.date_input(
             "Select Monday of the week to plan",
             value=date.today() + timedelta(days=(7 - date.today().weekday())),  # Next Monday
@@ -137,7 +134,7 @@ def render_input_forms():
         )
         
         # Product requirements table
-        st.write("**Product Demands:**")
+        st.write("**Product Demands**")
         
         if 'requirements_df' not in st.session_state:
             # Initialize with some default products
@@ -192,15 +189,15 @@ def render_input_forms():
         st.metric("Total Production Hours Requested", f"{total_hours:.1f} h")
         
         if total_hours > 600:  # 5 lines * 5 days * 24h = 600h theoretical max
-            st.error("⚠️ Total hours exceed theoretical capacity (600h/week)")
+            st.error("Total hours exceed theoretical capacity (600h/week)")
         elif total_hours > 480:  # 5 lines * 5 days * ~19h average = more reasonable max
-            st.warning("⚠️ Total hours are very high - may require overtime")
+            st.warning("Total hours are very high - may require overtime")
     
     with col2:
         st.subheader("B) Constraints & Factors")
         
         # Line availability
-        st.write("**Line Availability:**")
+        st.write("**Line Availability**")
         line_availability = {}
         lines = ["hohl2", "hohl3", "hohl4", "massiv2", "massiv3"]
         
@@ -212,7 +209,7 @@ def render_input_forms():
             )
         
         # Constraint overrides
-        st.write("**Constraint Settings:**")
+        st.write("**Constraint Settings**")
         
         enforce_idle_line = st.checkbox(
             "At least one line idle per day",
@@ -236,7 +233,7 @@ def render_input_forms():
         )
         
         # Additional factors
-        st.write("**Additional Factors:**")
+        st.write("**Additional Factors**")
         
         energy_consideration = st.checkbox(
             "Consider energy costs",
@@ -250,7 +247,7 @@ def render_input_forms():
             help="Prioritize even load distribution across the week"
         )
         
-        st.write("**Special Notes:**")
+        st.write("**Special Notes**")
         special_notes = st.text_area(
             "Additional planning considerations",
             placeholder="Any special requirements, customer deadlines, or other factors to consider...",
@@ -279,7 +276,7 @@ def render_input_forms():
     col1, col2, col3 = st.columns([1, 1, 1])
     
     with col2:
-        if st.button("🔮 Generate Forecast & Optimize", type="primary", use_container_width=True):
+        if st.button("Run Forecast & Optimization", type="primary", use_container_width=True):
             if total_hours == 0:
                 st.error("Please enter at least one product requirement")
             else:
@@ -289,7 +286,7 @@ def render_input_forms():
                 st.rerun()
     
     with col3:
-        if st.button("📊 Load Sample Scenario", use_container_width=True):
+        if st.button("Load Sample Scenario", use_container_width=True):
             load_sample_scenario()
 
 
@@ -304,13 +301,13 @@ def load_sample_scenario():
     ]
     
     st.session_state.requirements_df = pd.DataFrame(sample_products)
-    st.success("✅ Sample scenario loaded! Review the requirements and click 'Generate Forecast & Optimize'")
+    st.success("Sample scenario loaded. Review the requirements and click 'Run Forecast & Optimization'")
     st.rerun()
 
 
 def render_processing():
     """Render the processing step with progress indicators."""
-    st.header("🔮 Generating Forecast and Optimization")
+    st.header("Generating Forecast and Optimization")
     
     # Check if we should run processing
     if 'processing_complete' not in st.session_state:
@@ -323,7 +320,7 @@ def render_processing():
         
         try:
             # Step 1: Load historical data and generate forecast
-            status_text.text("🔄 Analyzing historical patterns...")
+            status_text.text("Analyzing historical patterns...")
             progress_bar.progress(25)
             
             forecast_results = run_forecast(
@@ -332,7 +329,7 @@ def render_processing():
             )
             
             # Step 2: Run optimization
-            status_text.text("⚖️ Optimizing schedule with constraints...")
+            status_text.text("Optimizing schedule with constraints...")
             progress_bar.progress(50)
             
             optimization_results = run_optimization(
@@ -342,13 +339,13 @@ def render_processing():
             )
             
             # Step 3: Calculate metrics
-            status_text.text("📊 Calculating performance metrics...")
+            status_text.text("Calculating performance metrics...")
             progress_bar.progress(75)
             
             metrics = calculate_metrics(forecast_results, optimization_results)
             
             # Step 4: Complete
-            status_text.text("✅ Processing complete!")
+            status_text.text("Processing complete")
             progress_bar.progress(100)
             
             # Store results
@@ -401,7 +398,7 @@ def render_processing():
 
 def render_results():
     """Render the results dashboard with visualizations and export options."""
-    st.header("📊 Optimized Production Schedule")
+    st.header("Optimized Production Schedule")
     
     if not st.session_state.optimization_results:
         st.error("No optimization results available. Please run the optimization first.")
@@ -410,19 +407,19 @@ def render_results():
     # Action buttons at top
     col1, col2, col3 = st.columns([1, 1, 1])
     with col1:
-        if st.button("🔙 Modify Inputs", type="secondary"):
+        if st.button("Modify Inputs", type="secondary"):
             st.session_state.planning_step = 'input'
             reset_processing_state()
             st.rerun()
     with col2:
-        if st.button("🔄 Re-run Optimization"):
+        if st.button("Re-run Optimization"):
             st.session_state.planning_step = 'forecast'
             reset_processing_state()
             st.rerun()
     
     # Forecast vs. Optimized Comparison
-    st.subheader("🔄 Forecast vs. Optimized Comparison")
-    st.info("💡 This shows how the optimization improved the initial forecast based on historical patterns")
+    st.subheader("Forecast vs. Optimized Comparison")
+    st.caption("This shows how the optimization improved the initial forecast based on historical patterns")
     
     # Get both forecast and optimized data
     forecast_df = st.session_state.forecast_results['forecast_df']
@@ -432,7 +429,7 @@ def render_results():
     col1, col2 = st.columns(2)
     
     with col1:
-        st.write("**📊 Initial Forecast**")
+        st.write("**Initial Forecast**")
         st.caption("Based on historical patterns + product requirements")
         
         # Forecast daily totals
@@ -461,7 +458,7 @@ def render_results():
         st.metric("Lowest Day", f"{forecast_min:.1f}h")
     
     with col2:
-        st.write("**⚖️ Optimized Schedule**")
+        st.write("**Optimized Schedule**")
         st.caption("After constraint-aware optimization")
         
         # Optimized daily totals
@@ -490,7 +487,7 @@ def render_results():
         st.metric("Lowest Day", f"{optimized_min:.1f}h", delta=f"{optimized_min - forecast_min:.1f}h")
     
     # Side-by-side comparison chart
-    st.write("**📊 Side-by-Side Comparison**")
+    st.write("**Side-by-Side Comparison**")
     
     # Combine data for comparison
     comparison_data = []
@@ -524,7 +521,7 @@ def render_results():
     st.plotly_chart(fig_comparison, use_container_width=True)
     
     # Optimization Summary
-    st.subheader("📈 What the Optimization Achieved")
+    st.subheader("What the Optimization Achieved")
     
     # Calculate improvements
     variance_improvement = forecast_variance - optimized_variance
@@ -534,29 +531,29 @@ def render_results():
     summary_col1, summary_col2 = st.columns(2)
     
     with summary_col1:
-        st.write("**🎯 Load Balancing Results:**")
+        st.write("**Load Balancing Results**")
         
         if variance_improvement > 0:
-            st.success(f"✅ Reduced daily load variance by {variance_improvement:.1f} hours²")
+            st.success(f"Reduced daily load variance by {variance_improvement:.1f} hours²")
         else:
-            st.info("ℹ️ Load distribution was already well-balanced")
+            st.info("Load distribution was already well-balanced")
             
         if peak_reduction > 0:
-            st.success(f"✅ Reduced peak day load by {peak_reduction:.1f} hours")
+            st.success(f"Reduced peak day load by {peak_reduction:.1f} hours")
         elif peak_reduction < 0:
-            st.warning(f"⚠️ Peak day increased by {abs(peak_reduction):.1f} hours")
+            st.warning(f"Peak day increased by {abs(peak_reduction):.1f} hours")
         else:
-            st.info("ℹ️ Peak day load unchanged")
+            st.info("Peak day load unchanged")
             
         if valley_increase > 0:
-            st.success(f"✅ Increased minimum day load by {valley_increase:.1f} hours")
+            st.success(f"Increased minimum day load by {valley_increase:.1f} hours")
         elif valley_increase < 0:
-            st.warning(f"⚠️ Minimum day decreased by {abs(valley_increase):.1f} hours")
+            st.warning(f"Minimum day decreased by {abs(valley_increase):.1f} hours")
         else:
-            st.info("ℹ️ Minimum day load unchanged")
+            st.info("Minimum day load unchanged")
     
     with summary_col2:
-        st.write("**📊 Overall Impact:**")
+        st.write("**Overall Impact**")
         
         # Calculate overall smoothness score
         max_theoretical_daily = optimized_df['total_hours'].sum() / 5  # Perfect daily average
@@ -572,9 +569,9 @@ def render_results():
         # Show constraint compliance
         violations = st.session_state.optimization_results.get('constraint_violations', [])
         if len(violations) == 0:
-            st.success("✅ All constraints satisfied")
+            st.success("All constraints satisfied")
         else:
-            st.warning(f"⚠️ {len(violations)} constraint violations")
+            st.warning(f"{len(violations)} constraint violations")
         
         # Show requirements fulfillment
         total_requirements = len(st.session_state.requirements.get('products', []))
@@ -593,7 +590,7 @@ def render_results():
         st.metric("Requirements Fulfilled", f"{fulfillment_rate:.0f}%", help="Percentage of product requirements met")
     
     # Key metrics
-    st.subheader("📊 Performance Metrics")
+    st.subheader("Performance Metrics")
     
     metrics = st.session_state.metrics
     col1, col2, col3, col4 = st.columns(4)
@@ -631,7 +628,7 @@ def render_results():
         )
     
     # Weekly Schedule Table
-    st.subheader("📅 Optimized Weekly Schedule")
+    st.subheader("Optimized Weekly Schedule")
     
     if 'schedule_df' in st.session_state.optimization_results:
         schedule_df = st.session_state.optimization_results['schedule_df']
@@ -658,16 +655,16 @@ def render_results():
         
         with col2:
             # Excel download (simplified)
-            if st.button("📊 Generate Excel Report"):
+            if st.button("Generate Excel Report"):
                 st.info("Excel export feature will be implemented in the next iteration")
         
         with col3:
             # Print-friendly view
-            if st.button("🖨️ Print View"):
+            if st.button("Print View"):
                 st.info("Print-friendly format will be implemented in the next iteration")
     
     # Product-Specific Analysis
-    st.subheader("🍫 Product Production Schedule")
+    st.subheader("Product Production Schedule")
     
     if 'optimized_df' in st.session_state.optimization_results:
         optimized_df = st.session_state.optimization_results['optimized_df']
@@ -688,7 +685,7 @@ def render_results():
                 product_summary['Start Date'] = pd.to_datetime(product_summary['Start Date']).dt.strftime('%a %m/%d')
                 product_summary['End Date'] = pd.to_datetime(product_summary['End Date']).dt.strftime('%a %m/%d')
                 
-                st.write("**📋 Product Schedule Summary**")
+                st.write("**Product Schedule Summary**")
                 st.dataframe(
                     product_summary,
                     use_container_width=True,
@@ -710,7 +707,7 @@ def render_results():
                 st.plotly_chart(fig_priority, use_container_width=True)
         
         # Daily product schedule visualization
-        st.subheader("📅 Daily Product Distribution")
+        st.subheader("Daily Product Distribution")
         
         # Create product timeline chart
         if 'product' in optimized_df.columns:
@@ -748,7 +745,7 @@ def render_results():
             st.plotly_chart(fig_products, use_container_width=True)
         
         # Line utilization with product details
-        st.subheader("🔧 Line Utilization by Product")
+        st.subheader("Line Utilization by Product")
         
         # Create a detailed view showing which products are on which lines
         if 'product' in optimized_df.columns and 'line' in optimized_df.columns:
@@ -780,7 +777,7 @@ def render_results():
             daily_line_summary = simplified_view.groupby('date_str')['line_product'].apply(lambda x: '\n'.join(x)).reset_index()
             daily_line_summary.columns = ['Day', 'Line Assignments']
             
-            st.write("**📋 Detailed Line-Product Assignments**")
+            st.write("**Detailed Line-Product Assignments**")
             st.dataframe(
                 daily_line_summary,
                 use_container_width=True,
@@ -789,32 +786,32 @@ def render_results():
             )
     
     # Constraint Compliance & Requirements Analysis  
-    st.subheader("✅ Constraint Compliance & Requirements Check")
+    st.subheader("Constraint Compliance & Requirements Check")
     
     violations = st.session_state.optimization_results.get('constraint_violations', [])
     
     col1, col2 = st.columns(2)
     
     with col1:
-        st.write("**🔒 Operational Constraints**")
+        st.write("**Operational Constraints**")
         if len(violations) == 0:
             st.success("🎉 All operational constraints satisfied!")
             
             # Show compliance badges
             subcol1, subcol2 = st.columns(2)
             with subcol1:
-                st.success("✅ Idle Line Constraint")
-                st.success("✅ Capacity Constraints")
+                st.success("Idle Line Constraint")
+                st.success("Capacity Constraints")
             with subcol2:
-                st.success("✅ Personnel-Intensive Constraint")
-                st.success("✅ Line Availability")
+                st.success("Personnel-Intensive Constraint")
+                st.success("Line Availability")
         else:
-            st.warning(f"⚠️ Found {len(violations)} constraint violations")
+            st.warning(f"Found {len(violations)} constraint violations")
             for violation in violations[:3]:  # Show first 3
                 st.warning(f"• {violation.get('constraint', 'Unknown')} violated on {violation.get('date', 'Unknown date')}")
     
     with col2:
-        st.write("**📋 Requirements Fulfillment**")
+        st.write("**Requirements Fulfillment**")
         
         # Check if all products were scheduled by their deadlines
         if 'optimized_df' in st.session_state.optimization_results:
@@ -845,13 +842,13 @@ def render_results():
                 
                 # Status determination
                 if scheduled_hours >= required_hours and scheduled_by_deadline:
-                    status = "✅ Complete"
+                    status = "Complete"
                 elif scheduled_hours >= required_hours * 0.9:
-                    status = "⚠️ Mostly Complete"
+                    status = "Mostly Complete"
                 elif scheduled_hours > 0:
-                    status = "🔶 Partial"
+                    status = "Partial"
                 else:
-                    status = "❌ Not Scheduled"
+                    status = "Not Scheduled"
                 
                 requirement_check.append({
                     'Product': product_name,
@@ -874,7 +871,7 @@ def render_results():
                 st.info("No specific product requirements to check.")
     
     # Summary Statistics
-    st.subheader("📈 Planning Summary")
+    st.subheader("Planning Summary")
     
     col1, col2 = st.columns(2)
     
@@ -893,14 +890,14 @@ def render_results():
             st.metric("Daily Standard Deviation", f"{daily_std:.1f}h")
     
     with col2:
-        st.write("**🔄 Optimization Transfers:**")
+        st.write("**Optimization Transfers**")
         transfers = st.session_state.optimization_results.get('transfers', [])
         
         if transfers:
             st.metric("Optimization Transfers Applied", len(transfers))
             
             # Create detailed transfer log
-            st.write("**📋 Transfer Details:**")
+            st.write("**Transfer Details**")
             transfer_details = []
             for i, transfer in enumerate(transfers, 1):
                 # Extract transfer information (format varies based on implementation)
@@ -938,7 +935,7 @@ def render_results():
                 )
             
             # Transfer impact summary
-            st.write("**📊 Transfer Impact:**")
+            st.write("**Transfer Impact**")
             subcol1, subcol2 = st.columns(2)
             with subcol1:
                 total_hours_moved = sum(t.get('hours_to_transfer', t.get('hours', 0)) for t in transfers if isinstance(t, dict))
@@ -947,11 +944,11 @@ def render_results():
                 unique_lines = len(set(t.get('line', '') for t in transfers if isinstance(t, dict) and t.get('line')))
                 st.metric("Lines Optimized", unique_lines)
         else:
-            st.info("✅ No transfers were needed - the initial forecast was already well-balanced!")
+            st.info("No transfers were needed - the initial forecast was already well-balanced.")
     
     # Strategic Summary for Managers
-    st.subheader("💼 Executive Summary")
-    st.info("🎯 **Key Takeaway**: This optimization replaced manual scheduling guesswork with data-driven decisions")
+    st.subheader("Executive Summary")
+    st.info("Key takeaway: This optimization replaced manual scheduling guesswork with data-driven decisions.")
     
     summary_metrics = st.container()
     with summary_metrics:
@@ -959,21 +956,21 @@ def render_results():
         executive_col1, executive_col2, executive_col3 = st.columns(3)
         
         with executive_col1:
-            st.write("**📈 Business Value:**")
+            st.write("**Business Value**")
             
             # Estimate cost savings (simplified calculation)
             total_hours = optimized_df['total_hours'].sum()
             if variance_improvement > 0:
                 overtime_reduction_estimate = variance_improvement * 0.1  # Rough estimate
-                st.success(f"💰 Estimated overtime reduction: {overtime_reduction_estimate:.1f}h/week")
+                st.success(f"Estimated overtime reduction: {overtime_reduction_estimate:.1f}h/week")
             
             if smoothness_improvement > 0:
-                st.success(f"📊 {smoothness_improvement:.1f}% improvement in load balance")
+                st.success(f"{smoothness_improvement:.1f}% improvement in load balance")
             
-            st.success(f"✅ {fulfillment_rate:.0f}% of requirements fulfilled")
+            st.success(f"{fulfillment_rate:.0f}% of requirements fulfilled")
         
         with executive_col2:
-            st.write("**🎯 What Changed:**")
+            st.write("**What Changed**")
             
             if len(transfers) > 0:
                 st.write(f"• {len(transfers)} optimization transfers applied")
@@ -987,25 +984,25 @@ def render_results():
             
             violation_count = len(st.session_state.optimization_results.get('constraint_violations', []))
             if violation_count == 0:
-                st.write("• ✅ All operational constraints satisfied")
+                st.write("• All operational constraints satisfied")
             else:
                 st.write(f"• ⚠️ {violation_count} constraint issues to address")
         
         with executive_col3:
-            st.write("**🚀 Next Steps:**")
+            st.write("**Next Steps**")
             
             if fulfillment_rate == 100 and len(violations) == 0:
-                st.success("🎉 **Ready to implement!**")
+                st.success("Ready to implement")
                 st.write("• Download schedule for production")
                 st.write("• Share with floor managers")
                 st.write("• Monitor actual vs. planned")
             elif fulfillment_rate >= 90:
-                st.warning("⚡ **Minor adjustments needed**")
+                st.warning("Minor adjustments needed")
                 st.write("• Review partial requirements")
                 st.write("• Consider constraint relaxation")
                 st.write("• Implement with monitoring")
             else:
-                st.error("🔧 **Requires revision**")
+                st.error("Requires revision")
                 st.write("• Adjust requirements or constraints")
                 st.write("• Consider additional capacity")
                 st.write("• Re-run optimization")
@@ -1013,7 +1010,7 @@ def render_results():
     # Future Vision Note
     st.markdown("---")
     st.info("""
-    🔮 **Future Vision**: In advanced implementations, the forecast will incorporate:
+    Future vision: In advanced implementations, the forecast will incorporate:
     • Machine learning predictions based on seasonality, orders, and market trends
     • Real-time capacity adjustments and material availability
     • Dynamic constraint optimization based on actual floor conditions
