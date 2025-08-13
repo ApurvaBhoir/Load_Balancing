@@ -226,9 +226,32 @@ def run_optimization(forecast_results: Dict[str, Any], requirements: Dict[str, A
         for date in optimized_df['date'].unique():
             day_data = optimized_df[optimized_df['date'] == date]
             day_violations = check_constraints(day_data, pd.to_datetime(date))
-            for constraint, violated in day_violations.items():
-                if violated:
-                    violations.append({'date': date, 'constraint': constraint})
+            
+            # Only add violations if constraints are NOT satisfied
+            if not day_violations['capacity_ok']:
+                violations.append({
+                    'date': date, 
+                    'constraint': 'capacity_ok',
+                    'description': f'Line exceeds 24h limit (max: {day_violations["max_line_hours"]:.1f}h)',
+                    'severity': 'high',
+                    'suggestion': 'Reduce hours on this day or redistribute to other days'
+                })
+            if not day_violations['idle_ok']:
+                violations.append({
+                    'date': date, 
+                    'constraint': 'idle_ok',
+                    'description': f'No idle lines available (need at least 1, got {day_violations["idle_lines"]})',
+                    'severity': 'medium',
+                    'suggestion': 'Reduce hours on one line to ensure backup capacity'
+                })
+            if not day_violations['personnel_ok']:
+                violations.append({
+                    'date': date, 
+                    'constraint': 'personnel_ok',
+                    'description': f'Multiple personnel-intensive lines active ({day_violations["personnel_count"]} lines)',
+                    'severity': 'high',
+                    'suggestion': 'Move personnel-intensive production to different days'
+                })
         
         # Create schedule summary
         schedule_summary = create_schedule_summary(optimized_df, requirements)
@@ -295,6 +318,86 @@ def create_schedule_summary(optimized_df: pd.DataFrame, requirements: Dict[str, 
     schedule_hours.attrs['product_details'] = schedule_products
     
     return schedule_hours
+
+
+def validate_input_requirements(requirements, constraints):
+    """Validate input requirements before processing."""
+    warnings = []
+    errors = []
+    
+    # Check total hours vs. available capacity
+    total_required_hours = requirements.get('total_hours', 0)
+    max_daily_hours = constraints.get('max_daily_hours', 24.0)
+    
+    # 5 lines, 5 days, but need at least 1 idle line per day = 4 lines max per day
+    max_weekly_capacity = 4 * max_daily_hours * 5  # 4 lines * 24h * 5 days = 480h
+    
+    if total_required_hours > max_weekly_capacity:
+        errors.append({
+            'type': 'capacity_exceeded',
+            'message': f'Total required hours ({total_required_hours}h) exceeds maximum weekly capacity ({max_weekly_capacity}h)',
+            'suggestion': f'Reduce requirements by {total_required_hours - max_weekly_capacity:.1f}h or extend timeline'
+        })
+    elif total_required_hours > max_weekly_capacity * 0.8:
+        warnings.append({
+            'type': 'high_utilization',
+            'message': f'High capacity utilization: {total_required_hours/max_weekly_capacity*100:.1f}% of maximum',
+            'suggestion': 'Consider adding buffer time for unexpected delays'
+        })
+    
+    # Check if too many personnel-intensive products
+    products = requirements.get('products', [])
+    personnel_intensive_hours = 0
+    high_priority_hours = 0
+    
+    for product in products:
+        product_name = product.get('Product', '')
+        hours = product.get('Quantity (hours)', 0)
+        priority = product.get('Priority', 'Medium')
+        
+        # Simple heuristic: products with "Knusper", "Waffel", or "Crisp" are personnel-intensive
+        if any(term in product_name.lower() for term in ['knusper', 'waffel', 'crisp', 'nuss']):
+            personnel_intensive_hours += hours
+        
+        if priority == 'High':
+            high_priority_hours += hours
+    
+    # Personnel-intensive can only run on 1 line per day = max 120h per week
+    max_personnel_weekly = max_daily_hours * 5  # 1 line * 24h * 5 days = 120h
+    if personnel_intensive_hours > max_personnel_weekly:
+        errors.append({
+            'type': 'personnel_conflict',
+            'message': f'Personnel-intensive products require {personnel_intensive_hours}h but max capacity is {max_personnel_weekly}h',
+            'suggestion': 'Reduce personnel-intensive products or extend timeline'
+        })
+    
+    # Check deadline conflicts
+    deadline_issues = []
+    daily_requirements = {}
+    for product in products:
+        deadline = product.get('Deadline', 'Friday')
+        hours = product.get('Quantity (hours)', 0)
+        priority = product.get('Priority', 'Medium')
+        
+        if deadline not in daily_requirements:
+            daily_requirements[deadline] = {'total': 0, 'high_priority': 0}
+        daily_requirements[deadline]['total'] += hours
+        if priority == 'High':
+            daily_requirements[deadline]['high_priority'] += hours
+    
+    for day, reqs in daily_requirements.items():
+        max_day_capacity = 4 * max_daily_hours  # 4 lines * 24h = 96h
+        if reqs['total'] > max_day_capacity:
+            deadline_issues.append(f"{day}: {reqs['total']:.1f}h required (max: {max_day_capacity}h)")
+    
+    if deadline_issues:
+        errors.append({
+            'type': 'deadline_conflict',
+            'message': 'Daily capacity exceeded for deadlines: ' + '; '.join(deadline_issues),
+            'suggestion': 'Redistribute products across different days or extend deadlines'
+        })
+    
+    return {'warnings': warnings, 'errors': errors}
 
 
 def calculate_metrics(forecast_results: Dict[str, Any], optimization_results: Dict[str, Any]) -> Dict[str, Any]:

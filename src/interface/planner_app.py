@@ -40,7 +40,8 @@ except ImportError:
         run_forecast,
         run_optimization,
         calculate_metrics,
-        export_schedule
+        export_schedule,
+        validate_input_requirements
     )
 
 
@@ -184,14 +185,19 @@ def render_input_forms():
         
         st.session_state.requirements_df = requirements_df
         
-        # Validation
+        # Validation - calculate total and show early feedback
         total_hours = requirements_df['Quantity (hours)'].sum()
         st.metric("Total Production Hours Requested", f"{total_hours:.1f} h")
         
-        if total_hours > 600:  # 5 lines * 5 days * 24h = 600h theoretical max
-            st.error("Total hours exceed theoretical capacity (600h/week)")
-        elif total_hours > 480:  # 5 lines * 5 days * ~19h average = more reasonable max
-            st.warning("Total hours are very high - may require overtime")
+        # Store current requirements for validation
+        current_requirements = {
+            'total_hours': total_hours,
+            'products': requirements_df.to_dict('records'),
+            'planning_date': datetime.now().date()
+        }
+        
+        # Store current constraints (we'll get these from the second column)
+        st.session_state.current_requirements = current_requirements
     
     with col2:
         st.subheader("B) Constraints & Factors")
@@ -270,6 +276,30 @@ def render_input_forms():
         'prefer_smooth_distribution': prefer_smooth_distribution,
         'special_notes': special_notes
     }
+    
+    # Real-time validation
+    if hasattr(st.session_state, 'current_requirements'):
+        validation_result = validate_input_requirements(
+            st.session_state.current_requirements, 
+            st.session_state.constraints
+        )
+        
+        # Display validation results
+        if validation_result['errors']:
+            st.error("🚨 **Input Issues Found**")
+            for error in validation_result['errors']:
+                st.error(f"**{error['message']}**\n\n💡 {error['suggestion']}")
+        
+        if validation_result['warnings']:
+            st.warning("⚠️ **Recommendations**")
+            for warning in validation_result['warnings']:
+                st.warning(f"**{warning['message']}**\n\n💡 {warning['suggestion']}")
+        
+        if not validation_result['errors'] and not validation_result['warnings']:
+            st.success("✅ **Input validation passed** - Ready for optimization!")
+        
+        # Store validation for later use
+        st.session_state.input_validation = validation_result
     
     # Action buttons
     st.markdown("---")
@@ -571,7 +601,7 @@ def render_results():
         if len(violations) == 0:
             st.success("All constraints satisfied")
         else:
-            st.warning(f"{len(violations)} constraint violations")
+            st.error(f"{len(violations)} constraint violations - see detailed analysis below")
         
         # Show requirements fulfillment
         total_requirements = len(st.session_state.requirements.get('products', []))
@@ -806,9 +836,28 @@ def render_results():
                 st.success("Personnel-Intensive Constraint")
                 st.success("Line Availability")
         else:
-            st.warning(f"Found {len(violations)} constraint violations")
-            for violation in violations[:3]:  # Show first 3
-                st.warning(f"• {violation.get('constraint', 'Unknown')} violated on {violation.get('date', 'Unknown date')}")
+            st.error(f"**{len(violations)} constraint violations found**")
+            
+            # Group violations by severity
+            high_severity = [v for v in violations if v.get('severity') == 'high']
+            medium_severity = [v for v in violations if v.get('severity') == 'medium']
+            
+            if high_severity:
+                st.error("🚨 **Critical Issues**")
+                for violation in high_severity:
+                    date_str = pd.to_datetime(violation['date']).strftime('%A %m/%d')
+                    st.error(f"**{date_str}**: {violation.get('description', 'Unknown issue')}")
+                    st.info(f"💡 **Fix**: {violation.get('suggestion', 'No suggestion available')}")
+            
+            if medium_severity:
+                st.warning("⚠️ **Warnings**")
+                for violation in medium_severity:
+                    date_str = pd.to_datetime(violation['date']).strftime('%A %m/%d')
+                    st.warning(f"**{date_str}**: {violation.get('description', 'Unknown issue')}")
+                    st.info(f"💡 **Fix**: {violation.get('suggestion', 'No suggestion available')}")
+            
+            # Show summary of how to resolve
+            st.info("🔧 **How to resolve**: Adjust your input requirements (reduce hours, change deadlines) or modify constraints, then re-optimize.")
     
     with col2:
         st.write("**Requirements Fulfillment**")
