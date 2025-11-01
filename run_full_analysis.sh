@@ -12,7 +12,7 @@ echo "=============================================="
 
 # Validate setup first
 echo "Step 1: Validating setup..."
-python validate_setup.py
+python3 validate_setup.py
 if [ $? -ne 0 ]; then
     echo "❌ Setup validation failed. Please fix issues before proceeding."
     exit 1
@@ -27,8 +27,9 @@ fi
 echo ""
 echo "Step 2: Data Ingestion..."
 echo "-------------------------"
-python -m src.etl.ingest \
+python3 -m src.etl.ingest \
     --input-root . \
+    --csv-input src/etl/cleaned_schedule.csv \
     --years 2024 \
     --areas H2_H3 H4 M2_M3 \
     --max-files 12 \
@@ -39,7 +40,7 @@ python -m src.etl.ingest \
     --log-level INFO
 
 echo "📊 Data quality check after deduplication..."
-python -c "
+python3 -c "
 import pandas as pd
 df = pd.read_csv('data/processed/normalized_daily.csv')
 daily_totals = df.groupby('date')['total_hours'].sum()
@@ -57,7 +58,7 @@ fi
 echo ""
 echo "Step 3: Baseline Forecasting..."
 echo "-------------------------------"
-python -m src.forecast.baseline \
+python3 -m src.forecast.baseline \
     --input data/processed/normalized_daily.csv \
     --start-date 2024-04-01 \
     --weeks 4 \
@@ -72,7 +73,7 @@ fi
 echo ""
 echo "Step 4: Load Smoothing..."
 echo "-------------------------"
-python -m src.smooth.greedy \
+python3 -m src.smooth.greedy \
     --input data/processed/forecast_baseline.csv \
     --output data/processed/forecast_smoothed.csv \
     --report data/reports/smoothing_report.json \
@@ -87,7 +88,7 @@ fi
 echo ""
 echo "Step 5: Dashboard Generation..."
 echo "-------------------------------"
-python -m src.viz.dashboard \
+python3 -m src.viz.dashboard \
     --historical data/processed/normalized_daily.csv \
     --forecast data/processed/forecast_baseline.csv \
     --smoothed data/processed/forecast_smoothed.csv \

@@ -91,6 +91,13 @@ def check_source_files():
 def check_data_files():
     """Check if Excel data files are available."""
     print("\n📊 Checking data files...")
+
+    cleaned_csv = Path('src/etl/cleaned_schedule.csv')
+    if cleaned_csv.exists():
+        print(f"  ✅ {cleaned_csv} - Cleaned historical CSV available")
+        return True
+    else:
+        print(f"  ⚠️  {cleaned_csv} not found. Falling back to Excel source scan...")
     
     data_dirs = ['data/2024/H2_H3', 'data/2024/H4', 'data/2024/M2_M3']
     excel_files_found = 0

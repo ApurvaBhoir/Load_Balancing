@@ -1,0 +1,591 @@
+Year,System,Produkt,Rezeptur,Soll,Leistung,Runtime_hours,Setup_min_time_before,Order_rank,Start,Ende,Min,Datum,Tag,FilePath
+2021,H2,100G Waffel,A-220,32.3,3306.122449,0.00977,123.46666666666663,,22:00,07:52,28,26.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2 H3_KW 30 Version 2.xlsx
+2021,H3,100G Kakao-Mousse,A-294,36.1,4039.900249,0.008936,26.416666666666657,1,06:00,15:01,30,26.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2 H3_KW 30 Version 2.xlsx
+2021,H2,100G Waffel,A-220,24.6,3306.122449,0.007441,123.46666666666663,,22:00,05:59,18,21.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 01 Version 1.xlsx
+2021,H3,100G Kakao-Mousse,A-294,26.3,4039.900249,0.00651,26.416666666666657,1,22:00,04:34,20,21.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 01 Version 1.xlsx
+2021,H2,100G Knusperkeks,A-214,30.3,3109.40499,0.009745,91.21666666666667,2,07:29,17:18,20,21.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 01 Version 1.xlsx
+2021,H3,100G Halbbitter,A-20,26.9,4396.200814,0.006119,93.89999999999995,5,13:23,19:33,20,21.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 01 Version 1.xlsx
+2021,H2,100G Weisse Mango Maracuja,A-217,48.1,,,,,22:00,11:09,40,18.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 03 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,55.3,4396.200814,0.012579,80.01666666666662,6,22:00,11:50,45,18.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 03 Version 1.xlsx
+2021,H3,100G Halbbitter,A-20,38.2,4396.200814,0.008689,93.89999999999995,5,12:50,21:35,34,18.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 03 Version 1.xlsx
+2021,H2,100G Knusperkeks,A-214,40.1,3109.40499,0.012896,91.21666666666667,2,22:00,10:59,36,25.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 04 Version 1.xlsx
+2021,H2,100G Waffel,A-220,18.4,3306.122449,0.005565,123.46666666666663,,12:29,18:27,14,25.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 04 Version 1.xlsx
+2021,H3,100G Kakao-Mousse,A-294,32.3,4039.900249,0.007995,26.416666666666657,1,06:00,14:05,22,25.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 04 Version 1.xlsx
+2021,H2,100G Weisse Mango Maracuja,A-217,80.1,,,,,22:00,19:53,70,01.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 05 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,40.1,4396.200814,0.009122,80.01666666666662,6,22:00,08:02,36,01.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 05 Version 1.xlsx
+2021,H3,100G Halbbitter,A-20,26.0,4396.200814,0.005914,93.89999999999995,5,09:02,15:00,20,01.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 05 Version 1.xlsx
+2021,H2,100G Knusperkeks,A-214,20.2,3109.40499,0.006496,91.21666666666667,2,22:00,04:31,16,08.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 06 Version 1.xlsx
+2021,H2,100G Haferkeks + Joghurt,A-934,34.5,,,,,06:01,18:29,30,08.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 06 Version 1.xlsx
+2021,H3,100G Kakao-Mousse,A-294,26.1,4039.900249,0.006461,26.416666666666657,1,06:00,12:32,20,08.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 06 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,29.0,4396.200814,0.006597,80.01666666666662,6,14:02,21:22:00,20,08.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 06 Version 1.xlsx
+2021,H2,100G Weisse Mango Maracuja,A-217,60.4,,,,,22:00,14:31,56,15.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 07 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,32.1,4396.200814,0.007302,80.01666666666662,6,22:00,06:02,26,15.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 07 Version 1.xlsx
+2021,H3,100G Halbbitter,A-20,25.5,4396.200814,0.0058,93.89999999999995,5,07:02,12:53,22,15.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 07 Version 1.xlsx
+2021,H2,100G Knusperkeks,A-214,24.0,3109.40499,0.007719,91.21666666666667,2,22:00,05:46,20,22.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 08 Version 1.xlsx
+2021,H3,100G Kakao-Mousse,A-294,44.4,4039.900249,0.01099,26.416666666666657,1,22:00,09:06,40,22.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 08 Version 1.xlsx
+2021,H2,100G Haferkeks + Joghurt,A-934,33.9,,,,,07:16,19:32,32,22.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 08 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,44.4,4396.200814,0.0101,80.01666666666662,6,10:36,21:43,40,22.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 08 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,35.1,4396.200814,0.007984,80.01666666666662,6,22:00,06:46,30,01.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 09 Version 1.xlsx
+2021,H3,100G Halbbitter,A-20,48.1,4396.200814,0.010941,93.89999999999995,5,07:46,18:48,38,01.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 09 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,28.3,4396.200814,0.006437,80.01666666666662,6,22:00,05:04,20,15.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 11 Version 1.xlsx
+2021,H3,100G Halbbitter,A-20,25.0,4396.200814,0.005687,93.89999999999995,5,06:04,11:48,22,15.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 11 Version 1.xlsx
+2021,H3,100G Kakao-Mousse,A-294,32.2,4039.900249,0.00797,26.416666666666657,1,22:00,06:03,28,22.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 12 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,54.10000000000001,4396.200814,0.012306,80.01666666666662,6,07:33,21:05,44,22.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 12 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,38.1,4396.200814,0.008667,80.01666666666662,6,22:00,07:32,30,29.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 13 Version 1.xlsx
+2021,H3,100G Halbbitter,A-20,40.1,4396.200814,0.009122,93.89999999999995,5,08:32,17:44,30,29.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 13 Version 1.xlsx
+2021,H2,100G Knusperkeks,A-214,52.3,3109.40499,0.01682,91.21666666666667,2,22:00,14:56,42,06.04.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 14 Version 1.xlsx
+2021,H3,100G Kakao-Mousse,A-294,36.3,4039.900249,0.008985,26.416666666666657,1,22:00,07:04,32,06.04.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 14 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,25.3,4396.200814,0.005755,80.01666666666662,6,08:34,14:53,20,06.04.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 14 Version 1.xlsx
+2021,H3,100G Halbbitter(*),A-20,26.62176165803109,4396.200814,0.006056,93.89999999999995,5,15:53,22:00,20,06.04.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 14 Version 1.xlsx
+2021,H2,100G Weisse Mango Maracuja,A-217,61.9,,,,,22:00,14:55,55,12.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 15 Version 2.xlsx
+2021,H3,100G Pfefferminz,A-28,50.10000000000001,4396.200814,0.011396,80.01666666666662,6,22:00,10:32,40,12.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 15 Version 2.xlsx
+2021,H2,KK 100G Ghana 81%(*),A-938,19.98071216617211,3596.00444,0.005556,58.98333333333327,4,16:25,22:00,15,12.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 15 Version 2.xlsx
+2021,H3,100G Halbbitter,A-20,44.2,4396.200814,0.010054,93.89999999999995,5,11:32,21:41,40,12.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 15 Version 2.xlsx
+2021,H2,100G Weisse Mango Maracuja,A-217,61.9,,,,,22:00,14:55,55,12.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 15 Version 2.xlsx
+2021,H3,100G Pfefferminz,A-28,50.10000000000001,4396.200814,0.011396,80.01666666666662,6,22:00,10:32,40,12.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 15 Version 2.xlsx
+2021,H2,KK 100G Ghana 81%(*),A-938,19.98071216617211,3596.00444,0.005556,58.98333333333327,4,16:25,22:00,15,12.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 15 Version 2.xlsx
+2021,H3,100G Halbbitter,A-20,44.2,4396.200814,0.010054,93.89999999999995,5,11:32,21:41,40,12.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 15 Version 2.xlsx
+2021,H2,250G Knusperflakes,A-623,14.7,,,,,07:50,13:56,10,14.04.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 15 Version 2.xlsx
+2021,H2,250G Nuss-Splitter,A-622,14.6,,,,,15:11,19:58,10,14.04.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 15 Version 2.xlsx
+2021,H2,250G Joghurt,A-602,14.0,,,,,02:12,07:02,10,15.04.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 15 Version 2.xlsx
+2021,H2,100G Knusperkeks,A-214,40.4,3109.40499,0.012993,91.21666666666667,2,22:00,11:05,35,19.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 16 Version 1.xlsx
+2021,H2,100G Haferkeks + Joghurt,A-934,22.1,,,,,12:35,19:45,18,19.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 16 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,32.1,4396.200814,0.007302,80.01666666666662,6,08:32,16:34,28,19.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 16 Version 1.xlsx
+2021,H2,100G Weisse Mango Maracuja,A-217,26.0,,,,,01:00,08:30,20,26.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 17 Version 1.xlsx
+2021,H2,KK 100G Nicaragua 61%,A-932,20.0,3596.00444,0.005562,90.49999999999996,6,10:00,15:36,15,26.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 17 Version 1.xlsx
+2021,H3,100G Nugat,A-26,50.7,3326.488706,0.015241,50.683333333333394,2,07:17,18:55,?,07.05.,Fr,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2021,H3,100G Halbbitter,A-20,25.8,4396.200814,0.005869,93.89999999999995,5,22:00,03:55,20,10.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 19 Version 1.xlsx
+2021,H2,100G Weisse Mango Maracuja,A-217,25.1,,,,,00:00,07:15,20,10.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 19 Version 1.xlsx
+2021,H3,100G Marzipan,A-25,55.5,4396.200814,0.012625,111.81666666666672,7,05:55,18:33,46,10.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 19 Version 1.xlsx
+2021,H2,KK 100G Ghana 81%,A-938,20.2,3596.00444,0.005617,58.98333333333327,4,08:45,14:24,10,10.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 19 Version 1.xlsx
+2021,H3,100G Kakao-Mousse,A-294,36.1,4039.900249,0.008936,26.416666666666657,1,22:00,06:58,32,17.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 20 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,52.10000000000001,4396.200814,0.011851,80.01666666666662,6,08:28,21:30,42,17.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 20 Version 1.xlsx
+2021,H2,100G Knusperkeks,A-214,50.0,3109.40499,0.01608,91.21666666666667,2,22:00,14:12,46,14.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2021,H3,100G Kakao-Mousse,A-294,25.0,4039.900249,0.006188,26.416666666666657,1,22:00,04:15,22,14.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,25.2,4396.200814,0.005732,80.01666666666662,6,05:45,12:03,20,14.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2021,H3,100G Halbbitter,A-20,28.1,4396.200814,0.006392,93.89999999999995,5,13:03,19:31,24,14.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2021,H2,100G Weisse Mango Maracuja,A-217,35.2,,,,,22:00,08:10,25,21.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 25 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,38.0,4396.200814,0.008644,80.01666666666662,6,22:00,07:30,28,21.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 25 Version 1.xlsx
+2021,H2,KK 100G Ghana 81%,A-938,32.2,3596.00444,0.008954,58.98333333333327,4,09:40,18:40,26,21.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 25 Version 1.xlsx
+2021,H3,100G Halbbitter,A-20,32.2,4396.200814,0.007325,93.89999999999995,5,08:30,15:53,28,21.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 25 Version 1.xlsx
+2021,H2,100G Knusperkeks,A-214,58.29999999999999,3109.40499,0.01875,91.21666666666667,2,22:00,16:52,50,28.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 26 Version 1.xlsx
+2021,H3,100G Kakao-Mousse,A-294,32.2,4039.900249,0.00797,26.416666666666657,1,06:00,14:02,28,28.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 26 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,25.1,4396.200814,0.005709,80.01666666666662,6,15:32,21:48,15,28.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 26 Version 1.xlsx
+2021,H2,100G Waffel,A-220,24.3,3306.122449,0.00735,123.46666666666663,,06:50,14:15,20,12.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 28 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,40.1,4396.200814,0.009122,80.01666666666662,6,22:00,08:01,36,19.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 29 Version 1.xlsx
+2021,H3,100G Halbbitter,A-20,28.3,4396.200814,0.006437,93.89999999999995,5,09:01,15:30,24,19.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 29 Version 1.xlsx
+2021,H2,100G Waffel,A-220,32.3,3306.122449,0.00977,123.46666666666663,,22:00,07:52,28,26.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2 H3_KW 30 Version 2.xlsx
+2021,H3,100G Kakao-Mousse,A-294,36.1,4039.900249,0.008936,26.416666666666657,1,06:00,15:01,30,26.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2 H3_KW 30 Version 2.xlsx
+2021,H2,100G Waffel,A-220,18.5,3306.122449,0.005596,123.46666666666663,,22:00,03:38,14,09.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 32 Version 1.xlsx
+2021,H3,100G Kakao-Mousse,A-294,40.3,4039.900249,0.009975,26.416666666666657,1,22:00,08:05,30,09.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 32 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,36.2,4396.200814,0.008234,80.01666666666662,6,09:35,18:38,30,09.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 32 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,44.1,4396.200814,0.010031,80.01666666666662,6,22:00,09:01,40,16.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 33 Version 1.xlsx
+2021,H2,100G Karamell-Mousse,A-2110,26.2,3306.122449,0.007925,117.41666666666659,7,03:00,11:00,24,16.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 33 Version 1.xlsx
+2021,H3,100G Halbbitter,A-20,50.1,4396.200814,0.011396,93.89999999999995,5,10:01,21:30,40,16.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 33 Version 1.xlsx
+2021,H2,KK 100G Nicaragua 61%,A-932,24.1,3596.00444,0.006702,90.49999999999996,6,12:30,19:14,20,16.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 33 Version 1.xlsx
+2021,H2,100G Waffel,A-220,18.0,3306.122449,0.005444,123.46666666666663,,22:00,03:30,14,23.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 34 Version 2.xlsx
+2021,H3,100G Kakao-Mousse,A-294,32.2,4039.900249,0.00797,26.416666666666657,1,22:00,06:03,30,23.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 34 Version 2.xlsx
+2021,H3,100G Halbbitter,A-20,44.4,4396.200814,0.0101,93.89999999999995,5,07:33,17:44,34,23.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 34 Version 2.xlsx
+2021,H2,100G Waffel,A-220,18.0,3306.122449,0.005444,123.46666666666663,,22:00,03:30,14,23.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 34 Version 2.xlsx
+2021,H3,100G Kakao-Mousse,A-294,32.2,4039.900249,0.00797,26.416666666666657,1,22:00,06:03,30,23.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 34 Version 2.xlsx
+2021,H3,100G Halbbitter,A-20,44.4,4396.200814,0.0101,93.89999999999995,5,07:33,17:44,34,23.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 34 Version 2.xlsx
+2021,H2,100G Karamell-Mousse,A-2110,25.2,3306.122449,0.007622,117.41666666666659,7,22:00,05:42,20,30.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 35 Version 1.xlsx
+2021,H3,100G Pfefferminz,A-28,47.2,4396.200814,0.010737,80.01666666666662,6,06:00,17:48,37,30.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 35 Version 1.xlsx
+2021,H2,KK 100G Ghana 81%,A-938,20.0,3596.00444,0.005562,58.98333333333327,4,14:00,19:36,10,30.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 35 Version 1.xlsx
+2021,H2,100G Waffel,A-220,18.7,3306.122449,0.005656,123.46666666666663,,22:00,03:43,15,06.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 36 Version 1.xlsx
+2021,H3,100G Kakao-Mousse,A-294,44.1,4039.900249,0.010916,26.416666666666657,1,22:00,09:01,40,06.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 36 Version 1.xlsx
+2021,H2,100G Knusperkeks,A-214,66.2,3109.40499,0.02129,91.21666666666667,2,22:00,19:26,60,13.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 37 Version 2.xlsx
+2021,H3,100G Pfefferminz,A-28,58.2,4396.200814,0.013239,80.01666666666662,6,22:00,12:34,54,13.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 37 Version 2.xlsx
+2021,H2,100G Knusperkeks,A-214,66.2,3109.40499,0.02129,91.21666666666667,2,22:00,19:26,60,13.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 37 Version 2.xlsx
+2021,H3,100G Pfefferminz,A-28,58.2,4396.200814,0.013239,80.01666666666662,6,22:00,12:34,54,13.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 37 Version 2.xlsx
+2021,H2,100G Waffel,A-220,25.3,3306.122449,0.007652,123.46666666666663,,22:00,05:42,20,04.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 40 Version 1.xlsx
+2021,H3,100G Nugat,A-26,60.1,3326.488706,0.018067,50.683333333333394,2,22:00:00,11:50:00,50,04.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 40 Version 1.xlsx
+2021,H2,250G Cranberry Nuss,A-624,16.2,,,,,23:50,05:45,14,06.10.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 40 Version 3.xlsx
+2021,H2,250G Nugat,A-601,24.2,3076.923077,0.007865,92.06666666666669,14,07:15,16:03,20,06.10.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 40 Version 3.xlsx
+2021,H2,250G Cranberry Nuss,A-624,16.2,,,,,23:50,05:45,14,06.10.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 40 Version 3.xlsx
+2021,H2,250G Nugat,A-601,24.2,3076.923077,0.007865,92.06666666666669,14,07:15,16:03,20,06.10.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 40 Version 3.xlsx
+2021,H2,250G Goldschatz,A-606,20.3,2916.291629,0.006961,41.43333333333326,8,13:22,20:24,15,07.10.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 40 Version 3.xlsx
+2021,H2,100G Waffel,A-220,25.3,3306.122449,0.007652,123.46666666666663,,22:00,05:42,20,04.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 40 Version 1.xlsx
+2021,H3,100G Nugat,A-26,60.1,3326.488706,0.018067,50.683333333333394,2,22:00,11:48,50,04.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 40 Version X.xlsx
+2021,H2,100G SPEKULATIUS,A-281,30.4,,,,,03:42,16:32:00,25,05.10.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 40 Version X.xlsx
+2021,H2,250G Weiss + Crisp,A-611,10.4,,,,,18:32,21:56,8,05.10.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 40 Version X.xlsx
+2021,H3,100G Halbbitter,A-20,25.0,4396.200814,0.005687,93.89999999999995,5,13:42,19:26,20,05.10.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 40 Version X.xlsx
+2021,H2,100G Knusperkeks,A-214,35.6,3109.40499,0.011449,91.21666666666667,2,22:00,10:32:00,30,11.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 41 Version 1.xlsx
+2021,H2,100G Waffel,A-220,26.5,3306.122449,0.008015,123.46666666666663,,22:00,06:15,20,18.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 42 Version 1.xlsx
+2021,H3,100G Kakao-Mousse,A-294,58.2,4039.900249,0.014406,26.416666666666657,1,22:00,12:34,54,18.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 42 Version 1.xlsx
+2021,H2,100G Knusperkeks,A-214,38.3,3109.40499,0.012317,91.21666666666667,2,07:45,20:10,30,18.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 42 Version 1.xlsx
+2021,H2,100G Nuss-Splitter(*),A-222,12.8734693877551,4468.965517,0.002881,0.08333333333333337,,22:00,01:48,20,18.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 42 Version 2.xlsx
+2021,H3,100G Kakao-Mousse,A-294,59.2,4039.900249,0.014654,26.416666666666657,1,22:00,12:49,54,18.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 42 Version 2.xlsx
+2021,H2,100G Waffel,A-220,25.8,3306.122449,0.007804,123.46666666666663,,22:00:00,09:41,20,18.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 42 Version 2.xlsx
+2021,H3,100G Joghurt,A-27,32.2,4396.200814,0.007325,75.46666666666665,3,09:28,16:51,24,19.10.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 42 Version 2.xlsx
+2021,H2,250G Cranberry Nuss,A-624,18.3,,,,,23:06,05:48,15,20.10.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 42 Version 2.xlsx
+2021,H3,100G Pfefferminz,A-28,40.2,4396.200814,0.009144,80.01666666666662,6,06:25,16:28,30,20.10.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 42 Version 2.xlsx
+2021,H2,100G Knusperkeks,A-214,40.2,3109.40499,0.012929,91.21666666666667,2,22:00:00,12:32:00,32,25.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 43 Version 1.xlsx
+2021,H3,100G Nugat,A-26,76.1,3326.488706,0.022877,50.683333333333394,2,22:00,15:29,70,25.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 43 Version 1.xlsx
+2021,H3,100G Joghurt,A-27,25.1,4396.200814,0.005709,75.46666666666665,3,16:14,21:59,20,25.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 43 Version 1.xlsx
+2021,H2,KK 100G Ghana 81%,A-938,20.2,3596.00444,0.005617,58.98333333333327,4,13:52,19:31,15,25.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 43 Version 1.xlsx
+2021,H2,100G Waffel,A-220,26.6,3306.122449,0.008046,123.46666666666663,,22:00,06:06,24,02.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 44 Version 1.xlsx
+2021,H3,100G Kakao-Mousse,A-294,46.3,4039.900249,0.011461,26.416666666666657,1,22:00,09:34,42,02.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 44 Version 1.xlsx
+2021,H2,100G Knusperkeks,A-214,36.4,3109.40499,0.011706,91.21666666666667,2,08:06,19:54,30,02.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 44 Version 1.xlsx
+2021,H2,100G Knusperkeks,A-214,44.10000000000001,3109.40499,0.014183,91.21666666666667,2,22:00,13:17:00,40,08.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 45 Version 2.xlsx
+2021,H2,KK 100G Nicaragua 61%(*),A-932,25.79768421052632,3596.00444,0.007174,90.49999999999996,6,14:47,22:00,20,08.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 45 Version 2.xlsx
+2021,H2,100G Knusperkeks,A-214,44.10000000000001,3109.40499,0.014183,91.21666666666667,2,22:00,13:17:00,40,08.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 45 Version 2.xlsx
+2021,H2,KK 100G Nicaragua 61%(*),A-932,25.79768421052632,3596.00444,0.007174,90.49999999999996,6,14:47,22:00,20,08.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 45 Version 2.xlsx
+2021,H2,KK 100G Peru 74%,A-933,42.0,3596.00444,0.01168,73.96666666666661,5,23:42,11:28,35,09.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 45 Version 2.xlsx
+2021,H3,100G Joghurt,A-27,36.6,4396.200814,0.008325,75.46666666666665,3,04:11,12:36,26,09.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 45 Version 2.xlsx
+2021,H2,KK 100G Ghana 81%,A-938,22.1,3596.00444,0.006146,58.98333333333327,4,12:28,18:39,15,09.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 45 Version 2.xlsx
+2021,H2,100G Karamell-Mousse,A-2110,25.3,3306.122449,0.007652,117.41666666666659,7,03:22,11:06,20,10.11.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 45 Version 2.xlsx
+2021,H3,100G Halbbitter,A-20,38.2,4396.200814,0.008689,93.89999999999995,5,09:07,17:53,34,10.11.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 45 Version 2.xlsx
+2021,H2,100G Weisse Mango Maracuja,A-217,26.2,,,,,22:00,05:34,20,22.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 47 Version 1.xlsx
+2021,H3,100G Nugat,A-26,66.3,3326.488706,0.019931,50.683333333333394,2,22:00,13:13,56,22.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 47 Version 1.xlsx
+2021,H3,100G Joghurt,A-27,25.1,4396.200814,0.005709,75.46666666666665,3,13:58,19:44,20,22.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 47 Version 1.xlsx
+2021,H2,100G Waffel,A-220,30.0,3306.122449,0.009074,123.46666666666663,,22:22,07:42,24,29.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 48 Version 1.xlsx
+2021,H3,100G Kakao-Mousse,A-294,52.197219,4039.900249,0.01292,26.416666666666657,1,22:00,11:03,42,29.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 48 Version 1.xlsx
+2021,H2,100G Waffel,A-220,30.1,3306.122449,0.009104,123.46666666666663,,22:00,07:11,24,29.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2021,H3,100G Joghurt,A-27,25.074507,4396.200814,0.005704,75.46666666666665,3,00:18,06:03,20,30.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2021,H3,100G Halbbitter,A-20,43.784755,4396.200814,0.00996,93.89999999999995,5,07:33,17:36,34,30.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2021,H2,250G Weiss + Crisp,A-611,12.589259,,,,,07:05,11:12,8,30.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2021,H2,250G Cranberry Nuss,A-624,12.317232,,,,,12:57,17:27,8,30.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2021,H2,250G Alpenmilch,A-603,25.382,2916.291629,0.008704,69.11666666666667,13,03:01,11:47,20,01.12.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2021,H2,100G Waffel,A-220,30.1,3306.122449,0.009104,123.46666666666663,,22:00,07:11,24,29.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2021,H3,100G Joghurt,A-27,25.074507,4396.200814,0.005704,75.46666666666665,3,00:18,06:03,20,30.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2021,H3,100G Halbbitter,A-20,43.784755,4396.200814,0.00996,93.89999999999995,5,07:33,17:36,34,30.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2021,H2,250G Weiss + Crisp,A-611,12.589259,,,,,07:05,11:12,8,30.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2021,H2,250G Cranberry Nuss,A-624,12.317232,,,,,12:57,17:27,8,30.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2021,H2,250G Alpenmilch,A-603,25.382,2916.291629,0.008704,69.11666666666667,13,03:01,11:47,20,01.12.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2021,H2,100G Weisse Mango Maracuja,A-217,33.136,,,,,22:00,07:34,30,06.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 49 Version 1.xlsx
+2021,H3,100G Nugat,A-26,77.983594,3326.488706,0.023443,50.683333333333394,2,22:00,15:54,68,06.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 49 Version 1.xlsx
+2021,H2,100G Knusperkeks,A-214,30.145014,3109.40499,0.009695,91.21666666666667,2,09:34,19:20,25,06.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H2H3/WP_H2+H3_KW 49 Version 1.xlsx
+2021,H4,Mini Nugat,A-36,20.3,2592.0,0.007832,77.08333333333334,6,22:00,06:19,18.2,15.01.,Fr,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H4 RI RUM/Wochenplan_Hohl 4_ÜZ_KW02_Version 2.xlsx
+2021,H4,Mini Marzipan,A-35,26.5,2430.607652,0.010903,67.3,8,07:34,18:55,25.1,15.01.,Fr,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/H4 RI RUM/Wochenplan_Hohl 4_ÜZ_KW02_Version 2.xlsx
+2021,M3,100G Nuss-Splitter,A-222,55.3,4468.965517,0.012374,0.08333333333333337,1,22:00,09:53,50,17.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/M2M3/WP_M2+M3_KW 20 Version 1.xlsx
+2021,M3,100G Nuss-Splitter,A-222,36.2,4468.965517,0.0081,0.08333333333333337,1,22:00,05:46,32,12.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/M2M3/WP_M2+M3_KW 28 Version 1.xlsx
+2021,M3,NK 100G Voll-Nuss,A-700,48.2,2916.291629,0.016528,35.7166666666666,2,06:01,16:23,44,12.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/M2M3/WP_M2+M3_KW 28 Version 1.xlsx
+2021,M3,100G Nuss-Splitter,A-222,38.2,4468.965517,0.008548,0.08333333333333337,1,22:00,06:12,34,19.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/M2M3/WP_M2+M3_KW 29 Version 1.xlsx
+2021,M3,NK 100G Voll-Nuss,A-700,50.2,2916.291629,0.017214,35.7166666666666,2,06:27,17:15,40,19.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/M2M3/WP_M2+M3_KW 29 Version 1.xlsx
+2021,M3,100G Nuss-Splitter,A-222,28.2,4468.965517,0.00631,0.08333333333333337,1,06:00,12:13,24,04.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/M2M3/WP_M2+M3_KW 40 Version 1.xlsx
+2021,M3,100G Nuss-Splitter,A-222,28.2,4468.965517,0.00631,0.08333333333333337,1,06:00,12:13,24,04.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2021/M2M3/WP_M2+M3_KW 40 Version 1.xlsx
+2022,H2,100G Weisse Mango Maracuja,A-217,36.16,,,,,06:00,16:26,34,02.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,25.048505,4039.900249,0.0062,26.416666666666657,1,06:00,11:56,22,02.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2022,H3,100G Nugat,A-26,34.00680000000001,3326.488706,0.010223,50.683333333333394,2,13:26,20:50,24,02.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2022,H2,KK 100G Ghana 81%,A-938,16.272,3596.00444,0.004525,58.98333333333327,4,08:00,12:33,10,03.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 01 2022 Version 1.xlsx
+2022,H2,KK 100G Peru 74%,A-933,21.0,3596.00444,0.00584,73.96666666666661,5,07:00,12:53,18,04.01.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 01 2022 Version 1.xlsx
+2022,H2,100G Weisse Mango Maracuja,A-217,42.048,,,,,22:00,10:08,38,10.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 02 Version 2.xlsx
+2022,H3,100G Kakao-Mousse,A-294,52.01520099999999,4039.900249,0.012875,26.416666666666657,1,22:00,11:00,48,10.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 02 Version 2.xlsx
+2022,H2,100G Weisse Mango Maracuja,A-217,42.048,,,,,22:00,10:08,38,10.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 02 Version 2.xlsx
+2022,H3,100G Kakao-Mousse,A-294,52.01520099999999,4039.900249,0.012875,26.416666666666657,1,22:00,11:00,48,10.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 02 Version 2.xlsx
+2022,H2,100G Weisse Mango Maracuja,A-217,58.4,,,,,22:00,14:52,54,24.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 04 Version 2.xlsx
+2022,H3,100G Kakao-Mousse,A-294,50.22302200000001,4039.900249,0.012432,26.416666666666657,1,22:00,10:27,46,24.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 04 Version 1.xlsx
+2022,H2,100G Weisse Mango Maracuja,A-217,58.4,,,,,22:00,14:52,54,24.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 04 Version 2.xlsx
+2022,H3,100G Kakao-Mousse,A-294,51.53,4039.900249,0.012755,26.416666666666657,1,22:00,10:46,46,24.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 04 Version 2.xlsx
+2022,H3,100G Joghurt,A-27,25.50655,4396.200814,0.005802,75.46666666666665,3,04:42,10:30,20,25.01.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 04 Version 2.xlsx
+2022,H2,100G Karamell-Mousse,A-2110,20.202,3306.122449,0.00611,117.41666666666659,7,06:30,12:40,15,25.01.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 04 Version 2.xlsx
+2022,H3,100G Erdbeer-Joghurt(*),A-237,54.0,3889.555822,0.013883,103.41666666666663,10,12:00,22:00,50,25.01.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 04 Version 2.xlsx
+2022,H3,100G Halbbitter,A-20,25.088,4396.200814,0.005707,93.89999999999995,5,23:30:00,05:31:00,20,26.01.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 04 Version 2.xlsx
+2022,H2,250G Alpenmilch,A-603,34.09,2916.291629,0.01169,69.11666666666667,13,04:24,16:11,24,26.01.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 04 Version 2.xlsx
+2022,H3,100G Pfefferminz,A-28,40.148014,4396.200814,0.009132,80.01666666666662,6,06:16:00,16:13:00,30,26.01.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 04 Version 2.xlsx
+2022,H2,250G Weiss + Crisp,A-611,11.521152,,,,,17:56,21:42,8,26.01.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 04 Version 2.xlsx
+2022,H2,100G Knusperkeks,A-214,25.090509,3109.40499,0.008069,91.21666666666667,2,22:00,06:07,20,31.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 05 Version 1.xlsx
+2022,H2,100G Karamell-Mousse,A-2110,21.042,3306.122449,0.006365,117.41666666666659,7,08:37:00,15:02:00,16,31.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 05 Version 1.xlsx
+2022,H3,100G Nugat,A-26,44.328864,3326.488706,0.013326,50.683333333333394,2,06:00,15:39,34,31.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 05 Version 1.xlsx
+2022,H2,KK 100G Ghana 81%,A-938,20.112,3596.00444,0.005593,58.98333333333327,4,16:32:00,22:10:00,15,31.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 05 Version 1.xlsx
+2022,H3,100G Joghurt,A-27,25.074507,4396.200814,0.005704,75.46666666666665,3,16:24,21:51,20,31.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 05 Version 1.xlsx
+2022,H2,250G Nuss-Splitter,A-622,14.084,,,,,06:53:00,11:30:00,10,02.02.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 05 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,26.1,4039.900249,0.006461,26.416666666666657,1,22:00,04:18,20,07.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 06 Version 1.xlsx
+2022,H3,100G Nugat,A-26,33.2,3326.488706,0.00998,50.683333333333394,2,05:48,13:05,20,07.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 06 Version 1.xlsx
+2022,H3,100G Joghurt,A-27,25.0,4396.200814,0.005687,75.46666666666665,3,13:50,19:20,15,07.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 06 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,26.560656,4039.900249,0.006575,26.416666666666657,1,22:00,04:18,20,07.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 06 Version 2.xlsx
+2022,H3,100G Nugat,A-26,33.446688,3326.488706,0.010055,50.683333333333394,2,05:48,13:05,20,07.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 06 Version 2.xlsx
+2022,H3,100G Joghurt,A-27,25.282528,4396.200814,0.005751,75.46666666666665,3,13:50,19:20,15,07.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 06 Version 2.xlsx
+2022,H2,100G Waffel,A-220,20.134013,3306.122449,0.00609,123.46666666666663,,01:30,07:39,15,08.02.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 06 Version 2.xlsx
+2022,H2,100G Knusperkeks,A-214,24.292429,3109.40499,0.007813,91.21666666666667,2,22:00,05:52,20,14.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 07 Version 1.xlsx
+2022,H3,100G Nugat,A-26,74.142826,3326.488706,0.022289,50.683333333333394,2,22:00,14:09,64,14.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 07 Version 1.xlsx
+2022,H2,KK 100G Nicaragua 61%,A-932,20.048,3596.00444,0.005575,90.49999999999996,6,07:22,12:59,15,14.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 07 Version 1.xlsx
+2022,H3,100G Joghurt,A-27,25.20252,4396.200814,0.005733,75.46666666666665,3,14:54,20:23,20,14.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 07 Version 1.xlsx
+2022,H2,KK 100G Peru 74%,A-933,28.0,3596.00444,0.007786,73.96666666666661,5,13:59,21:49,21,14.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 07 Version 1.xlsx
+2022,H2,100G Weisse Mango Maracuja,A-217,54.08,,,,,22:00,13:37,50,22.02.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 08 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,42.144214,4039.900249,0.010432,26.416666666666657,1,22:00,08:00,38,22.02.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 08 Version 1.xlsx
+2022,H2,100G Knusperkeks,A-214,38.041804,3109.40499,0.012234,91.21666666666667,2,22:45,11:04,30,28.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 09 Version 1.xlsx
+2022,H3,100G Nugat,A-26,64.076813,3326.488706,0.019263,50.683333333333394,2,22:45,12:43,54,28.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 09 Version 1.xlsx
+2022,H2,100G Karamell-Mousse,A-2110,18.48,3306.122449,0.00559,117.41666666666659,7,15:04,20:42,16,28.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 09 Version 1.xlsx
+2022,H2,KK 100G Peru 74%,A-933,21.0,3596.00444,0.00584,73.96666666666661,5,22:12,04:05,14,01.03.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 09 Version 1.xlsx
+2022,H2,100G Alpenmilch,A-18,33.0,3694.412771,0.008932,94.51666666666671,1,22:54,07:55,?,11.03.,Fr,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 10 Konzept.xlsx
+2022,H2,100G Knusperkeks,A-214,58.189818,3109.40499,0.018714,91.21666666666667,2,22:00,16:51,54,14.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 11 Version 2.xlsx
+2022,H2,KK 100G Nicaragua 61%,A-932,14.032,3596.00444,0.003902,90.49999999999996,6,01:20,05:15,12,15.03.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 11 Version 2.xlsx
+2022,H3,100G Joghurt,A-27,30.611061,4396.200814,0.006963,75.46666666666665,3,06:15,12:55,26,15.03.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 11 Version 2.xlsx
+2022,H2,KK 100G Peru 74%,A-933,14.0,3596.00444,0.003893,73.96666666666661,5,06:15,10:09:00,12,15.03.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 11 Version 2.xlsx
+2022,H2,KK 100G Ghana 81%,A-933,11.2,3596.00444,0.003115,73.96666666666661,5,10:09:00,14:21:00,9,15.03.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 11 Version 2.xlsx
+2022,H2,KK 100G Ghana 55%,A-931,11.136,,,,,15:21,18:28,80,15.03.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 11 Version 2.xlsx
+2022,H3,100G Alpenmilch,A-18,66.0,3694.412771,0.017865,94.51666666666671,9,03:30:00,17:53:00,56,24.03.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 12 Version 2.xlsx
+2022,H2,100G Knusperkeks,A-214,33.281328,3109.40499,0.010703,91.21666666666667,2,22:00,08:47,30,28.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 13 Version 1.xlsx
+2022,H2,KK 100G Ghana 81%,A-938,10.012,3596.00444,0.002784,58.98333333333327,4,10:47,13:35,8,28.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 13 Version 1.xlsx
+2022,H3,100G Kirsch Mandel,A-219,52.18,,,,,10:00,21:33,48,28.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 13 Version 1.xlsx
+2022,H2,KK 100G Peru 74%,A-933,21.0,3596.00444,0.00584,73.96666666666661,5,14:35,20:28,16,28.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 13 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,42.21422099999999,4039.900249,0.010449,26.416666666666657,1,22:00,12:30:00,40,04.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 14 Version 2.xlsx
+2022,H3,100G Nugat,A-26,34.4,3326.488706,0.010341,50.683333333333394,2,22:00,05:29:00,30,05.04.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 14 Version 2.xlsx
+2022,H2,100G Knusperkeks,A-214,42.0,3109.40499,0.013507,91.21666666666667,2,22:13,09:52:00,36,05.04.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 14 Version 2.xlsx
+2022,H3,100G Joghurt,A-27,28.2,4396.200814,0.006415,75.46666666666665,3,10:30:00,16:53:00,20,05.04.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 14 Version 2.xlsx
+2022,H3,100G Nugat,A-26,55.37107199999999,3326.488706,0.016646,50.683333333333394,2,22:00,10:04,50,11.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 15 Version 1.xlsx
+2022,H2,KK 100G Nicaragua 61%,A-932,11.2,3596.00444,0.003115,90.49999999999996,6,16:16,19:24,9,11.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 15 Version 1.xlsx
+2022,H3,100G Halbbitter,A-20,15.043008,4396.200814,0.003422,93.89999999999995,5,01:39,04:55,12,21.04.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 16 Version 2.xlsx
+2022,H2,250G Weiss + Crisp,A-611,10.045004,,,,,14:17,17:34,8,21.04.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 16 Version 2.xlsx
+2022,H3,100G Pfefferminz,A-28,22.162216,4396.200814,0.005041,80.01666666666662,6,05:40,10:55,20,21.04.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 16 Version 2.xlsx
+2022,H2,250G Nugat,A-601,10.0,3076.923077,0.00325,92.06666666666669,14,19:19,22:00,8,21.04.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 16 Version 2.xlsx
+2022,H2,100G Weisse Mango Maracuja,A-217,36.16,,,,,06:00,16:26,34,02.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,25.048505,4039.900249,0.0062,26.416666666666657,1,06:00,11:56,22,02.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2022,H3,100G Nugat,A-26,34.00680000000001,3326.488706,0.010223,50.683333333333394,2,13:26,20:50,24,02.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2022,H2,100G Waffel,A-220,24.0,3306.122449,0.007259,123.46666666666663,,06:00,13:28,18,16.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 20 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,32.0,4039.900249,0.007921,26.416666666666657,1,06:00,13:41,28,16.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 20 Version 1.xlsx
+2022,H3,100G Nugat,A-26,44.376874,3326.488706,0.01334,50.683333333333394,2,22:00,07:40,34,23.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 21 Version 1.xlsx
+2022,H2,100G Knusperkeks,A-214,24.222422,3109.40499,0.00779,91.21666666666667,2,06:00,13:50,20,23.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 21 Version 1.xlsx
+2022,H3,100G Joghurt,A-27,25.056,4396.200814,0.005699,75.46666666666665,3,08:25,13:52,20,23.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 21 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,27.97451627067669,4039.900249,0.006925,26.416666666666657,1,15:22,22:00,24,23.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 21 Version 1.xlsx
+2022,H2,KK 100G Nicaragua 61%,A-932,22.128,3596.00444,0.006153,90.49999999999996,6,15:40,21:52,16,23.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 21 Version 1.xlsx
+2022,H2,100G Waffel,A-220,15.20552,3306.122449,0.004599,123.46666666666663,,05:27,10:05,10,30.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 22 Version 1.xlsx
+2022,H2,100G Knusperkeks,A-214,30.2,3109.40499,0.009712,91.21666666666667,2,22:00,07:48,24,07.06.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 23 Version 1.xlsx
+2022,H2,100G Kokos,A-298,33.3,3694.412771,0.009014,107.86666666666665,,11:28,20:32,30,07.06.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 23 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,26.154615,4039.900249,0.006474,26.416666666666657,1,06:00,12:12,24,27.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 26 Version 1.xlsx
+2022,H3,100G Nugat,A-26,32.262451,3326.488706,0.009699,50.683333333333394,2,13:42,20:43,26,27.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 26 Version 1.xlsx
+2022,H2,100G Karamell-Mousse,A-2110,16.324,3306.122449,0.004938,117.41666666666659,7,06:00,10:59,12,04.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 27 Version 1.xlsx
+2022,H3,100G Nugat,A-26,70.302058,3326.488706,0.021134,50.683333333333394,2,06:00,21:19,66,04.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 27 Version 1.xlsx
+2022,H2,KK 100G Nicaragua 61%,A-932,14.128,3596.00444,0.003929,90.49999999999996,6,12:29,16:26,10,04.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 27 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,26.462646,4039.900249,0.00655,26.416666666666657,1,22:00,04:17,22,11.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 28 Version 1.xlsx
+2022,H3,100G Nugat,A-26,42.216442,3326.488706,0.012691,50.683333333333394,2,05:47,14:59,36,11.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 28 Version 1.xlsx
+2022,H2,100G Knusperkeks,A-214,24.250425,3109.40499,0.007799,91.21666666666667,2,06:00,13:51,22,18.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 29 Version 1.xlsx
+2022,H2,100G Karamell-Mousse,A-2110,16.24,3306.122449,0.004912,117.41666666666659,7,16:21,21:18,10,18.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 29 Version 1.xlsx
+2022,H3,100G Pfefferminz,A-28,31.763176,4396.200814,0.007225,80.01666666666662,6,13:09,20:41,28,03.08.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 31 Version 2.xlsx
+2022,H2,KK 100G Ghana 81%,A-938,16.112,3596.00444,0.004481,58.98333333333327,4,10:00,14:30,14,04.08.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 31 Version 2.xlsx
+2022,H3,100G Marzipan,A-25,68.30165799999999,4396.200814,0.015537,111.81666666666672,7,06:00,21:33,60,04.08.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 31 Version 2.xlsx
+2022,H2,KK 100G Ghana 55%,A-931,20.112,,,,,15:30,21:08,16,04.08.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 31 Version 2.xlsx
+2022,H3,100G Pfefferminz,A-28,31.763176,4396.200814,0.007225,80.01666666666662,6,13:09,20:41,28,03.08.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 31 Version 2.xlsx
+2022,H2,KK 100G Ghana 81%,A-938,16.112,3596.00444,0.004481,58.98333333333327,4,10:00,14:30,14,04.08.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 31 Version 2.xlsx
+2022,H3,100G Marzipan,A-25,68.30165799999999,4396.200814,0.015537,111.81666666666672,7,06:00,21:33,60,04.08.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 31 Version 2.xlsx
+2022,H2,KK 100G Ghana 55%,A-931,20.112,,,,,15:30,21:08,16,04.08.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 31 Version 2.xlsx
+2022,H3,100G Pfefferminz,A-28,31.763176,4396.200814,0.007225,80.01666666666662,6,13:09,20:41,28,03.08.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 31 Version 2.xlsx
+2022,H2,KK 100G Ghana 81%,A-938,16.112,3596.00444,0.004481,58.98333333333327,4,10:00,14:30,14,04.08.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 31 Version 2.xlsx
+2022,H3,100G Marzipan,A-25,68.30165799999999,4396.200814,0.015537,111.81666666666672,7,06:00,21:33,60,04.08.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 31 Version 2.xlsx
+2022,H2,KK 100G Ghana 55%,A-931,20.112,,,,,15:30,21:08,16,04.08.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 31 Version 2.xlsx
+2022,H2,100G Waffel,A-220,36.05,3306.122449,0.010904,123.46666666666663,,22:00,09:00,32,08.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 32 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,40.272027,4039.900249,0.009969,26.416666666666657,1,22:00,07:33,36,08.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 32 Version 1.xlsx
+2022,H3,100G Nugat,A-26,40.1,3326.488706,0.012055,50.683333333333394,2,09:03,17:57,30,08.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 32 Version 1.xlsx
+2022,H2,100G Knusperkeks,A-214,30.089009,3109.40499,0.009677,91.21666666666667,2,22:00,07:44,26,15.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 33 Version 1.xlsx
+2022,H3,100G Nugat,A-26,66.205238,3326.488706,0.019902,50.683333333333394,2,22:00,12:25,60,15.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 33 Version 1.xlsx
+2022,H3,100G Joghurt,A-27,36.051605,4396.200814,0.008201,75.46666666666665,3,13:10,21:01,30,15.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 33 Version 1.xlsx
+2022,H3,100G Erdbeer-Joghurt,A-237,50.005,3889.555822,0.012856,103.41666666666663,10,22:00,08:54,46,22.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 34 Version 1.xlsx
+2022,H3,100G Nugat,A-26,40.072013,3326.488706,0.012046,50.683333333333394,2,10:24,19:08,35,22.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 34 Version 1.xlsx
+2022,H2,100G Waffel,A-220,50.37703699999999,3306.122449,0.015237,123.46666666666663,,22:00,13:23,48,19.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 38 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,54.241424,4039.900249,0.013426,26.416666666666657,1,22:00,10:52,50,19.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 38 Version 1.xlsx
+2022,H2,100G Knusperkeks,A-214,30.40304,3109.40499,0.009778,91.21666666666667,2,22:00,07:51,26,26.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 39 Version 1.xlsx
+2022,H3,100G Nugat,A-26,98.099616,3326.488706,0.02949,50.683333333333394,2,22:00,19:23,90,26.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 39 Version 1.xlsx
+2022,H2,100G Karamell-Mousse,A-2110,20.16,3306.122449,0.006098,117.41666666666659,7,10:21,16:30,18,26.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 39 Version 1.xlsx
+2022,H2,100G Waffel,A-220,38.069807,3306.122449,0.011515,123.46666666666663,,22:00,09:37,30,04.10.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 40 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,38.139814,4039.900249,0.009441,26.416666666666657,1,22:00,07:03,36,04.10.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 40 Version 1.xlsx
+2022,H2,100G Knusperkeks(*),A-214,33.3,3109.40499,0.010709,91.21666666666667,2,11:07,22:00,30,04.10.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 40 Version 1.xlsx
+2022,H3,100G Nugat,A-26,50.1,3326.488706,0.015061,50.683333333333394,2,08:33,19:27,46,04.10.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 40 Version 1.xlsx
+2022,H2,100G Knusperkeks,A-214,48.094809,3109.40499,0.015468,91.21666666666667,2,22:00,13:34,40,10.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 41 Version 1.xlsx
+2022,H3,100G Nugat,A-26,88.113619,3326.488706,0.026488,50.683333333333394,2,22:00,17:12,80,10.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 41 Version 1.xlsx
+2022,H2,100G Knusperkeks,A-214,44.062406,3109.40499,0.014171,91.21666666666667,2,22:00,12:16,40,24.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_Kw 43 Version 1.xlsx
+2022,H3,100G Nugat,A-26,84.08081299999999,3326.488706,0.025276,50.683333333333394,2,22:00,16:19,80,24.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_Kw 43 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,38.40584,4039.900249,0.009507,26.416666666666657,1,22:00,07:07,34,02.11.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 44 Version 1.xlsx
+2022,H2,100G Knusperkeks,A-214,30.086,3109.40499,0.009676,91.21666666666667,2,08:41,18:25,25,02.11.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 44 Version 1.xlsx
+2022,H2,100G Knusperkeks,A-214,56.13,3109.40499,0.018052,91.21666666666667,2,22:00,16:11,50,07.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 45 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,72.13521300000001,4039.900249,0.017856,26.416666666666657,1,22:00,15:07,68,14.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 46 Version 1.xlsx
+2022,H3,100G Kakao-Mousse,A-294,70.245024,4039.900249,0.017388,26.416666666666657,1,22:00,14:40,65,28.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 48 Version 1.xlsx
+2022,H2,100G Weisse Mango Maracuja,A-217,28.1,,,,,22:30,06:35,24,28.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 48 Version 1.xlsx
+2022,H2,100G Knusperkeks,A-214,60.146,3109.40499,0.019343,91.21666666666667,2,22:00,17:29,56,05.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 49 Version 1.xlsx
+2022,H2,100G Waffel,A-220,20.0,3306.122449,0.006049,123.46666666666663,,22:00,04:06,16,19.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 51 Version1.xlsx
+2022,H3,100G Nugat,A-26,99.4,3326.488706,0.029881,50.683333333333394,2,22:00,19:41,90,19.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 51 Version1.xlsx
+2022,H2,100G Knusperkeks,A-214,20.326,3109.40499,0.006537,91.21666666666667,2,05:36,12:11,18,19.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2+H3_KW 51 Version1.xlsx
+2022,H2,100G Knusperkeks,A-214,43.194319,3109.40499,0.013892,91.21666666666667,2,22:00,11:59,38,12.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2_H3_KW 37_Version 1.xlsx
+2022,H3,100G Nugat,A-26,102.242444,3326.488706,0.030736,50.683333333333394,2,22:00,20:17,90,12.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/H2H3/WP_H2_H3_KW 37_Version 1.xlsx
+2022,M3,"100G Mandel Orange 
+(Rohstoff RF-6722 knapp)",A-212,30.486778,4468.965517,0.006822,52.60000000000003,11,12:00,18:48,20,30.03.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/M2M3/WP_M2_M3_KW 13 Version 1.xlsx
+2022,M3,NK 100G Voll-Nuss,A-700,32.0,2916.291629,0.010973,35.7166666666666,2,13:18:00,21:30:00,28,04.10.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2022/M2M3/WP_M2_M3_KW 40_Version 1.xlsx
+2023,H2,100G Knusperkeks,A-214,24.068407,3109.40499,0.007741,91.21666666666667,2,22:00,05:47,22,23.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 04 Version 1.xlsx
+2023,H2,100G Waffel,A-220,20.092009,3306.122449,0.006077,123.46666666666663,,07:17,13:25,15,23.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 04 Version 1.xlsx
+2023,H3,100G Nugat,A-26,68.189235,3326.488706,0.020499,50.683333333333394,2,22:00,12:55:00,58,06.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 06 Version 1.xlsx
+2023,H2,100G Weisse Mango Maracuja,A-217,44.224,,,,,23:30,12:16,40,06.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 06 Version 1.xlsx
+2023,H3,100G Joghurt,A-27,30.4,4396.200814,0.006915,75.46666666666665,3,13:40:00,20:49:00,25,06.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 06 Version 1.xlsx
+2023,H2,100G Knusperkeks,A-214,30.20102,3109.40499,0.009713,91.21666666666667,2,22:00,07:47,25,13.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 07 Version 1.xlsx
+2023,H2,KK 100G Nicaragua 61%,A-932,20.048,3596.00444,0.005575,90.49999999999996,6,09:47,15:24,12,13.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 07 Version 1.xlsx
+2023,H3,100G Nugat,A-26,58.0,3326.488706,0.017436,50.683333333333394,2,06:00,18:38,48,13.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 07 Version 1.xlsx
+2023,H2,100G Weisse Mango Maracuja,A-217,54.128,,,,,22:00,13:38,50,20.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 08 Version 1.xlsx
+2023,H3,100G Kakao-Mousse,A-294,22.668267,4039.900249,0.005611,26.416666666666657,1,06:00,11:22,20,20.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 08 Version 1.xlsx
+2023,H2,100G Knusperkeks,A-214,30.257025,3109.40499,0.009731,91.21666666666667,2,22:00,07:48,26,27.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_Kw 09 Version 1.xlsx
+2023,H2,KK 100G Ghana 81%,A-938,20.0,3596.00444,0.005562,58.98333333333327,4,09:48,15:24,16,27.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_Kw 09 Version 1.xlsx
+2023,H3,100G Nugat,A-26,68.30165799999999,3326.488706,0.020533,50.683333333333394,2,06:00,20:53,58,27.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_Kw 09 Version 1.xlsx
+2023,H2,100G Weisse Mango Maracuja,A-217,50.176,,,,,22:00,12:29,46,06.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 10 Version 1.xlsx
+2023,H3,100G Nugat,A-26,55.019002,3326.488706,0.01654,50.683333333333394,2,07:14,19:13,45,06.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 10 Version 1.xlsx
+2023,H2,100G Knusperkeks,A-214,31.279128,3109.40499,0.01006,91.21666666666667,2,22:00,08:08,28,13.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 11 Version 1.xlsx
+2023,H2,100G Weisse Mango Maracuja,A-217,44.128,,,,,22:00,10:45,42,20.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 12 Version 1.xlsx
+2023,H2,100G Waffel,A-220,20.078008,3306.122449,0.006073,123.46666666666663,,12:45,18:52,16,20.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 12 Version 1.xlsx
+2023,H2,100G Knusperkeks,A-214,30.3,3109.40499,0.009745,91.21666666666667,2,22:00,07:29:00,26,27.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 13 Version 1.xlsx
+2023,H3,100G Nugat,A-26,78.399677,3326.488706,0.023568,50.683333333333394,2,22:00,15:05,74,27.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 13 Version 1.xlsx
+2023,H3,100G Joghurt,A-27,28.066806,4396.200814,0.006384,75.46666666666665,3,15:50,21:57,24,27.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 13 Version 1.xlsx
+2023,H2,100G Weisse Mango Maracuja,A-217,30.016,,,,,22:00,06:40,20,03.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 14 Version 1.xlsx
+2023,H2,100G Waffel,A-220,22.024202,3306.122449,0.006662,123.46666666666663,,08:40,15:23,16,03.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 14 Version 1.xlsx
+2023,H2,100G Knusperkeks,A-214,34.09941000000001,3109.40499,0.010967,91.21666666666667,2,22:00,09:02,30,12.04.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 15 Version 1.xlsx
+2023,H3,100G Nugat,A-26,54.170832,3326.488706,0.016285,50.683333333333394,2,06:00,17:48,50,12.04.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 15 Version 1.xlsx
+2023,H2,250G Knusperflakes,A-623,7.404,,,,,16:55,19:59,5,12.04.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 15 Version 1.xlsx
+2023,H2,100G Knusperkeks,A-214,40.156015,3109.40499,0.012914,91.21666666666667,2,22:00,11:00,36,24.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 17 Version 1 (1).xlsx
+2023,H3,100G Nugat,A-26,90.098016,3326.488706,0.027085,50.683333333333394,2,22:00,17:38,80,24.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 17 Version 1 (1).xlsx
+2023,H2,100G Knusperkeks,A-214,40.156015,3109.40499,0.012914,91.21666666666667,2,22:00,11:00,36,24.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 17 Version 1 (1).xlsx
+2023,H3,100G Nugat,A-26,90.098016,3326.488706,0.027085,50.683333333333394,2,22:00,17:38,80,24.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 17 Version 1 (1).xlsx
+2023,H2,100G Karamell-Mousse,A-2110,18.626,3306.122449,0.005634,117.41666666666659,7,13:28,19:09,?,08.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2023,H2,100G Weisse Mango Maracuja,A-217,20.0,,,,,22:00,03:46,15,02.05.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2023,H3,100G Kakao-Mousse,A-294,22.1,4039.900249,0.00547,26.416666666666657,1,22:00,03:43,18,02.05.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2023,H3,100G Nugat,A-26,40.008,3326.488706,0.012027,50.683333333333394,2,05:13,13:56,30,02.05.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2023,H3,100G Joghurt,A-27,20.082008,4396.200814,0.004568,75.46666666666665,3,14:41,19:03,15,02.05.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2023,H2,100G Karamell-Mousse,A-2110,18.626,3306.122449,0.005634,117.41666666666659,7,13:28,19:09,?,08.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2023,H2,100G Karamell-Mousse,A-2110,18.052,3306.122449,0.00546,117.41666666666659,7,12:50,18:20,?,08.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 19 Version 1.xlsx
+2023,H2,100G Knusperkeks,A-214,38.097809,3109.40499,0.012252,91.21666666666667,2,22:00,10:20,34,08.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 19 Version 1.xlsx
+2023,H2,100G Karamell-Mousse,A-2110,18.052,3306.122449,0.00546,117.41666666666659,7,12:50,18:20,?,08.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 19 Version 1.xlsx
+2023,H2,100G Weisse Mango Maracuja,A-217,16.0,,,,,22:00,02:37,12,15.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 20 Version 1.xlsx
+2023,H2,100G Waffel,A-220,12.013201,3306.122449,0.003634,123.46666666666663,,04:37,08:17,8,15.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 20 Version 1.xlsx
+2023,H2,250G Weiss + Crisp,A-611,10.081008,,,,,11:17,14:35,8,15.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 20 Version 1.xlsx
+2023,H2,250G Nugat,A-601,14.2,3076.923077,0.004615,92.06666666666669,14,16:20,21:04,10,15.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 20 Version 1.xlsx
+2023,H3,100G Kakao-Mousse,A-294,14.029403,4039.900249,0.003473,26.416666666666657,1,15:58,19:17,10,15.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 20 Version 1.xlsx
+2023,H2,100G Knusperkeks,A-214,22.022,3109.40499,0.007082,91.21666666666667,2,22:00,05:08,18,22.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 21 Version 1.xlsx
+2023,H3,100G Kakao-Mousse,A-294,14.183418,4039.900249,0.003511,26.416666666666657,1,06:00,09:22,10,22.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 21 Version 1.xlsx
+2023,H3,100G Nugat,A-26,25.013002,3326.488706,0.007519,50.683333333333394,2,10:52,16:19,20,22.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 21 Version 1.xlsx
+2023,H2,KK 100G Ghana 81%,A-938,20.064,3596.00444,0.00558,58.98333333333327,4,12:10:00,17:17:00,16,22.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 21 Version 1.xlsx
+2023,H3,100G Joghurt,A-27,16.113611,4396.200814,0.003665,75.46666666666665,3,17:04,20:34,10,22.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 21 Version 1.xlsx
+2023,H2,100G Knusperkeks,A-214,44.0,3109.40499,0.014151,91.21666666666667,2,22:00,12:28,34,05.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 23 Version 1.xlsx
+2023,H3,100G Nugat,A-26,25.125024,3326.488706,0.007553,50.683333333333394,2,22:00,03:28,20,05.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 23 Version 1.xlsx
+2023,H3,100G Kokos,A-298,25.066022,3694.412771,0.006785,107.86666666666665,4,04:58,10:25,20,05.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 23 Version 1.xlsx
+2023,H3,100G Halbbitter,A-20,18.0,4396.200814,0.004094,93.89999999999995,5,11:55,15:31,14,05.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 23 Version 1.xlsx
+2023,H2,100G Weisse Mango Maracuja,A-217,12.16,,,,,22:00,01:30,11,12.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2023,H2,100G Waffel,A-220,12.223222,3306.122449,0.003697,123.46666666666663,,03:30,07:14,8,12.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2023,H2,250G Knusper Nuss,A-613,10.08,2916.291629,0.003456,111.24999999999994,,09:44,13:15,5,12.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2023,H2,250G Nugat,A-601,12.39,3076.923077,0.004027,92.06666666666669,14,15:45,19:48,8,12.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2023,H2,100G Waffel,A-220,20.120012,3306.122449,0.006086,123.46666666666663,,22:00,04:08,16,19.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 25 Version 1.xlsx
+2023,H3,100G Kakao-Mousse,A-294,22.40224,4039.900249,0.005545,26.416666666666657,1,22:00,03:19,18,26.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 26 Version 1.xlsx
+2023,H3,100G Nugat,A-26,28.256,3326.488706,0.008494,50.683333333333394,2,04:49,10:58,25,26.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 26 Version 1.xlsx
+2023,H3,100G Kakao-Mousse,A-294,22.318232,4039.900249,0.005524,26.416666666666657,1,22:00,03:17,16,10.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 28 Version 2.xlsx
+2023,H3,100G Nugat,A-26,28.05361,3326.488706,0.008433,50.683333333333394,2,04:47,10:53,20,10.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 28 Version 2.xlsx
+2023,H2,100G Knusperkeks,A-214,58.20382,3109.40499,0.018719,91.21666666666667,2,22:00,16:51,50,31.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 31 Version 1.xlsx
+2023,H3,100G Kakao-Mousse,A-294,36.025602,4039.900249,0.008917,26.416666666666657,1,22:00,06:33,32,07.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 32 Version 1.xlsx
+2023,H2,100G Weisse Mango Maracuja,A-217,22.112,,,,,06:00,12:23,16,07.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 32 Version 1.xlsx
+2023,H2,250G Joghurt,A-602,10.0,,,,,18:00:00,21:30:00,5,22.08.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 34 Version 2.xlsx
+2023,H2,100G Olympia,A-280,32.0,,,,,23:30:00,08:00:00,30,23.08.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 34 Version 2.xlsx
+2023,H2,100G Chrunchy Creamy Winter,A-942,27.0,,,,,10:00:00,17:00:00,25,23.08.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 34 Version 2.xlsx
+2023,H2,100G Waffel,A-220,36.053605,3306.122449,0.010905,123.46666666666663,,22:00,09:00,34,04.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 36 Version 1.xlsx
+2023,H3,100G Kakao-Mousse,A-294,46.120612,4039.900249,0.011416,26.416666666666657,1,22:00,08:57,42,04.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 36 Version 1.xlsx
+2023,H2,250G Weiss + Crisp,A-611,11.341134,,,,,11:30,15:13,8,04.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 36 Version 1.xlsx
+2023,H2,250G Nugat,A-601,14.0,3076.923077,0.00455,92.06666666666669,14,16:58,21:41,10,04.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 36 Version 1.xlsx
+2023,H2,100G Knusperkeks,A-214,55.115511,3109.40499,0.017725,91.21666666666667,2,22:00,15:51,50,11.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 37 Version 1.xlsx
+2023,H3,100G Nugat,A-26,58.123622,3326.488706,0.017473,50.683333333333394,2,22:00,10:40,48,11.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 37 Version 1.xlsx
+2023,H3,100G Joghurt,A-27,25.010501,4396.200814,0.005689,75.46666666666665,3,11:25,16:52,15,11.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 37 Version 1.xlsx
+2023,H2,250G Cranberry Nuss,A-624,15.233523,,,,,14:36,20:10,?,11.10.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 37 Version 1.xlsx
+2023,H3,100G Nugat,A-26,92.194435,3326.488706,0.027715,50.683333333333394,2,22:00,18:05,82,23.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 43 Version 1.xlsx
+2023,H3,100G Nugat,A-26,92.06641,3326.488706,0.027677,50.683333333333394,2,22:00,18:04,82,06.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 45 Version 1.xlsx
+2023,H2,100G Waffel,A-220,30.1,3306.122449,0.009104,123.46666666666663,,22:00,07:11,28,13.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 46 Version 1.xlsx
+2023,H3,100G Kakao-Mousse,A-294,52.183218,4039.900249,0.012917,26.416666666666657,1,22:00,10:23,48,13.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 46 Version 1.xlsx
+2023,H2,100G Knusperkeks,A-214,30.173017,3109.40499,0.009704,91.21666666666667,2,08:41,18:27,20,13.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 46 Version 1.xlsx
+2023,H3,100G Nugat,A-26,46.281254,3326.488706,0.013913,50.683333333333394,2,11:53,21:58,36,13.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 46 Version 1.xlsx
+2023,H2,250G Goldschatz,A-606,20.146,2916.291629,0.006908,41.43333333333326,8,22:00,04:58,14,20.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 47 Version 1.xlsx
+2023,H3,100G Nugat,A-26,92.0,3326.488706,0.027657,50.683333333333394,2,22:00,18:03,82,20.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 47 Version 1.xlsx
+2023,H2,218g Sweet N Salty Duo,A-633,26.5,2119.032047,0.012506,135.8666666666667,9,06:28,22:00,22,20.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 47 Version 1.xlsx
+2023,H3,100G Nugat,A-26,66.14122599999999,3326.488706,0.019883,50.683333333333394,2,22:00,12:25,60,27.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2023,H2,100g Weisse Zitronenmousse,A-285,36.036,3498.920086,0.010299,28.51666666666661,,06:00,15:51,32,27.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2023,H3,100G Nugat,A-26,66.14122599999999,3326.488706,0.019883,50.683333333333394,2,22:00,12:25,60,27.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2023,H2,100g Weisse Zitronenmousse,A-285,36.036,3498.920086,0.010299,28.51666666666661,,06:00,15:51,32,27.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2023,H2,100G Knusperkeks,A-214,52.2,3109.40499,0.016788,91.21666666666667,2,05:11,22:06:00,50,28.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2023,H3,100G Pfefferminz,A-28,38.371837,4396.200814,0.008728,80.01666666666662,6,00:42,09:48,34,28.11.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 48 Version 2.xlsx
+2023,H2,100G Waffel,A-220,28.156815,3306.122449,0.008517,123.46666666666663,,22:00,06:36,26,04.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 50 Version 2.xlsx
+2023,H3,100G Nugat,A-26,105.909178,3326.488706,0.031838,50.683333333333394,2,22:00,21:05,100,04.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 50 Version 2.xlsx
+2023,H2,100G Waffel,A-220,28.156815,3306.122449,0.008517,123.46666666666663,,22:00,06:36,26,04.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 50 Version 2.xlsx
+2023,H3,100G Nugat,A-26,105.909178,3326.488706,0.031838,50.683333333333394,2,22:00,21:05,100,04.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 50 Version 2.xlsx
+2023,H2,100G Waffel,A-220,28.156815,3306.122449,0.008517,123.46666666666663,,22:00,06:36,26,04.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 50 Version 2.xlsx
+2023,H3,100G Nugat,A-26,105.909178,3326.488706,0.031838,50.683333333333394,2,22:00,21:05,100,04.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 50 Version 2.xlsx
+2023,H2,250G Goldschatz,A-606,17.92,2916.291629,0.006145,41.43333333333326,8,22:00,04:12,14,11.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 50 Version 2.xlsx
+2023,H2,218g Sweet N Salty Duo,A-633,28.322556,2119.032047,0.013366,135.8666666666667,9,05:42,20:07,24,11.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 50 Version 2.xlsx
+2023,H2,100G Waffel,A-220,28.156815,3306.122449,0.008517,123.46666666666663,,22:00,06:36,26,04.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 50 Version 2.xlsx
+2023,H3,100G Nugat,A-26,105.909178,3326.488706,0.031838,50.683333333333394,2,22:00,21:05,100,04.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 50 Version 2.xlsx
+2023,H2,250G Goldschatz,A-606,17.92,2916.291629,0.006145,41.43333333333326,8,22:00,04:12,14,11.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 50 Version 2.xlsx
+2023,H2,218g Sweet N Salty Duo,A-633,28.322556,2119.032047,0.013366,135.8666666666667,9,05:42,20:07,24,11.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 50 Version 2.xlsx
+2023,H2,100g Weisse Zitronenmousse,A-285,58.156,3498.920086,0.016621,28.51666666666661,,22:00,13:54,55,18.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 51 Version 1.xlsx
+2023,H3,100G Nugat,A-26,56.747347,3326.488706,0.017059,50.683333333333394,2,22:00,10:22,50,18.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 51 Version 1.xlsx
+2023,H2,100G Waffel,A-220,20.2,3306.122449,0.00611,123.46666666666663,,15:54,22:03:00,18,18.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 51 Version 1.xlsx
+2023,H3,100G Joghurt,A-27,40.2,4396.200814,0.009144,75.46666666666665,3,11:07,19:56,30,18.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/H2H3/WP_H2+H3_KW 51 Version 1.xlsx
+2023,M3,100G Haselnuss,A-222,48.0,4468.965517,0.010741,0.08333333333333337,1,22:00,09:28,46,28.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2+M3_KW 35 Version 1.xlsx
+2023,M2,100G Weiss + Crisp,A-292,15.524258,2916.291629,0.005323,3.2499999999999933,1,06:00,11:52,0,18.07.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2_M3_KW 26_Version 2.xlsx
+2023,M2,NK 100G Weisse Voll-Nuss(*),A-701,25.49426745833334,2916.291629,0.008742,18.283333333333395,2,12:22,22:00,16.8,18.07.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2_M3_KW 26_Version 2.xlsx
+2023,M2,100g Weiße Smarties,A-208,27.68,2916.291629,0.009492,48.06666666666663,,07:16,16:57,0,19.07.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2_M3_KW 26_Version 2.xlsx
+2023,M2,NK 100G Honig-Salz-Mandel(*),A-704,11.77642751298701,2916.291629,0.004038,50.800000000000026,3,16:57,22:00,17.4,19.07.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2_M3_KW 26_Version 2.xlsx
+2023,M2,100G Trauben-Nuss,A-22,17.3,2916.291629,0.005932,41.24999999999995,4,01:39,07:42:00,16.9,20.07.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2_M3_KW 26_Version 2.xlsx
+2023,M2,100g Vollmilch Smarties,A-206,18.4,2916.291629,0.006309,44.31666666666672,,07:42:00,15:08:00,49.5,20.07.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2_M3_KW 26_Version 2.xlsx
+2023,M2,100G Rum-Trauben-Nuss,A-12,17.3,2916.291629,0.005932,21.19999999999997,5,15:38:00,21:36:00,17,20.07.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2_M3_KW 26_Version 2.xlsx
+2023,M2,100G Weiss + Crisp,A-292,15.524258,2916.291629,0.005323,3.2499999999999933,1,06:00,11:52,0,18.07.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2_M3_KW 26_Version 2.xlsx
+2023,M2,NK 100G Weisse Voll-Nuss(*),A-701,25.49426745833334,2916.291629,0.008742,18.283333333333395,2,12:22,22:00,16.8,18.07.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2_M3_KW 26_Version 2.xlsx
+2023,M2,100g Weiße Smarties,A-208,27.68,2916.291629,0.009492,48.06666666666663,,07:16,16:57,0,19.07.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2_M3_KW 26_Version 2.xlsx
+2023,M2,NK 100G Honig-Salz-Mandel(*),A-704,11.77642751298701,2916.291629,0.004038,50.800000000000026,3,16:57,22:00,17.4,19.07.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2_M3_KW 26_Version 2.xlsx
+2023,M2,100G Trauben-Nuss,A-22,17.3,2916.291629,0.005932,41.24999999999995,4,01:39,07:42:00,16.9,20.07.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2_M3_KW 26_Version 2.xlsx
+2023,M2,100g Vollmilch Smarties,A-206,18.4,2916.291629,0.006309,44.31666666666672,,07:42:00,15:08:00,49.5,20.07.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2_M3_KW 26_Version 2.xlsx
+2023,M2,100G Rum-Trauben-Nuss,A-12,17.3,2916.291629,0.005932,21.19999999999997,5,15:38:00,21:36:00,17,20.07.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2023/M2M3/WP_M2_M3_KW 26_Version 2.xlsx
+2024,H2,250G Knusper Nuss,A-613,13.92,2916.291629,0.004773,111.24999999999994,,11:01,15:53,(35),01.03.,Fr,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 03 Konzept.xlsx
+2024,H3,100G Kakao-Mousse,A-294,72.149214,4039.900249,0.017859,26.416666666666657,1,22:00,15:07,68,15.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 03 Version 1.xlsx
+2024,H2,218g Sweet N Salty Duo,A-633,16.603,2119.032047,0.007835,135.8666666666667,9,11:51,20:18,12,15.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 03 Version 1.xlsx
+2024,H2,250G Goldschatz,A-606,24.164,2916.291629,0.008286,41.43333333333326,8,22:00,06:21,20,05.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 06 Version 1.xlsx
+2024,H3,100G Kakao-Mousse,A-294,48.796879,4039.900249,0.012079,26.416666666666657,1,22:00,09:35,44,05.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 06 Version 1.xlsx
+2024,H2,218g Sweet N Salty Duo,A-633,19.532096,2119.032047,0.009217,135.8666666666667,9,07:51,17:48,16,05.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 06 Version 1.xlsx
+2024,H3,100G Kakao-Mousse,A-294,44.678467,4039.900249,0.011059,26.416666666666657,1,22:00,08:36,40,19.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 08 Version 1.xlsx
+2024,H3,100G Nugat,A-26,38.439686,3326.488706,0.011556,50.683333333333394,2,10:06,21:10,28,19.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 08 Version 1.xlsx
+2024,H3,100G Nugat,A-26,50.05801,3326.488706,0.015048,50.683333333333394,2,22:00,12:25,40,26.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 09 Version 1.xlsx
+2024,H2,KK 100G Nicaragua 61%,A-932,20.096,3596.00444,0.005588,90.49999999999996,6,13:30,19:07,18,27.02.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 09 Version 1.xlsx
+2024,H3,100G Kakao-Mousse,A-294,46.330633,4039.900249,0.011468,26.416666666666657,1,22:00,09:00,44,04.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 10 Version 1.xlsx
+2024,H2,218g Sweet N Salty Duo,A-633,16.11452,2119.032047,0.007605,135.8666666666667,9,05:27,13:39,12,04.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 10 Version 1.xlsx
+2024,H3,100G Nugat,A-26,26.0052,3326.488706,0.007818,50.683333333333394,2,10:30,17:59,20,04.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 10 Version 1.xlsx
+2024,H2,100G Knusperkeks,A-214,56.019601,3109.40499,0.018016,91.21666666666667,2,22:00,16:09,52,11.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 11 Version 1.xlsx
+2024,H3,100G Nugat,A-26,55.147027,3326.488706,0.016578,50.683333333333394,2,22:00,13:53,50,11.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 11 Version 1.xlsx
+2024,H2,100g Weisse Zitronenmousse,A-285,46.08000000000001,3498.920086,0.01317,28.51666666666661,,22:00,10:35,42,18.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 12 Version 1.xlsx
+2024,H3,100G Kakao-Mousse,A-294,44.0064,4039.900249,0.010893,26.416666666666657,1,22:00,08:26,42,18.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 12 Version 1.xlsx
+2024,H2,250G Goldschatz,A-606,33.95,2916.291629,0.011641,41.43333333333326,8,22:00,09:44,32,22.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 17 Version 1.xlsx
+2024,H3,100G Kakao-Mousse,A-294,42.312231,4039.900249,0.010474,26.416666666666657,1,22:00,08:02,40,29.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2024,H2,100G Alpenmilch,A-18,33.0,3694.412771,0.008932,94.51666666666671,1,10:23,19:24,28,29.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2024,H3,100G Kakao-Mousse,A-294,42.312231,4039.900249,0.010474,26.416666666666657,1,22:00,08:02,40,29.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2024,H2,100G Alpenmilch,A-18,33.0,3694.412771,0.008932,94.51666666666671,1,10:23,19:24,28,29.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 18 Version 1.xlsx
+2024,H3,100G Nugat,A-26,32.05441,3326.488706,0.009636,50.683333333333394,2,22:00,07:14,28,27.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 22 Verssion 1.xlsx
+2024,H2,100G Waffel,A-220,40.136013,3306.122449,0.01214,123.46666666666663,,08:03,20:18,38,27.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 22 Verssion 1.xlsx
+2024,H3,100G Joghurt,A-27,25.0,4396.200814,0.005687,75.46666666666665,3,07:59,13:25,23,27.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 22 Verssion 1.xlsx
+2024,H3,100G Orange,A-100,41.4,4396.200814,0.009417,80.34999999999998,,00:58,11:12,35.2,13.06.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 22 Verssion 1.xlsx
+2024,H2,100G Olympia,A-280,26.245248,,,,,00:49,07:37,38,20.06.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 22 Verssion 1.xlsx
+2024,H2,100G Waffel,A-220,30.327032,3306.122449,0.009173,123.46666666666663,,22:00,07:15,52,24.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 22 Verssion 1.xlsx
+2024,H2,100G Knusperkeks(*),A-214,40.9258648783314,3109.40499,0.013162,91.21666666666667,2,08:45,22:00,66,24.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 22 Verssion 1.xlsx
+2024,H2,100G Waffel,A-220,20.162016,3306.122449,0.006098,123.46666666666663,,14:00,20:09,16,03.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 23 Version 1.xlsx
+2024,H2,100G Waffel,A-220,16.24,3306.122449,0.004912,123.46666666666663,,06:00,10:57,14,04.06.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 23 Version 2.xlsx
+2024,H2,100G Knusperkeks,A-214,26.432,3109.40499,0.008501,91.21666666666667,2,22:00,06:33,24,10.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2024,H2,250G Nugat,A-601,10.08,3076.923077,0.003276,92.06666666666669,14,08:48,12:06,8,10.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2024,H2,250G Alpenmilch,A-603,22.092,2916.291629,0.007575,69.11666666666667,13,13:36,21:14,20,10.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2024,H3,100G Kakao-Mousse,A-294,40.330033,4039.900249,0.009983,26.416666666666657,1,22:00,07:34,36,17.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 25 Version 1.xlsx
+2024,H3,100G Kakao-Mousse,A-294,34.359436,4039.900249,0.008505,26.416666666666657,1,22:00,06:09,32,08.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 28 Version 1.xlsx
+2024,H3,100G Nugat,A-26,26.05321,3326.488706,0.007832,50.683333333333394,2,07:39,15:09,16,08.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 28 Version 1.xlsx
+2024,H2,KK 100G Nicaragua 61%,A-932,16.304,3596.00444,0.004534,90.49999999999996,6,15:18,19:52,10,08.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 28 Version 1.xlsx
+2024,H2,100G Knusperkeks,A-214,44.146414,3109.40499,0.014198,91.21666666666667,2,22:00,12:18,40,15.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 29 Version 1.xlsx
+2024,H3,100G Nugat,A-26,34.262851,3326.488706,0.0103,50.683333333333394,2,22:00,07:52,24,15.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 29 Version 1.xlsx
+2024,H2,100G Waffel,A-220,22.2,3306.122449,0.006715,123.46666666666663,,13:48,20:33:00,16,15.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 29 Version 1.xlsx
+2024,H2,100G Knusperkeks,A-214,44.2,3109.40499,0.014215,91.21666666666667,2,22:00,12:17,40,29.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 31 Version 1.xlsx
+2024,H2,250G Goldschatz,A-606,10.1,2916.291629,0.003463,41.43333333333326,8,14:17,17:48,7,29.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 31 Version 1.xlsx
+2024,H2,100G Waffel,A-220,18.943894,3306.122449,0.00573,123.46666666666663,,22:00,03:47,16,05.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 32 Version 1.xlsx
+2024,H2,100G Karamell-Mousse,A-2110,18.4,3306.122449,0.005565,117.41666666666659,7,06:17,13:02,16,05.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 32 Version 1.xlsx
+2024,H2,KK 100G Ghana 81%,A-938,26.032,3596.00444,0.007239,58.98333333333327,4,14:32,21:49,22,05.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 32 Version 1.xlsx
+2024,H2,100G Knusperkeks,A-214,25.230523,3109.40499,0.008114,91.21666666666667,2,22:00,06:10,22,02.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 36 Version 1.xlsx
+2024,H3,100G Nugat,A-26,50.050008,3326.488706,0.015046,50.683333333333394,2,22:00,12:25,46,02.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 36 Version 1.xlsx
+2024,H2,100G Waffel,A-220,18.089809,3306.122449,0.005472,123.46666666666663,,07:40,13:11,16,02.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 36 Version 1.xlsx
+2024,H3,100G Joghurt,A-27,38.80388,4396.200814,0.008827,75.46666666666665,3,13:10,21:37,36,02.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 36 Version 1.xlsx
+2024,H2,250G Nugat,A-601,8.008,3076.923077,0.002603,92.06666666666669,14,22:00,00:37,6,23.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 39 Version 1.xlsx
+2024,H3,100G Nugat,A-26,60.044006,3326.488706,0.01805,50.683333333333394,2,22:00,15:18,54,23.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 39 Version 1.xlsx
+2024,H2,250G Goldschatz,A-606,20.286,2916.291629,0.006956,41.43333333333326,8,02:07,09:08,18,23.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 39 Version 1.xlsx
+2024,H3,100G Nugat,A-26,60.348067,3326.488706,0.018142,50.683333333333394,2,22:00,15:23,50,30.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 40 Version 1.xlsx
+2024,H2,100G Waffel,A-220,24.894489,3306.122449,0.00753,123.46666666666663,,23:30:00,07:06:00,23,30.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 40 Version 1.xlsx
+2024,H2,100G Knusperkeks,A-214,26.1,3109.40499,0.008394,91.21666666666667,2,08:36:00,17:23,24,30.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 40 Version 1.xlsx
+2024,H2,KK 100G Ghana 81%,A-938,28.032,3596.00444,0.007795,58.98333333333327,4,23:48,07:39,26,02.10.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 40 Version 2.xlsx
+2024,H3,100G Alpenmilch,A-18,55.04000000000001,3694.412771,0.014898,94.51666666666671,9,07:38,19:37,45,02.10.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 40 Version 2.xlsx
+2024,H2,KK 100G Ghana 81%,A-938,28.032,3596.00444,0.007795,58.98333333333327,4,23:48,07:39,26,02.10.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 40 Version 2.xlsx
+2024,H3,100G Alpenmilch,A-18,55.04000000000001,3694.412771,0.014898,94.51666666666671,9,07:38,19:37,45,02.10.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 40 Version 2.xlsx
+2024,H3,100G Edel-Bitter 70%,A-2600,21.0,4039.900249,0.005198,105.0666666666667,11,22:00,03:46,?,17.10.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 42 Konzept.xlsx
+2024,H3,100G Edel-Bitter 70%,A-2600,13.910782,4039.900249,0.003443,105.0666666666667,11,15:33,19:26,?,13.11.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 42 Konzept.xlsx
+2024,H2,250G Goldschatz,A-606,18.485,2916.291629,0.006339,41.43333333333326,8,22:00,04:23,14,21.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 43 Version 1.xlsx
+2024,H3,100G Nugat,A-26,48.0,3326.488706,0.01443,50.683333333333394,2,22:00,11:50,40,21.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 43 Version 1.xlsx
+2024,H3,100G Joghurt,A-27,33.29933,4396.200814,0.007575,75.46666666666665,3,12:35,19:50,30,21.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 43 Version 1.xlsx
+2024,H3,100G Kakao-Mousse,A-294,19.95,4039.900249,0.004938,26.416666666666657,1,22:00,02:44,16,28.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 44 Version 1.xlsx
+2024,H2,100G Knusperkeks,A-214,37.002,3109.40499,0.0119,91.21666666666667,2,06:28,18:27,30,28.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 44 Version 1.xlsx
+2024,H3,100G Nugat Versuch Martin Schnee,A-26,14.816,3326.488706,0.004454,50.683333333333394,2,06:30,10:46,12,28.10.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 44 Version 1.xlsx
+2024,H2,KK 100G Nicaragua 61%,A-932,16.064,3596.00444,0.004467,90.49999999999996,6,22:00,02:30,14,04.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 45 Version 1.xlsx
+2024,H3,100G Nugat,A-26,48.2,3326.488706,0.01449,50.683333333333394,2,22:00,12:05,40,04.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 45 Version 1.xlsx
+2024,H2,KK 100G Peru 74%,A-933,35.0,3596.00444,0.009733,73.96666666666661,5,03:30,13:18,30,04.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 45 Version 1.xlsx
+2024,H3,100G Joghurt,A-27,15.281528,4396.200814,0.003476,75.46666666666665,3,12:50,16:09,10,04.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 45 Version 1.xlsx
+2024,H2,KK 100G Ghana 81%,A-938,26.0,3596.00444,0.00723,58.98333333333327,4,14:18,21:35,22,04.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 45 Version 1.xlsx
+2024,H3,100G Winter Mandel Mousse,A-203,17.302,,,,,11:34,15:40,24,15.11.,Fr,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 45 Version 1.xlsx
+2024,H2,100G Alpenmilch,A-18,24.0,3694.412771,0.006496,94.51666666666671,1,22:00,04:33,12,11.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 46 Version 1.xlsx
+2024,H3,100G Kakao-Mousse,A-294,36.249625,4039.900249,0.008973,26.416666666666657,1,22:00,06:36,30,11.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 46 Version 1.xlsx
+2024,H3,100G Orange,A-100,22.946294,4396.200814,0.00522,80.34999999999998,,01:42,07:22,35,12.12.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 46 Version 1.xlsx
+2024,H2,100g Weisse Zitronenmousse,A-285,42.0,3498.920086,0.012004,28.51666666666661,,22:00,09:29,38,25.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 48 Version1.xlsx
+2024,H3,100G Kakao-Mousse,A-294,48.234823,4039.900249,0.01194,26.416666666666657,1,22:00,09:27,44,25.11.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 48 Version1.xlsx
+2024,H2,KK 100G Ghana 81%,A-938,20.128,3596.00444,0.005597,58.98333333333327,4,22:00,03:38,18,02.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 49 Version 1.xlsx
+2024,H2,KK 100G Peru 74%,A-933,42.0,3596.00444,0.01168,73.96666666666661,5,04:38,16:24,40,02.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 49 Version 1.xlsx
+2024,H2,KK 100G Nicaragua 61%,A-932,14.0,3596.00444,0.003893,90.49999999999996,6,17:24,21:19,12,02.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 49 Version 1.xlsx
+2024,H2,100g Weisse Zitronenmousse,A-285,46.858,3498.920086,0.013392,28.51666666666661,,22:00,10:48,36,29.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 5 Version 1.xlsx
+2024,H3,100G Nugat,A-26,60.172032,3326.488706,0.018089,50.683333333333394,2,22:00,15:20,50,29.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 5 Version 1.xlsx
+2024,H2,100g Weisse Zitronenmousse,A-285,57.82,3498.920086,0.016525,28.51666666666661,,22:00,13:48,50,09.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 50 Version 1.xlsx
+2024,H3,100G Kakao-Mousse,A-294,48.136813,4039.900249,0.011915,26.416666666666657,1,22:00,09:25,46,09.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 50 Version 1.xlsx
+2024,H2,100G Knusperkeks,A-214,20.022002,3109.40499,0.006439,91.21666666666667,2,22:00,04:29,16,16.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 51 Version 1.xlsx
+2024,H3,100G Kakao-Mousse,A-294,28.016801,4039.900249,0.006935,26.416666666666657,1,22:00,04:39,22,16.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 51 Version 1.xlsx
+2024,H2,250G Goldschatz,A-606,10.08,2916.291629,0.003456,41.43333333333326,8,05:59,09:28,8,16.12.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H2H3/WP_H2+H3_KW 51 Version 1.xlsx
+2024,H4,100G Waffel,A-220,22.046204,3306.122449,0.006668,123.46666666666663,,12:07,18:51,12,02.04.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/H4/WP_H2+H3_KW 14 Version 1.xlsx
+2024,M3,100G Haselnuss,A-222,25.209184,4468.965517,0.005641,0.08333333333333337,1,22:00,04:01,25.2,29.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/M2M3/WP_M2_M3_KW 30_Version 2.xlsx
+2024,M2,100G Weiss + Crisp,A-292,20.731763,2916.291629,0.007109,3.2499999999999933,1,06:00,13:15,21.2,29.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/M2M3/WP_M2_M3_KW 30_Version 2.xlsx
+2024,M3,NK 100G Voll-Nuss,A-700,28.173768,2916.291629,0.009661,35.7166666666666,2,04:16,10:59,39.8,29.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/M2M3/WP_M2_M3_KW 30_Version 2.xlsx
+2024,M2,NK 100G Weisse Voll-Nuss,A-701,19.937862,2916.291629,0.006837,18.283333333333395,2,13:45,21:17,24.7,29.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/M2M3/WP_M2_M3_KW 30_Version 2.xlsx
+2024,M3,NK 100G Dunkle Voll-Nuss,A-702,25.043018,4468.965517,0.005604,38.45000000000001,3,11:19,17:18,31.7,29.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/M2M3/WP_M2_M3_KW 30_Version 2.xlsx
+2024,M3,100G Mandel Orange(*),A-212,20.86585445454546,4468.965517,0.004669,52.60000000000003,11,22:00,02:59,20.3,30.07.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/M2M3/WP_M2_M3_KW 30_Version 2.xlsx
+2024,M2,NK 100G Honig-Salz-Mandel,A-704,19.795272,2916.291629,0.006788,50.800000000000026,3,06:17,14:17,24.6,30.07.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/M2M3/WP_M2_M3_KW 30_Version 2.xlsx
+2024,M3,100G Kakaokeks + Haselnuss,A-207,22.518496,4468.965517,0.005039,45.61666666666661,,03:59,09:21,22.5,30.07.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/M2M3/WP_M2_M3_KW 30_Version 2.xlsx
+2024,M2,100g Vollmilch Smarties(*),A-206,19.91740429027841,2916.291629,0.00683,44.31666666666672,,15:02,22:00,104.4,30.07.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/M2M3/WP_M2_M3_KW 30_Version 2.xlsx
+2024,M2,100G Trauben-Nuss,A-22,17.656685,2916.291629,0.006054,41.24999999999995,4,12:18,18:28,16.3,01.08.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/M2M3/WP_M2_M3_KW 30_Version 2.xlsx
+2024,M2,100G Rum-Trauben-Nuss(*),A-12,9.167951412244898,2916.291629,0.003144,21.19999999999997,5,18:48,22:00,14,01.08.,Do,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/M2M3/WP_M2_M3_KW 30_Version 2.xlsx
+2024,M2,100G Rum-Trauben-Nuss,A-12,11.394202,2916.291629,0.003907,21.19999999999997,5,06:53,10:52,11.2,02.08.,Fr,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2024/M2M3/WP_M2_M3_KW 30_Version 2.xlsx
+2025,H2,250G Goldschatz,A-606,18.2,2916.291629,0.006241,41.43333333333326,8,22:00,04:17,12,13.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 03 Version 1.xlsx
+2025,H3,100G Kakao-Mousse,A-294,26.042604,4039.900249,0.006446,26.416666666666657,1,22:00,04:11,24,13.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 03 Version 1.xlsx
+2025,H2,100g Weisse Zitronenmousse,A-285,38.066,3498.920086,0.010879,28.51666666666661,,22:00,08:24,34,20.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 04 Version 1.xlsx
+2025,H3,100G Kakao-Mousse,A-294,74.221421,4039.900249,0.018372,26.416666666666657,1,22:00,15:37,72,20.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 04 Version 1.xlsx
+2025,H2,100G Waffel,A-220,22.178218,3306.122449,0.006708,123.46666666666663,,10:24,17:10,20,20.01.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 04 Version 1.xlsx
+2025,H2,100g Weisse Zitronenmousse,A-285,32.004,3498.920086,0.009147,28.51666666666661,,22:00,06:45,28,17.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 08 Version 1.xlsx
+2025,H3,100G Kakao-Mousse,A-294,38.391839,4039.900249,0.009503,26.416666666666657,1,22:00,07:06,30,17.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 08 Version 1.xlsx
+2025,H2,100G Waffel / RD-9422 MHD verlängert,A-220,10.263026,3306.122449,0.003104,123.46666666666663,,08:45,11:53,8,17.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 08 Version 1.xlsx
+2025,H2,250G Goldschatz,A-606,52.052,2916.291629,0.017849,41.43333333333326,8,22:00,16:00,50,24.02.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 09 Version 1.xlsx
+2025,H2,218g Crunchy Duo,A-630,43.803,2119.032047,0.020671,237.75000000000048,10,22:00,20:19,40,10.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 11 Version 1.xlsx
+2025,H2,100g Weisse Zitronenmousse,A-285,40.318,3498.920086,0.011523,28.51666666666661,,22:00,09:01,36,17.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 12 Version 1.xlsx
+2025,H3,100G Kakao-Mousse,A-294,24.152415,4039.900249,0.005978,26.416666666666657,1,22:00,03:44,20,17.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 12 Version 1.xlsx
+2025,H3,100G Nugat,A-26,26.325264,3326.488706,0.007914,50.683333333333394,2,05:14,12:49,20,17.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 12 Version 1.xlsx
+2025,H2,250G Goldschatz,A-606,28.196,2916.291629,0.009668,41.43333333333326,8,00:00:00,09:45:00,24,24.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 13 Version 1.xlsx
+2025,H3,100G Nugat,A-26,35.19103699999999,3326.488706,0.010579,50.683333333333394,2,06:00,16:08,30,24.03.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 13 Version 1.xlsx
+2025,H2,218g Fruity Duo,A-631,20.203594,2119.032047,0.009534,341.56666666666655,12,22:00,08:17,16,07.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 15 Version 1.xlsx
+2025,H3,100G Nugat,A-26,52.314461,3326.488706,0.015727,50.683333333333394,2,06:00,21:04,48,07.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 15 Version 1.xlsx
+2025,H2,100G Alpenmilch,A-18,20.0,3694.412771,0.005414,94.51666666666671,1,03:17,08:33:00,?,08.04.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 15 Version 1.xlsx
+2025,H2,100G Knusperkeks,A-214,60.198019,3109.40499,0.01936,91.21666666666667,2,22:00,17:30,56,14.04.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 16 Version 1.xlsx
+2025,H2,250G Goldschatz,A-606,16.128,2916.291629,0.00553,41.43333333333326,8,22:00,03:34,10,22.04.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 17 Version 1.xlsx
+2025,H2,218g Sweet N Salty Duo,A-633,16.394628,2119.032047,0.007737,135.8666666666667,9,05:04,13:25,14,22.04.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 17 Version 1.xlsx
+2025,H2,250G Goldschatz,A-606,11.256,2916.291629,0.00386,41.43333333333326,8,02:00,05:53,8,05.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 19 Version 1.xlsx
+2025,H2,218g Sweet N Salty Duo,A-633,14.21,2119.032047,0.006706,135.8666666666667,9,07:23,14:37,10,05.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 19 Version 1.xlsx
+2025,H3,100G Joghurt,A-27,25.20252,4396.200814,0.005733,75.46666666666665,3,15:32,21:01,?,05.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 19 Version 1.xlsx
+2025,H2,100g Weisse Zitronenmousse,A-285,38.08,3498.920086,0.010883,28.51666666666661,,22:00,08:24,34,12.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 20 Version 1.xlsx
+2025,H3,100G Kakao-Mousse,A-294,50.223022,4039.900249,0.012432,26.416666666666657,1,22:00,09:55,46,12.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 20 Version 1.xlsx
+2025,H3,100G Nugat,A-26,44.4,3326.488706,0.013347,50.683333333333394,2,22:00,10:48,40,19.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 21 Version 1.xlsx
+2025,H3,100G Kokos,A-298,26.0,3694.412771,0.007038,107.86666666666665,4,12:18,17:59,22,19.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 21 Version 1.xlsx
+2025,H3,100G Nugat (KW21+22),A-26,24.4,3326.488706,0.007335,50.683333333333394,2,22:00,05:02,40,19.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 21 Version 2.xlsx
+2025,H3,100G Kokos,A-298,26.01599999999999,3694.412771,0.007042,107.86666666666665,4,06:32,12:12,22,19.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 21 Version 2.xlsx
+2025,H3,100G Kakao-Mousse,A-294,22.066206,4039.900249,0.005462,26.416666666666657,1,22:00,03:14,18,26.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 22 Version 1.xlsx
+2025,H3,100G Joghurt,A-27,25.008,4396.200814,0.005689,75.46666666666665,3,12:28,17:55,20,26.05.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 22 Version 1.xlsx
+2025,H3,100G Nugat,A-26,38.119622,3326.488706,0.011459,50.683333333333394,2,22:00,08:59,30,10.06.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2025,H2,100G Knusperkeks,A-214,34.415441,3109.40499,0.011068,91.21666666666667,2,02:14,13:23,30,10.06.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2025,H3,100G Kakao-Mousse,A-294,21.170117,4039.900249,0.00524,26.416666666666657,1,10:29,15:30,19,10.06.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2025,H2,100G Waffel,A-220,18.453845,3306.122449,0.005582,123.46666666666663,,14:53,20:31,14,10.06.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2025,H3,100G Joghurt,A-27,22.176,4396.200814,0.005044,75.46666666666665,3,17:00,21:50,18,10.06.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 24 Version 1.xlsx
+2025,H2,100G Waffel,A-220,16.185618,3306.122449,0.004896,123.46666666666663,,12:00,16:56,14,23.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 26 Version 1.xlsx
+2025,H3,100G Kakao-Mousse,A-294,22.290229,4039.900249,0.005518,26.416666666666657,1,14:00,19:17,20,23.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 26 Version 1.xlsx
+2025,H2,KK 100G Ghana 81%,A-938,20.032,3596.00444,0.005571,58.98333333333327,4,22:00,03:36,16,30.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 27 Version 1.xlsx
+2025,H2,KK 100G Peru 74%,A-933,28.0,3596.00444,0.007786,73.96666666666661,5,04:36,12:26,20,30.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 27 Version 1.xlsx
+2025,H2,KK 100G Nicaragua 61%,A-932,12.08,3596.00444,0.003359,90.49999999999996,6,13:26,16:49,10,30.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 27 Version 1.xlsx
+2025,H2,250G Nugat,A-601,10.3,3076.923077,0.003347,92.06666666666669,14,18:49,22:11:00,8,30.06.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 27 Version 1.xlsx
+2025,H3,100G Nugat,A-26,32.0064,3326.488706,0.009622,50.683333333333394,2,22:00,07:13,28,28.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 31 Version 1.xlsx
+2025,H3,100G Kokos,A-298,24.537811,3694.412771,0.006642,107.86666666666665,4,08:43,14:03,23,28.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 31 Version 1.xlsx
+2025,H3,100G Halbbitter,A-20,16.227245,4396.200814,0.003691,93.89999999999995,5,15:33,19:05,10,28.07.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 31 Version 1.xlsx
+2025,H3,100G Kakao-Mousse,A-294,38.251825,4039.900249,0.009469,26.416666666666657,1,22:00,07:05,34,04.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 32 Version 2.xlsx
+2025,H2,100G Weisse Spekulatius_G,A-2900,28.112,3109.40499,0.009041,6.9333333333333265,,00:00,09:06,24,04.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 32 Version 2.xlsx
+2025,H3,100G Nugat,A-26,36.247248,3326.488706,0.010897,50.683333333333394,2,08:35,19:02,30,04.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 32 Version 2.xlsx
+2025,H2,100G Alpenmilch,A-18,36.0,3694.412771,0.009744,94.51666666666671,1,10:36,20:26,30,04.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 32 Version 2.xlsx
+2025,H3,100G Nugat,A-26,44.1,3326.488706,0.013257,50.683333333333394,2,08:09:00,21:05,38,18.08.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 34 Version 1.xlsx
+2025,H3,100G Joghurt,A-27,36.0,4396.200814,0.008189,75.46666666666665,3,05:42,13:32,30,01.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 36 Version 1.xlsx
+2025,H3,100G Halbbitter,A-20,28.021603,4396.200814,0.006374,93.89999999999995,5,15:02,21:08,26,01.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 36 Version 1.xlsx
+2025,H2,218g Sweet N Salty Duo,A-633,42.142,2119.032047,0.019887,135.8666666666667,9,22:00,19:28,38,08.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 37 Version 2.xlsx
+2025,H2,218g Sweet N Salty Duo,A-633,42.142,2119.032047,0.019887,135.8666666666667,9,22:00,19:28,38,08.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 37 Version 2.xlsx
+2025,H3,100G Kakao-Mousse,A-294,28.254825,4039.900249,0.006994,26.416666666666657,1,11:11,17:53,26,09.09.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 37 Version 2.xlsx
+2025,H3,100G Kokos,A-298,26.23449,3694.412771,0.007101,107.86666666666665,4,09:35,15:18,24,10.09.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 37 Version 2.xlsx
+2025,H2,100G Weisse Spekulatius_G,A-2900,36.12,3109.40499,0.011616,6.9333333333333265,,22:00,09:42,32,15.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 38 Version 1.xlsx
+2025,H3,100G Kakao-Mousse,A-294,42.242224,4039.900249,0.010456,26.416666666666657,1,22:00,08:01,40,15.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 38 Version 1.xlsx
+2025,H2,100G Alpenmilch,A-18,40.0,3694.412771,0.010827,94.51666666666671,1,11:12,22:00,30,15.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 38 Version 1.xlsx
+2025,H2,250G Alpenmilch,A-603,12.432,2916.291629,0.004263,69.11666666666667,13,22:00,02:18,10,22.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 39 Version 1.xlsx
+2025,H2,218g Sweet N Salty Duo,A-633,25.698,2119.032047,0.012127,135.8666666666667,9,03:48,16:53,26,22.09.,Mo,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/H2H3/WP_H2+H3_KW 39 Version 1.xlsx
+2025,M3,100g Brezel,A-284,25.782,4468.965517,0.005769,67.98333333333326,,07:07,13:37,34.7,30.04.,Mi,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/M2M3/WP_M2_M3_KW 16 Version 1.xlsx
+2025,M3,100G Salted Caramel,A-221,21.6,4468.965517,0.004833,98.93333333333332,10,03:24,08:51,30,06.05.,Di,/mnt/c/Users/abhoir01/Documents/doc_BA/data/2025/M2M3/WP_M2_M3_KW 16 Version 1.xlsx

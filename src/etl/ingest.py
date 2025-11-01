@@ -3,7 +3,7 @@ import glob
 import json
 import os
 from datetime import datetime
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import pandas as pd
 
@@ -144,6 +144,142 @@ def normalize_file(path: str, personnel_terms: set, personnel_aliases: dict, log
     return grouped
 
 
+def process_cleaned_schedule_csv(
+    csv_path: str,
+    personnel_terms: set,
+    personnel_aliases: Dict[str, str],
+    logger,
+) -> Tuple[pd.DataFrame, List[Dict[str, Any]]]:
+    if not os.path.exists(csv_path):
+        logger.error(f"CSV input not found: {csv_path}")
+        return pd.DataFrame(), []
+
+    try:
+        df = pd.read_csv(csv_path)
+    except Exception as exc:
+        logger.error(f"Failed to read CSV {csv_path}: {exc}")
+        return pd.DataFrame(), []
+
+    if df.empty:
+        logger.warning(f"CSV input {csv_path} is empty")
+        return pd.DataFrame(), []
+
+    if "Start" not in df.columns or "Ende" not in df.columns:
+        logger.error("CSV input must contain 'Start' and 'Ende' columns with shift times")
+        return pd.DataFrame(), []
+
+    raw_rows = len(df)
+
+    def _normalize_time_value(value: Any) -> Optional[str]:
+        if pd.isna(value):
+            return None
+        s = str(value).strip()
+        if not s or s.lower() == "nan":
+            return None
+        s = s.replace(".", ":")
+        s = s.replace(",", ".")
+        parts = s.split(":")
+        if len(parts) == 1:
+            s = f"{parts[0]}:00:00"
+        elif len(parts) == 2:
+            s = f"{parts[0]}:{parts[1]}:00"
+        elif len(parts) > 3:
+            s = ":".join(parts[:3])
+        return s
+
+    def _parse_time_series(series: pd.Series) -> pd.Series:
+        normalized = series.apply(_normalize_time_value)
+        return pd.to_timedelta(normalized, errors="coerce")
+
+    # Parse date column
+    if "Datum" not in df.columns or "Year" not in df.columns:
+        logger.error("CSV input must contain 'Datum' and 'Year' columns")
+        return pd.DataFrame(), []
+    date_strings = df["Datum"].astype(str).str.strip() + df["Year"].astype(str)
+    df["date"] = pd.to_datetime(date_strings, format="%d.%m.%Y", errors="coerce")
+    failed_dates = df["date"].isna().sum()
+    if failed_dates:
+        logger.warning(f"Dropping {failed_dates} rows with unparseable dates from CSV input")
+    df = df.dropna(subset=["date"]).copy()
+
+    df["start_td"] = _parse_time_series(df["Start"])
+    df["end_td"] = _parse_time_series(df["Ende"])
+    missing_times = (df["start_td"].isna() | df["end_td"].isna()).sum()
+    if missing_times:
+        logger.warning(f"Dropping {missing_times} rows with missing start/end times from CSV input")
+    df = df[df["start_td"].notna() & df["end_td"].notna()].copy()
+
+    df["duration_h"] = (df["end_td"] - df["start_td"]).dt.total_seconds() / 3600.0
+    negative_mask = df["duration_h"] <= 0
+    df.loc[negative_mask, "duration_h"] = df.loc[negative_mask, "duration_h"] + 24.0
+    df["duration_h"] = df["duration_h"].clip(lower=0)
+
+    if "System" not in df.columns:
+        logger.error("CSV input must contain 'System' column for line identification")
+        return pd.DataFrame(), []
+    df["line"] = df["System"].apply(lambda v: normalize_line_value(v) or (str(v).strip().lower() if pd.notna(v) else None))
+    df["line"] = df["line"].fillna("unknown")
+
+    def _resolve_product(row: pd.Series) -> Optional[str]:
+        for key in ("Produkt", "Rezeptur"):
+            if key in row and pd.notna(row[key]) and str(row[key]).strip():
+                return str(row[key])
+        return None
+
+    df["personnel_flag"] = df.apply(
+        lambda row: is_personnel_intensive(_resolve_product(row), personnel_terms, personnel_aliases),
+        axis=1,
+    )
+
+    df["weekday"] = df["date"].apply(lambda d: pd.Timestamp(d).day_name()[:3])
+    df["kw"] = df["date"].apply(kw_from_date)
+    df["source_file"] = os.path.basename(csv_path)
+    df["source_type"] = "CSV"
+
+    grouped = df.groupby(["date", "line"], dropna=False).agg(
+        total_hours=("duration_h", "sum"),
+        personnel_intensive_flag=("personnel_flag", "max"),
+        num_segments=("duration_h", "count"),
+        weekday=("weekday", "first"),
+        kw=("kw", "first"),
+        source_file=("source_file", lambda x: ",".join(sorted(set(x)))),
+        source_type=("source_type", "first"),
+    ).reset_index()
+
+    grouped["num_segments"] = grouped["num_segments"].astype(int)
+    grouped["total_hours"] = grouped["total_hours"].astype(float)
+    grouped["capped"] = grouped["total_hours"] > 24.0
+    grouped.loc[grouped["capped"], "total_hours"] = 24.0
+    grouped["total_hours"] = grouped["total_hours"].round(2)
+    grouped["line"] = grouped["line"].fillna("unknown")
+    grouped["weekday"] = grouped["weekday"].fillna(grouped["date"].apply(lambda d: pd.Timestamp(d).day_name()[:3]))
+    grouped["kw"] = grouped["kw"].fillna(grouped["date"].apply(kw_from_date))
+
+    if grouped.empty:
+        logger.error("No aggregated records produced from cleaned CSV input")
+        return pd.DataFrame(), []
+
+    logger.info(f"Loaded {raw_rows} rows from cleaned CSV: {csv_path}")
+    logger.info(
+        "Aggregated to %d day×line records spanning %s to %s",
+        len(grouped),
+        grouped["date"].min().date(),
+        grouped["date"].max().date(),
+    )
+    logger.info("Lines covered: %s", ", ".join(sorted(grouped["line"].unique())))
+
+    stats: List[Dict[str, Any]] = [{
+        "file": os.path.basename(csv_path),
+        "rows": int(len(grouped)),
+        "raw_segments": int(len(df)),
+        "unknown_line_pct": float((grouped["line"] == "unknown").sum()) / float(len(grouped)),
+        "capped_rows": int(grouped["capped"].sum()),
+        "mode": "csv",
+    }]
+
+    return grouped, stats
+
+
 def main():
     parser = argparse.ArgumentParser(description="POC ETL: Normalize weekly Excel files to daily line hours")
     parser.add_argument("--input-root", default=os.getcwd(), help="Root path containing year/area folders")
@@ -156,6 +292,7 @@ def main():
     parser.add_argument("--personnel-config", default="config/personnel_intensive.yml", help="Personnel terms config")
     parser.add_argument("--log-level", default="INFO", help="Logging level")
     parser.add_argument("--matrix", action="store_true", default=True, help="Use matrix parser (default)")
+    parser.add_argument("--csv-input", help="Path to pre-cleaned schedule CSV; skips Excel ingestion when provided")
 
     args = parser.parse_args()
 
@@ -167,44 +304,58 @@ def main():
 
     logger, log_path = configure_logging("logs", args.log_level)
 
-    files = find_excel_files([args.input_root], args.years, args.areas, args.max_files)
-    logger.info(f"Found {len(files)} files to process")
-
     terms, aliases = load_personnel_config(args.personnel_config)
     if terms:
         logger.info(f"Loaded {len(terms)} personnel-intensive terms and {len(aliases)} aliases")
 
-    all_rows: List[pd.DataFrame] = []
+    combined: Optional[pd.DataFrame] = None
     per_file_stats: List[Dict[str, Any]] = []
 
-    for f in files:
-        logger.info(f"Processing: {f}")
-        out_df = normalize_matrix_file(f, terms, aliases, logger)
-        if out_df.empty:
-            logger.warning(f"No usable rows from file: {f}")
+    if args.csv_input:
+        logger.info(f"Using cleaned CSV input: {args.csv_input}")
+        csv_df, csv_stats = process_cleaned_schedule_csv(args.csv_input, terms, aliases, logger)
+        if csv_df.empty:
+            logger.error("No data produced from cleaned CSV input. Aborting.")
+            return 2
+        combined = csv_df
+        per_file_stats.extend(csv_stats)
+    else:
+        files = find_excel_files([args.input_root], args.years, args.areas, args.max_files)
+        logger.info(f"Found {len(files)} files to process")
+        all_rows: List[pd.DataFrame] = []
+
+        for f in files:
+            logger.info(f"Processing: {f}")
+            out_df = normalize_matrix_file(f, terms, aliases, logger)
+            if out_df.empty:
+                logger.warning(f"No usable rows from file: {f}")
+                per_file_stats.append({
+                    "file": f,
+                    "rows": 0,
+                    "unknown_line_pct": None,
+                    "capped_rows": 0,
+                })
+                continue
+            all_rows.append(out_df)
+            total = len(out_df)
+            unknown = (out_df["line"] == "unknown").sum()
+            capped = (out_df["capped"]).sum()
             per_file_stats.append({
                 "file": f,
-                "rows": 0,
-                "unknown_line_pct": None,
-                "capped_rows": 0,
+                "rows": int(total),
+                "unknown_line_pct": float(unknown) / float(total) if total else 0.0,
+                "capped_rows": int(capped),
             })
-            continue
-        all_rows.append(out_df)
-        total = len(out_df)
-        unknown = (out_df["line"] == "unknown").sum()
-        capped = (out_df["capped"]).sum()
-        per_file_stats.append({
-            "file": f,
-            "rows": int(total),
-            "unknown_line_pct": float(unknown) / float(total) if total else 0.0,
-            "capped_rows": int(capped),
-        })
 
-    if not all_rows:
-        logger.error("No data produced. Aborting.")
+        if not all_rows:
+            logger.error("No data produced from Excel sources. Aborting.")
+            return 2
+
+        combined = pd.concat(all_rows, ignore_index=True)
+
+    if combined is None or combined.empty:
+        logger.error("No data produced after ingestion. Aborting.")
         return 2
-
-    combined = pd.concat(all_rows, ignore_index=True)
 
     # Apply deduplication strategy for same day×line combinations
     logger.info("Applying deduplication strategy...")
@@ -237,8 +388,11 @@ def main():
 
     if args.save_parquet:
         out_parquet = os.path.splitext(out_csv)[0] + ".parquet"
-        combined_sorted.to_parquet(out_parquet, index=False)
-        logger.info(f"Wrote Parquet: {out_parquet}")
+        try:
+            combined_sorted.to_parquet(out_parquet, index=False)
+            logger.info(f"Wrote Parquet: {out_parquet}")
+        except ImportError as exc:
+            logger.warning(f"Skipping Parquet export: {exc}")
 
     # Report
     summary: Dict[str, Any] = {
